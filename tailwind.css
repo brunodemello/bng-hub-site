@@ -1,0 +1,154 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --BNG-bot-o-02-font-family: "Poppins", Helvetica;
+  --BNG-bot-o-02-font-size: 12px;
+  --BNG-bot-o-02-font-style: normal;
+  --BNG-bot-o-02-font-weight: 600;
+  --BNG-bot-o-02-letter-spacing: 0px;
+  --BNG-bot-o-02-line-height: 149.5950164794922%;
+  --BNG-bot-o-font-family: "Poppins", Helvetica;
+  --BNG-bot-o-font-size: 14px;
+  --BNG-bot-o-font-style: normal;
+  --BNG-bot-o-font-weight: 600;
+  --BNG-bot-o-letter-spacing: 0px;
+  --BNG-bot-o-line-height: 149.5950164794922%;
+  --BNG-corpo-02-font-family: "Poppins", Helvetica;
+  --BNG-corpo-02-font-size: 14px;
+  --BNG-corpo-02-font-style: normal;
+  --BNG-corpo-02-font-weight: 400;
+  --BNG-corpo-02-letter-spacing: 0px;
+  --BNG-corpo-02-line-height: 149.5950164794922%;
+  --BNG-display-02-font-family: "Poppins", Helvetica;
+  --BNG-display-02-font-size: 48px;
+  --BNG-display-02-font-style: normal;
+  --BNG-display-02-font-weight: 700;
+  --BNG-display-02-letter-spacing: 0px;
+  --BNG-display-02-line-height: 149.5950164794922%;
+  --BNG-overline-font-family: "Poppins", Helvetica;
+  --BNG-overline-font-size: 10px;
+  --BNG-overline-font-style: normal;
+  --BNG-overline-font-weight: 500;
+  --BNG-overline-letter-spacing: 0px;
+  --BNG-overline-line-height: 149.5950164794922%;
+  --BNG-subt-tulo-font-family: "Poppins", Helvetica;
+  --BNG-subt-tulo-font-size: 18px;
+  --BNG-subt-tulo-font-style: normal;
+  --BNG-subt-tulo-font-weight: 600;
+  --BNG-subt-tulo-letter-spacing: 0px;
+  --BNG-subt-tulo-line-height: 149.5950164794922%;
+  --BNG-t-tulo-01-h1-font-family: "Poppins", Helvetica;
+  --BNG-t-tulo-01-h1-font-size: 36px;
+  --BNG-t-tulo-01-h1-font-style: normal;
+  --BNG-t-tulo-01-h1-font-weight: 600;
+  --BNG-t-tulo-01-h1-letter-spacing: 0px;
+  --BNG-t-tulo-01-h1-line-height: 149.5950164794922%;
+  --BNG-t-tulo-02-h2-font-family: "Poppins", Helvetica;
+  --BNG-t-tulo-02-h2-font-size: 28px;
+  --BNG-t-tulo-02-h2-font-style: normal;
+  --BNG-t-tulo-02-h2-font-weight: 600;
+  --BNG-t-tulo-02-h2-letter-spacing: 0px;
+  --BNG-t-tulo-02-h2-line-height: 149.5950164794922%;
+  --BNG-TIPOGRAFIA-BNG-corpo-02-font-family: "Poppins", Helvetica;
+  --BNG-TIPOGRAFIA-BNG-corpo-02-font-size: 16px;
+  --BNG-TIPOGRAFIA-BNG-corpo-02-font-style: normal;
+  --BNG-TIPOGRAFIA-BNG-corpo-02-font-weight: 700;
+  --BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing: 0px;
+  --BNG-TIPOGRAFIA-BNG-corpo-02-line-height: 149.5950164794922%;
+  --marca-o-font-family: "Poppins", Helvetica;
+  --marca-o-font-size: 14px;
+  --marca-o-font-style: normal;
+  --marca-o-font-weight: 700;
+  --marca-o-letter-spacing: 0px;
+  --marca-o-line-height: 149.5950164794922%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
