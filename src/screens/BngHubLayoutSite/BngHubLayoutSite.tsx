@@ -5,8 +5,9 @@ import { Separator } from "../../components/ui/separator";
 import { AboutUsSection } from "./sections/AboutUsSection";
 import { ContactUsSection } from "./sections/ContactUsSection";
 import { FeaturesSection } from "./sections/FeaturesSection";
+import { HeaderSection } from "./sections/HeaderSection";
+import { HeroBannerSection } from "./sections/HeroBannerSection";
 import { HeroSection } from "./sections/HeroSection";
-import { NavigationSection } from "./sections/NavigationSection";
 import { ServiceOverviewSection } from "./sections/ServiceOverviewSection";
 import { SolutionsSection } from "./sections/SolutionsSection";
 
@@ -73,35 +74,16 @@ export const BngHubLayoutSite = (): JSX.Element => {
   ];
 
   return (
-    <div className="bg-white flex flex-row justify-center w-full">
-      <div className="bg-white overflow-hidden w-full relative">
-        {/* Hero Section with Navigation */}
-        <section className="relative w-full">
-          <div className="w-full h-[45.07vw] bg-[url('./rectangle-178.png')] bg-cover bg-center relative">
-            <img
-              className="absolute w-full h-full top-0 left-0"
-              alt="Rectangle"
-              src="./rectangle-231.svg"
-            />
-
-            <div className="absolute w-[34.44vw] h-[7.5vw] top-[24.24vw] left-[55.14vw]">
-              <div className="relative w-[34.31vw] h-[7.5vw]">
-                <div className="absolute w-[34.31vw] h-[3.54vw] top-[3.96vw] left-0 bg-[#003cff] rounded-lg" />
-                <div className="absolute w-[32.85vw] top-0 left-[0.76vw] font-BNG-t-tulo-01-h1 font-[number:var(--BNG-t-tulo-01-h1-font-weight)] text-white text-[2.5vw] tracking-[var(--BNG-t-tulo-01-h1-letter-spacing)] leading-[var(--BNG-t-tulo-01-h1-line-height)] [font-style:var(--BNG-t-tulo-01-h1-font-style)]">
-                  Somos a força por trás da assistência de qualidade
-                </div>
-              </div>
-            </div>
-
-            <img
-              className="absolute w-[4.17vw] h-[2.08vw] top-[41.32vw] left-[47.92vw]"
-              alt="Frame"
-              src="./frame-158.svg"
-            />
-
-            <NavigationSection />
-          </div>
-        </section>
+    <div className="bg-white w-full min-h-screen">
+      <div className="bg-white w-full relative overflow-x-hidden">
+        {/* Hero Banner Section */}
+        <div className="relative">
+          {/* Header Section - Sobreposto ao banner */}
+          <HeaderSection />
+          
+          {/* Hero Banner Section */}
+          <HeroBannerSection />
+        </div>
 
         {/* About Us Section */}
         <section className="relative w-full py-16">
@@ -115,7 +97,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 src="./group-84.png"
               />
 
-              <div className="absolute w-[2.78vw] h-[2.78vw] top-[28.61vw] left-[27.92vw]">
+              <div className="absolute w-[2.78vw] h-[2.78vw] top-[6vw] left-[8vw]">
                 <img
                   className="absolute w-[0.83vw] h-[0.9vw] top-0 left-[0.97vw]"
                   alt="Vector"
@@ -138,7 +120,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 />
               </div>
 
-              <div className="absolute w-[1.94vw] h-[1.94vw] top-[4.44vw] left-[74.1vw]">
+              <div className="absolute w-[1.94vw] h-[1.94vw] top-[8vw] right-[8vw]">
                 <img
                   className="absolute w-[0.56vw] h-[0.63vw] top-0 left-[0.69vw]"
                   alt="Vector"
@@ -178,6 +160,54 @@ export const BngHubLayoutSite = (): JSX.Element => {
               <Button className="absolute top-[29.24vw] left-0 bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
                 Saiba mais
               </Button>
+
+              {/* Cruz pequena inferior esquerda */}
+              <div className="absolute w-[1.5vw] h-[1.5vw] top-[32vw] left-[25vw] opacity-60">
+                <img
+                  className="absolute w-[0.45vw] h-[0.5vw] top-0 left-[0.52vw]"
+                  alt="Vector"
+                  src="./vector.svg"
+                />
+                <img
+                  className="absolute w-[0.45vw] h-[0.5vw] top-[1vw] left-[0.52vw]"
+                  alt="Vector"
+                  src="./vector-49.svg"
+                />
+                <img
+                  className="absolute w-[0.5vw] h-[0.45vw] top-[0.52vw] left-0"
+                  alt="Vector"
+                  src="./vector-1.svg"
+                />
+                <img
+                  className="absolute w-[0.5vw] h-[0.45vw] top-[0.52vw] left-[1vw]"
+                  alt="Vector"
+                  src="./vector-27.svg"
+                />
+              </div>
+
+              {/* Cruz grande inferior direita */}
+              <div className="absolute w-[3.5vw] h-[3.5vw] bottom-[4vw] right-[4vw] opacity-40">
+                <img
+                  className="absolute w-[1.05vw] h-[1.17vw] top-0 left-[1.22vw]"
+                  alt="Vector"
+                  src="./vector.svg"
+                />
+                <img
+                  className="absolute w-[1.05vw] h-[1.17vw] top-[2.33vw] left-[1.22vw]"
+                  alt="Vector"
+                  src="./vector-2.svg"
+                />
+                <img
+                  className="absolute w-[1.17vw] h-[1.05vw] top-[1.22vw] left-0"
+                  alt="Vector"
+                  src="./vector-1.svg"
+                />
+                <img
+                  className="absolute w-[1.17vw] h-[1.05vw] top-[1.22vw] right-0"
+                  alt="Vector"
+                  src="./vector-27.svg"
+                />
+              </div>
             </div>
           </div>
         </section>
