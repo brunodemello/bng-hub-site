@@ -10,7 +10,7 @@ import { HeaderSection } from "./sections/HeaderSection";
 import { HeroBannerSection } from "./sections/HeroBannerSection";
 import { HeroSection } from "./sections/HeroSection";
 import { ServiceOverviewSection } from "./sections/ServiceOverviewSection";
-import { SolutionsSection } from "./sections/SolutionsSection";
+import { SolutionsSection as SolutionsAccordion } from "./sections/SolutionsSection";
 
 export const BngHubLayoutSite = (): JSX.Element => {
   const [currentBrandIndex, setCurrentBrandIndex] = useState(1);
@@ -575,63 +575,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               Tecnologia, expertise técnica e inovação à serviço da saúde
             </p>
 
-            <div className="flex justify-center gap-[2.22vw] mb-[4.44vw]">
-              {serviceCards.map((card, index) => (
-                <Card
-                  key={index}
-                  className={`w-[23.89vw] ${index === 2 ? "h-[33.89vw]" : "h-[24.72vw]"} bg-[#0000bf] rounded-[1.11vw] relative`}
-                >
-                  <CardContent className="p-[1.67vw] pt-[8.61vw] text-white">
-                    <div className="absolute w-[9.24vw] h-[6.94vw] top-0 left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw]">
-                      <div className="absolute w-[4.86vw] h-[4.86vw] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
-                        <img
-                          className={`${card.iconWidth} ${card.iconHeight}`}
-                          alt="Icon"
-                          src={`.${card.iconSrc}`}
-                        />
-                      </div>
-                    </div>
-
-                    <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[3.33vw]">
-                      {card.title}
-                    </h3>
-
-                    <div className="flex flex-col gap-[1.11vw]">
-                      {card.items.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className={`flex flex-col ${idx === 3 && index === 2 ? "text-[#0dffc0]" : ""}`}
-                        >
-                          <div className="flex justify-between items-center">
-                            <div className="font-sans font-semibold text-[1.11vw] leading-[1.66vw]">
-                              {item}
-                            </div>
-                            <img
-                              className="w-[1.18vw] h-[0.69vw]"
-                              alt="Vector"
-                              src={
-                                idx === 3 && index === 2
-                                  ? "./vector-28.svg"
-                                  : "./vector-5.svg"
-                              }
-                            />
-                          </div>
-                          {(idx < 3 || index !== 2) && (
-                            <Separator className="h-[0.07vw] bg-white mt-[0.28vw]" />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-
-                    {card.description && (
-                      <p className="text-white text-[0.97vw] leading-[1.45vw] mt-[1.67vw] text-left">
-                        {card.description}
-                      </p>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <SolutionsAccordion />
 
             <Button className="bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
               Falar com um especialista
@@ -642,41 +586,47 @@ export const BngHubLayoutSite = (): JSX.Element => {
         {/* Where We Are Section */}
         <section className="w-full py-[4.44vw]">
           <div className="container mx-auto">
-            <div className="flex flex-col items-start ml-[10.42vw] mb-[1.39vw]">
-              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#00009b] text-[0.97vw] text-center tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)]">
-                ONDE ESTAMOS
+            <div className="flex items-center justify-between px-[10.42vw]">
+              {/* Conteúdo de texto à esquerda */}
+              <div className="flex flex-col w-[32.01vw]">
+                <div className="flex flex-col items-start mb-[1.39vw]">
+                  <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#00009b] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)]">
+                    ONDE ESTAMOS
+                  </div>
+                  <Separator className="w-[6.94vw] h-[0.14vw] bg-[#fedc0b] rounded-sm" />
+                </div>
+
+                <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-black text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.67vw]">
+                  SEM FRONTEIRAS para a alta peformance assistencial
+                </h2>
+
+                <p className="font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw] mb-[2.22vw]">
+                  A BNG Hub rompe barreiras geográficas e operacionais para entregar
+                  soluções de saúde que geram impacto nas instituições. Atuamos em
+                  todo o território nacional com estratégias personalizadas que
+                  aliam eficiência, tecnologia e humanização.
+                </p>
+
+                <Button className="w-fit bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
+                  Saiba mais
+                </Button>
               </div>
-              <Separator className="w-[6.94vw] h-[0.14vw] bg-[#fedc0b] rounded-sm" />
-            </div>
 
-            <h2 className="max-w-[32.01vw] ml-[10.42vw] font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-black text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.67vw]">
-              SEM FRONTEIRAS para a alta peformance assistencial
-            </h2>
-
-            <p className="max-w-[32.01vw] ml-[10.42vw] font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw] mb-[2.22vw]">
-              A BNG Hub rompe barreiras geográficas e operacionais para entregar
-              soluções de saúde que geram impacto nas instituições. Atuamos em
-              todo o território nacional com estratégias personalizadas que
-              aliam eficiência, tecnologia e humanização.
-            </p>
-
-            <Button className="ml-[10.42vw] bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
-              Saiba mais
-            </Button>
-
-            <div className="relative">
-              <img
-                className="w-[40.42vw] h-[40.49vw] ml-auto"
-                alt="Group"
-                src="./group-60.png"
-              />
-
-              <div className="absolute w-[25.76vw] h-[25.76vw] top-[35.83vw] left-[26.6vw]">
+              {/* Mapa do Brasil à direita */}
+              <div className="relative w-[40.42vw] h-[40.49vw]">
                 <img
-                  className="w-[25.76vw] h-[25.76vw]"
-                  alt="Ellipse"
-                  src="./ellipse-16.svg"
+                  className="w-full h-full object-contain"
+                  alt="Mapa do Brasil"
+                  src="./group-60.png"
                 />
+
+                <div className="absolute w-[25.76vw] h-[25.76vw] top-[35.83vw] left-[26.6vw]">
+                  <img
+                    className="w-[25.76vw] h-[25.76vw]"
+                    alt="Ellipse"
+                    src="./ellipse-16.svg"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -684,9 +634,6 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* Features Section */}
         <FeaturesSection />
-
-        {/* Service Overview Section */}
-        <div className="py-[4.44vw]"><ServiceOverviewSection /></div>
 
         {/* Contact Us Section */}
         <ContactUsSection />

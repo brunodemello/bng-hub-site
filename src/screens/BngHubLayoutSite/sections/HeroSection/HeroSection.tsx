@@ -137,9 +137,15 @@ export const HeroSection = (): JSX.Element => {
           {statsData.map((stat, index) => (
             <Card
               key={index}
-              className="flex flex-col w-[20.69vw] h-[22.92vw] items-center justify-center bg-no-repeat bg-contain bg-center bg-[url('./frame-15.png')] border-none shadow-none"
+              className="flex flex-col w-[20.69vw] h-[22.92vw] items-center justify-center bg-no-repeat bg-contain bg-center border-none shadow-none relative"
+              style={{
+                backgroundImage: "url('./frame-15.png')",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center'
+              }}
             >
-              <CardContent className="flex flex-col items-center justify-center gap-[0.39vw] px-[0.47vw] border-none h-full">
+              <CardContent className="flex flex-col items-center justify-center gap-[0.39vw] px-[0.47vw] border-none h-full relative z-10">
                 <h2 className="w-[19.65vw] font-BNG-display-02 font-[number:var(--BNG-display-02-font-weight)] text-white text-[3.33vw] text-center tracking-[var(--BNG-display-02-letter-spacing)] leading-[var(--BNG-display-02-line-height)] [font-style:var(--BNG-display-02-font-style)]">
                   <AnimatedValue value={stat.value} shouldAnimate={isVisible} />
                 </h2>
@@ -147,6 +153,9 @@ export const HeroSection = (): JSX.Element => {
                   {stat.description}
                 </p>
               </CardContent>
+              
+              {/* Fallback caso a imagem não carregue */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg opacity-90 -z-10" />
             </Card>
           ))}
         </div>

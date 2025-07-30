@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../../../../components/ui/button";
 import {
   NavigationMenu,
@@ -7,10 +8,16 @@ import {
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
 
-export const HeaderSection = (): JSX.Element => {
+export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: boolean }): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    // Se for página Quem Somos, sempre manter fundo branco
+    if (isQuemSomosPage) {
+      setIsScrolled(true);
+      return;
+    }
+    
     const handleScroll = () => {
       // Detecta se saiu da área do hero banner (45.07vw + padding top 5.56vw)
       const heroHeight = (window.innerWidth * 0.4507) + (window.innerWidth * 0.0556);
@@ -21,14 +28,14 @@ export const HeaderSection = (): JSX.Element => {
     // Chama uma vez para definir o estado inicial correto
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isQuemSomosPage]);
 
   // Navigation menu items data
   const navItems = [
-    { label: "Home", active: true },
-    { label: "Quem Somos", active: false },
-    { label: "Pessoas", active: false },
-    { label: "Contato", active: false },
+    { label: "Home", active: !isQuemSomosPage, href: "/" },
+    { label: "Quem Somos", active: isQuemSomosPage, href: "/quem-somos" },
+    { label: "Pessoas", active: false, href: "/pessoas" },
+    { label: "Contato", active: false, href: "/contato" },
   ];
 
   return (
@@ -40,11 +47,13 @@ export const HeaderSection = (): JSX.Element => {
       <div className="flex w-full items-center justify-between px-[6.94vw] py-[1.67vw]">
         <div className="flex items-center gap-[22.71vw]">
           {/* Logo */}
-          <img
-            className="w-[3.82vw] h-[3.82vw] object-contain"
-            alt="BNG Hub Logo"
-            src="./ativo-2dgbcvn-1.png"
-          />
+          <Link to="/">
+            <img
+              className="w-[3.82vw] h-[3.82vw] object-contain"
+              alt="BNG Hub Logo"
+              src="./ativo-2dgbcvn-1.png"
+            />
+          </Link>
 
           {/* Navigation and Button Container */}
           <div className="flex items-center justify-between w-[52.36vw]">
@@ -53,15 +62,17 @@ export const HeaderSection = (): JSX.Element => {
               <NavigationMenuList className="flex items-center gap-[2.78vw]">
                 {navItems.map((item, index) => (
                   <NavigationMenuItem key={index}>
-                    <NavigationMenuLink
-                      className={`flex flex-col items-center justify-center gap-[0.21vw] p-[0.69vw] font-bold text-[1.11vw] transition-all duration-300 ease-in-out ${
-                        !isScrolled 
-                          ? `text-white hover:text-white ${item.active ? "border-b-[0.14vw] border-white" : ""}`
-                          : `text-[#0c46e6] hover:text-[#0c46e6] ${item.active ? "border-b-[0.14vw] border-[#0c46e6]" : ""}`
-                      }`}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
+                    <Link to={item.href}>
+                      <NavigationMenuLink
+                        className={`flex flex-col items-center justify-center gap-[0.21vw] p-[0.69vw] font-bold text-[1.11vw] transition-all duration-300 ease-in-out ${
+                          !isScrolled 
+                            ? `text-white hover:text-white ${item.active ? "border-b-[0.14vw] border-white" : ""}`
+                            : `text-[#0c46e6] hover:text-[#0c46e6] ${item.active ? "border-b-[0.14vw] border-[#0c46e6]" : ""}`
+                        }`}
+                      >
+                        {item.label}
+                      </NavigationMenuLink>
+                    </Link>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>

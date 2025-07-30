@@ -1,0 +1,1 @@
+export { QuemSomosPage } from "./QuemSomosPage";
