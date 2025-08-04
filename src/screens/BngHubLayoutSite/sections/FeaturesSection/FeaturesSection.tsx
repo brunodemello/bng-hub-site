@@ -1,11 +1,12 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const FeaturesSection = (): JSX.Element => {
   return (
-    <section className="w-full bg-[#00009b] py-[3vw] relative overflow-hidden">
-      <div className="container mx-auto relative">
+    <section className="w-full py-[3vw] relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #0C46E6 0%, #0C46E6 21%, #00009B 22%, #00009B 100%)' }}>
+      <div className="container mx-auto relative max-w-[83%]">
         <div className="flex flex-row items-center justify-between gap-[4vw]">
           <div className="flex flex-col gap-[1.67vw] flex-1 max-w-[45%] z-10">
             <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
@@ -29,22 +30,38 @@ export const FeaturesSection = (): JSX.Element => {
             <img
               className="w-full h-[24.03vw] object-cover rounded-[1.11vw]"
               alt="Healthcare professionals"
-              src="./rectangle-187.png"
+              src="/rectangle-187.png"
             />
           </div>
         </div>
         
-        {/* Elemento decorativo verde - formato circular curvo */}
-        <div className="absolute top-[2vw] right-[2vw] w-[12vw] h-[12vw] z-0">
-          <div 
-            className="w-full h-full opacity-90"
-            style={{
-              background: 'linear-gradient(135deg, #0dffc0 0%, #00b894 100%)',
-              borderRadius: '50% 20% 50% 20%',
-              transform: 'rotate(45deg)'
-            }}
-          />
-        </div>
+        {/* Elemento decorativo verde */}
+        <motion.img
+          src="/formaVerde.png"
+          alt=""
+          className="absolute -bottom-[2vw] -right-[1vw] w-[9.306vw] h-auto z-[99]"
+          initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          animate={{
+            y: [0, -8, 0]
+          }}
+          transition={{
+            y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }
+          }}
+        />
+        
+        {/* Nova imagem decorativa */}
+        <motion.img
+          src="/banner-hero-bg.png"
+          alt=""
+          className="absolute top-[2vw] left-[2vw] w-[8vw] h-auto z-[98] opacity-30"
+          initial={{ opacity: 0, scale: 0.8, x: -30 }}
+          whileInView={{ opacity: 0.3, scale: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        />
       </div>
     </section>
   );

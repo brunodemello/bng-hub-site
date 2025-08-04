@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../../../../components/ui/button";
 import {
   NavigationMenu,
@@ -10,6 +10,10 @@ import {
 
 export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: boolean }): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  // Detecta se estamos em qualquer página do blog
+  const isHubNewsPage = location.pathname.startsWith('/hub-news');
 
   useEffect(() => {
     // Se for página Quem Somos, sempre manter fundo branco
@@ -32,10 +36,10 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
 
   // Navigation menu items data
   const navItems = [
-    { label: "Home", active: !isQuemSomosPage, href: "/" },
-    { label: "Quem Somos", active: isQuemSomosPage, href: "/quem-somos" },
+    { label: "Home", active: location.pathname === "/", href: "/" },
+    { label: "Quem Somos", active: location.pathname === "/quem-somos", href: "/quem-somos" },
     { label: "Pessoas", active: false, href: "/pessoas" },
-    { label: "Contato", active: false, href: "/contato" },
+    { label: "Contato", active: location.pathname === "/contato", href: "/contato" },
   ];
 
   return (
@@ -51,7 +55,7 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
             <img
               className="w-[3.82vw] h-[3.82vw] object-contain"
               alt="BNG Hub Logo"
-              src="./ativo-2dgbcvn-1.png"
+              src="/ativo-2dgbcvn-1.png"
             />
           </Link>
 
@@ -79,11 +83,17 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
             </NavigationMenu>
 
             {/* Hub News Button */}
-            <Button className="bg-[#0c46e6] hover:bg-[#0c46e6]/90 rounded-[6.94vw] px-[1.67vw] py-[0.35vw] transition-all duration-300">
-              <span className="text-white font-semibold text-[0.97vw] leading-[1.45vw]">
-                Hub News
-              </span>
-            </Button>
+            <Link to="/hub-news">
+              <Button className={`rounded-[6.94vw] px-[1.67vw] py-[0.35vw] transition-all duration-300 ${
+                isHubNewsPage 
+                  ? 'bg-[#fedc0b] text-[#0c46e6] hover:bg-[#fedc0b]/90' 
+                  : 'bg-[#0c46e6] text-white hover:bg-[#0c46e6]/90'
+              }`}>
+                <span className="font-semibold text-[0.97vw] leading-[1.45vw]">
+                  Hub News
+                </span>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

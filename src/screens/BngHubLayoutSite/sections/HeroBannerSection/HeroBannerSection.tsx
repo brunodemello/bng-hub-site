@@ -8,17 +8,17 @@ export const HeroBannerSection = (): JSX.Element => {
     {
       id: 1,
       title: "Somos a força por trás da assistência de qualidade",
-      image: "./rectangle-178.png"
+      image: "/rectangle-178.png"
     },
     {
       id: 2,
       title: "Transformamos a saúde através de conexões de valor",
-      image: "./rectangle-178.png"
+      image: "/rectangle-178.png"
     },
     {
       id: 3,
       title: "Inovação e tecnologia a serviço da vida",
-      image: "./rectangle-178.png"
+      image: "/rectangle-178.png"
     }
   ];
 
@@ -123,7 +123,7 @@ export const HeroBannerSection = (): JSX.Element => {
           <img
             className="absolute w-[4.17vw] h-[2.08vw] top-[41.32vw] left-[47.92vw] animate-bounce"
             alt="Scroll down indicator"
-            src="./frame-158.svg"
+            src="/frame-158.svg"
           />
         )}
       </div>

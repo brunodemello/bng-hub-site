@@ -139,7 +139,7 @@ export const HeroSection = (): JSX.Element => {
               key={index}
               className="flex flex-col w-[20.69vw] h-[22.92vw] items-center justify-center bg-no-repeat bg-contain bg-center border-none shadow-none relative"
               style={{
-                backgroundImage: "url('./frame-15.png')",
+                backgroundImage: "url('/frame-15.png')",
                 backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center'

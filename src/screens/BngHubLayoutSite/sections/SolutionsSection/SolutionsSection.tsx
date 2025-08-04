@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 
@@ -7,7 +8,7 @@ const solutionsData = [
   {
     id: "gestao-saude",
     title: "Gestão da saúde",
-    iconSrc: "./vector-30.svg",
+    iconSrc: "/vector-30.svg",
     items: [
       {
         id: "consultoria",
@@ -34,7 +35,7 @@ const solutionsData = [
   {
     id: "fast-ops",
     title: "Fast OPS",
-    iconSrc: "./vector-51.svg",
+    iconSrc: "/vector-51.svg",
     items: [
       {
         id: "equipes-medicas",
@@ -61,7 +62,7 @@ const solutionsData = [
   {
     id: "telemedicina",
     title: "Telemedicina",
-    iconSrc: "./vector-48.svg",
+    iconSrc: "/vector-48.svg",
     items: [
       {
         id: "sistemas",
@@ -114,72 +115,103 @@ export const SolutionsSection = (): JSX.Element => {
   };
 
   return (
-    <div className="flex justify-center gap-[2.22vw] mb-[4.44vw] relative">
+    <div className="flex justify-center gap-[2.22vw] mb-[4.44vw] relative overflow-visible mt-[8.4vw]">
+      {/* Imagem decorativa */}
+      <motion.img
+        src="/banner-hero-bg.png"
+        alt=""
+        className="absolute top-[2vw] left-[-2vw] w-[12vw] h-auto z-[1] opacity-20"
+        initial={{ opacity: 0, scale: 0.8, x: -50 }}
+        whileInView={{ opacity: 0.2, scale: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        viewport={{ once: true }}
+      />
+      
       {solutionsData.map((card) => (
-        <Card 
+        <motion.div
           key={card.id}
-          className="w-[23.89vw] bg-[#0000bf] rounded-[1.11vw] relative transition-all duration-300 ease-in-out"
-          style={{ minHeight: getCardHeight(card.id) }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: solutionsData.findIndex(c => c.id === card.id) * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ y: -5 }}
         >
-          <CardContent className="p-[1.67vw] pt-[4.17vw] text-white">
-            {/* Ícone azul no topo */}
-            <div className="absolute w-[6.94vw] h-[4.86vw] -top-[2.43vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw] flex items-center justify-center">
-              <img
-                className="w-[3.47vw] h-[3.47vw] filter brightness-0 invert"
-                alt={card.title}
-                src={card.iconSrc}
-              />
-            </div>
+          <Card 
+            className="w-[23.89vw] bg-[#0000bf] rounded-[1.11vw] relative transition-all duration-300 ease-in-out z-[2]"
+            style={{ minHeight: getCardHeight(card.id) }}
+          >
+            <CardContent className="p-[1.67vw] pt-[4.17vw] text-white">
+              {/* Ícone azul no topo */}
+              <div className="absolute w-[9.24vw] h-[6.94vw] -top-[3.47vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw] flex items-center justify-center">
+                <img
+                  className="w-[4.86vw] h-[4.86vw] filter brightness-0 invert"
+                  alt={card.title}
+                  src={card.iconSrc}
+                />
+              </div>
 
-            <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[2.78vw] mt-[1.39vw]">
-              {card.title}
-            </h3>
+              <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[2.78vw] mt-[2.78vw]">
+                {card.title}
+              </h3>
 
-            <div className="flex flex-col gap-[0.83vw]">
-              {card.items.map((item, index) => (
-                <div key={item.id} className="flex flex-col">
-                  <button
-                    onClick={() => toggleItem(card.id, item.id)}
-                    className="flex justify-between items-center py-[0.42vw] text-left hover:opacity-80 transition-opacity"
-                  >
-                    <span 
-                      className={`font-sans font-semibold text-[1.11vw] leading-[1.66vw] ${
-                        isItemExpanded(card.id, item.id) ? 'text-[#0dffc0]' : 'text-white'
-                      }`}
+              <div className="flex flex-col gap-[0.83vw]">
+                {card.items.map((item, index) => (
+                  <div key={item.id} className="flex flex-col">
+                    <motion.button
+                      onClick={() => toggleItem(card.id, item.id)}
+                      className="flex justify-between items-center py-[0.42vw] text-left hover:opacity-80 transition-opacity"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {item.title}
-                    </span>
-                    <svg 
-                      className={`w-[0.83vw] h-[0.83vw] transition-all duration-300 ${
-                        isItemExpanded(card.id, item.id) 
-                          ? 'text-[#0dffc0] rotate-180' 
-                          : 'text-[#fedc0b] rotate-0'
-                      }`} 
-                      fill="currentColor" 
-                      viewBox="0 0 20 20"
-                    >
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                  
-                  {/* Separador - não aparece no último item quando expandido */}
-                  {!(index === card.items.length - 1 && isItemExpanded(card.id, item.id)) && (
-                    <Separator className="h-[0.07vw] bg-white" />
-                  )}
-                  
-                  {/* Conteúdo expandido */}
-                  {isItemExpanded(card.id, item.id) && (
-                    <div className="mt-[1.11vw] p-[1.11vw] bg-[#003cff] rounded-[0.56vw] transition-all duration-300 ease-in-out">
-                      <p className="text-white text-[0.97vw] leading-[1.45vw] text-left">
-                        {item.description}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+                      <span 
+                        className={`font-sans font-semibold text-[1.11vw] leading-[1.66vw] ${
+                          isItemExpanded(card.id, item.id) ? 'text-[#0dffc0]' : 'text-white'
+                        }`}
+                      >
+                        {item.title}
+                      </span>
+                      <motion.svg 
+                        className={`w-[0.83vw] h-[0.83vw] transition-all duration-300 ${
+                          isItemExpanded(card.id, item.id) 
+                            ? 'text-[#0dffc0]' 
+                            : 'text-[#fedc0b]'
+                        }`} 
+                        fill="currentColor" 
+                        viewBox="0 0 20 20"
+                        animate={{ rotate: isItemExpanded(card.id, item.id) ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </motion.svg>
+                    </motion.button>
+                    
+                    {/* Separador - não aparece no último item quando expandido */}
+                    {!(index === card.items.length - 1 && isItemExpanded(card.id, item.id)) && (
+                      <Separator className="h-[0.07vw] bg-white" />
+                    )}
+                    
+                    {/* Conteúdo expandido */}
+                    <AnimatePresence>
+                      {isItemExpanded(card.id, item.id) && (
+                        <motion.div 
+                          className="mt-[1.11vw] p-[1.11vw] bg-[#003cff] rounded-[0.56vw]"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <p className="text-white text-[0.97vw] leading-[1.45vw] text-left">
+                            {item.description}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       ))}
     </div>
   );

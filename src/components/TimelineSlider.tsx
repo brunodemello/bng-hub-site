@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-    "./quemSomos_timeLine.png",
+    "/quemSomos_timeLine.png",
     "https://placehold.co/1440x600?text=Slide+2",
     "https://placehold.co/1440x600?text=Slide+3",
     "https://placehold.co/1440x600?text=Slide+4",
