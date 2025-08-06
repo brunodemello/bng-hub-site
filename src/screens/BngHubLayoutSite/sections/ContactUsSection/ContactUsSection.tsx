@@ -146,9 +146,9 @@ export const ContactUsSection = (): JSX.Element => {
 
                 {/* Linha 2: Políticas de Privacidade */}
                 <div className="pt-[1vw] border-t border-white/30">
-                  <a href="#" className="font-BNG-corpo-02 font-[number:var(--BNG-corpo-02-font-weight)] text-white text-[0.97vw] tracking-[var(--BNG-corpo-02-letter-spacing)] leading-[var(--BNG-corpo-02-line-height)] [font-style:var(--BNG-corpo-02-font-style)] underline hover:text-[#0dffc0] transition-colors">
+                  <Link to="/politicas-de-privacidade" className="font-BNG-corpo-02 font-[number:var(--BNG-corpo-02-font-weight)] text-white text-[0.97vw] tracking-[var(--BNG-corpo-02-letter-spacing)] leading-[var(--BNG-corpo-02-line-height)] [font-style:var(--BNG-corpo-02-font-style)] underline hover:text-[#0dffc0] transition-colors">
                     Políticas de Privacidade
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

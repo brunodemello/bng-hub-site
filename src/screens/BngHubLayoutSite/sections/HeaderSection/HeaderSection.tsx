@@ -38,7 +38,7 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
   const navItems = [
     { label: "Home", active: location.pathname === "/", href: "/" },
     { label: "Quem Somos", active: location.pathname === "/quem-somos", href: "/quem-somos" },
-    { label: "Pessoas", active: false, href: "/pessoas" },
+    { label: "Pessoas", active: location.pathname === "/pessoas", href: "/pessoas" },
     { label: "Contato", active: location.pathname === "/contato", href: "/contato" },
   ];
 
