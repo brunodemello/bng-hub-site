@@ -881,6 +881,12 @@
     font-size: 16px !important;
   }
 
+  .pessoas-page section.trabalhe-conosco form p {
+    text-align: left;
+    width: 100%;
+    font-size: 11px !important;
+  }
+
   .pessoas-page section.trabalhe-conosco .conteudo-mobile {
     display: block;
   }
@@ -892,14 +898,40 @@
   .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form {
     width: 100%;
     max-width: 500px;
+    padding: 20px 30px !important;
   }
   
   .pessoas-page .two-input {
     flex-direction: column;
   }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input {
+    margin-top: 5px;
+  }
   
-  .pessoas-page .two-input div {
+  .pessoas-page .two-input>div {
+    width: 50% !important;
+    text-align: left;
+  }
+
+  .pessoas-page .two-input>div label,
+  .pessoas-page .two-input>div .custom-label {
+    white-space: nowrap;
+    margin-bottom: 5px;
+    font-size: 12px !important;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input .file-input-wrapper {
     width: 100% !important;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input .file-input-wrapper .file-wrapper{
+    padding: 9px 9px 10px 12px;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form label,
+  .pessoas-page .custom-label {
+    text-align: left;
   }
 }
 

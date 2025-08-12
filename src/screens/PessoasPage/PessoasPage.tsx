@@ -427,7 +427,7 @@ export const PessoasPage = (): JSX.Element => {
           </p>
         </div>
         <form className="trabalhe-conosco__form" onSubmit={handleSubmit} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-          <div className="form__group two-input">
+          <div className="form__group">
             <label htmlFor="nome">Nome</label>
             <input 
               type="text" 
@@ -438,6 +438,8 @@ export const PessoasPage = (): JSX.Element => {
               onChange={handleInputChange}
               required
             />
+          </div>
+          <div className="form__group">
             <label htmlFor="email">E-mail</label>
             <input 
               type="email" 
@@ -461,43 +463,44 @@ export const PessoasPage = (): JSX.Element => {
               required
             />
           </div>
-          <div className="form__group">
-            <label htmlFor="areaInteresse">Área de interesse</label>
-            <select 
-              name="areaInteresse" 
-              id="areaInteresse" 
-              value={formData.areaInteresse}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="" disabled>Selecionar</option>
-              <option value="gestao-medica">Gestão Médica</option>
-              <option value="tecnologia">Tecnologia</option>
-              <option value="01">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-            </select>
-          </div>
-          <div className="form__group">
-            <label htmlFor="file">Anexar currículo</label>
-            <div className="file-input-wrapper">
-              <span className="custom-label">Selecionar arquivo*</span>
-              <div className="file-wrapper">
-                <span className="file-name">
-                  {formData.arquivo ? formData.arquivo.name : 'Selecionar'}
-                </span>
-                <input 
-                  type="file" 
-                  id="file" 
-                  name="arquivo" 
-                  onChange={handleInputChange}
-                  required
-                />
-                <svg className="icon" width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd"
-                    d="M4.44128 1.96489C3.91097 1.96919 3.40407 2.18393 3.03207 2.5619C2.66006 2.93986 2.4534 3.45011 2.45753 3.98042L2.51373 11.0513C2.51122 11.3168 2.56163 11.5802 2.66201 11.8261C2.76239 12.072 2.91073 12.2954 3.09837 12.4833C3.28602 12.6712 3.50921 12.8199 3.75493 12.9206C4.00065 13.0214 4.26397 13.0722 4.52953 13.0701C4.79509 13.068 5.05757 13.013 5.30166 12.9083C5.54574 12.8037 5.76655 12.6515 5.95118 12.4606C6.13582 12.2697 6.28059 12.044 6.37705 11.7966C6.47351 11.5491 6.51972 11.285 6.513 11.0195L6.50746 10.2339C6.51277 10.0396 6.59328 9.85503 6.73202 9.71896C6.87076 9.58288 7.0569 9.50597 7.25122 9.50443C7.44555 9.50288 7.63289 9.57683 7.77377 9.71068C7.91465 9.84453 7.99808 10.0278 8.00648 10.222L8.01343 11.0076C8.02081 11.9358 7.65913 12.829 7.00795 13.4906C6.35678 14.1522 5.46945 14.5281 4.54118 14.5354C3.6129 14.5428 2.71971 14.1811 2.05811 13.53C1.3965 12.8788 1.02067 11.9915 1.01329 11.0632L0.957101 3.99234C0.949724 3.06407 1.31141 2.17088 1.96258 1.50927C2.61375 0.847668 3.50108 0.471837 4.42935 0.464459C5.35763 0.457082 6.25082 0.818764 6.91242 1.46994C7.57403 2.12111 7.94986 3.00844 7.95724 3.93671L7.9794 6.72545C7.98397 7.28908 7.76446 7.83143 7.36915 8.2332C6.97385 8.63498 6.43513 8.86326 5.8715 8.86783C5.30788 8.87241 4.76553 8.6529 4.36375 8.25759C3.96198 7.86228 3.73369 7.32356 3.72912 6.75994L3.70766 3.97048C3.70331 3.86986 3.71927 3.76939 3.75459 3.67507C3.7899 3.58074 3.84386 3.4945 3.91323 3.42148C3.98261 3.34847 4.06598 3.29017 4.15837 3.25007C4.25076 3.20997 4.35028 3.1889 4.451 3.18809C4.55171 3.18729 4.65156 3.20679 4.74458 3.24541C4.8376 3.28404 4.92188 3.341 4.99241 3.41291C5.06293 3.48481 5.11825 3.57019 5.15506 3.66394C5.19188 3.75769 5.20943 3.85789 5.20668 3.95857L5.22955 6.74801C5.23572 6.91047 5.30495 7.06413 5.42255 7.17638C5.54015 7.28864 5.69686 7.35065 5.85942 7.34927C6.02199 7.34788 6.17762 7.28321 6.29329 7.16897C6.40896 7.05473 6.47556 6.89991 6.47897 6.73738L6.4568 3.94864C6.45251 3.41833 6.23777 2.91143 5.8598 2.53942C5.48183 2.16742 4.97159 1.96076 4.44128 1.96489Z"
-                    fill="#003CFF" />
-                </svg>
+          <div className="form__group two-input">
+            <div className="group__one">
+              <label htmlFor="areaInteresse">Área de interesse</label>
+              <select 
+                name="areaInteresse" 
+                id="areaInteresse" 
+                value={formData.areaInteresse}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="" disabled>Selecionar</option>
+                <option value="gestao-medica">Gestão Médica</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+              </select>
+            </div>
+            <div className="group__two">
+              <div className="file-input-wrapper">
+                <span className="custom-label">Selecionar arquivo*</span>
+                <div className="file-wrapper">
+                  <span className="file-name">
+                    {formData.arquivo ? formData.arquivo.name : 'Selecionar'}
+                  </span>
+                  <input 
+                    type="file" 
+                    id="file" 
+                    name="arquivo" 
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <svg className="icon" width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd"
+                      d="M4.44128 1.96489C3.91097 1.96919 3.40407 2.18393 3.03207 2.5619C2.66006 2.93986 2.4534 3.45011 2.45753 3.98042L2.51373 11.0513C2.51122 11.3168 2.56163 11.5802 2.66201 11.8261C2.76239 12.072 2.91073 12.2954 3.09837 12.4833C3.28602 12.6712 3.50921 12.8199 3.75493 12.9206C4.00065 13.0214 4.26397 13.0722 4.52953 13.0701C4.79509 13.068 5.05757 13.013 5.30166 12.9083C5.54574 12.8037 5.76655 12.6515 5.95118 12.4606C6.13582 12.2697 6.28059 12.044 6.37705 11.7966C6.47351 11.5491 6.51972 11.285 6.513 11.0195L6.50746 10.2339C6.51277 10.0396 6.59328 9.85503 6.73202 9.71896C6.87076 9.58288 7.0569 9.50597 7.25122 9.50443C7.44555 9.50288 7.63289 9.57683 7.77377 9.71068C7.91465 9.84453 7.99808 10.0278 8.00648 10.222L8.01343 11.0076C8.02081 11.9358 7.65913 12.829 7.00795 13.4906C6.35678 14.1522 5.46945 14.5281 4.54118 14.5354C3.6129 14.5428 2.71971 14.1811 2.05811 13.53C1.3965 12.8788 1.02067 11.9915 1.01329 11.0632L0.957101 3.99234C0.949724 3.06407 1.31141 2.17088 1.96258 1.50927C2.61375 0.847668 3.50108 0.471837 4.42935 0.464459C5.35763 0.457082 6.25082 0.818764 6.91242 1.46994C7.57403 2.12111 7.94986 3.00844 7.95724 3.93671L7.9794 6.72545C7.98397 7.28908 7.76446 7.83143 7.36915 8.2332C6.97385 8.63498 6.43513 8.86326 5.8715 8.86783C5.30788 8.87241 4.76553 8.6529 4.36375 8.25759C3.96198 7.86228 3.73369 7.32356 3.72912 6.75994L3.70766 3.97048C3.70331 3.86986 3.71927 3.76939 3.75459 3.67507C3.7899 3.58074 3.84386 3.4945 3.91323 3.42148C3.98261 3.34847 4.06598 3.29017 4.15837 3.25007C4.25076 3.20997 4.35028 3.1889 4.451 3.18809C4.55171 3.18729 4.65156 3.20679 4.74458 3.24541C4.8376 3.28404 4.92188 3.341 4.99241 3.41291C5.06293 3.48481 5.11825 3.57019 5.15506 3.66394C5.19188 3.75769 5.20943 3.85789 5.20668 3.95857L5.22955 6.74801C5.23572 6.91047 5.30495 7.06413 5.42255 7.17638C5.54015 7.28864 5.69686 7.35065 5.85942 7.34927C6.02199 7.34788 6.17762 7.28321 6.29329 7.16897C6.40896 7.05473 6.47556 6.89991 6.47897 6.73738L6.4568 3.94864C6.45251 3.41833 6.23777 2.91143 5.8598 2.53942C5.48183 2.16742 4.97159 1.96076 4.44128 1.96489Z"
+                      fill="#003CFF" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
