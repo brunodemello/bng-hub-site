@@ -45,7 +45,7 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
       !isScrolled 
-        ? 'bg-transparent'
+        ? 'bg-black/10 backdrop-blur-sm'
         : 'bg-white shadow-md'
     }`}>
       <div className="flex w-full items-center justify-between px-[6.94vw] py-[1.67vw]">
@@ -68,10 +68,10 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
                   <NavigationMenuItem key={index}>
                     <Link to={item.href}>
                       <NavigationMenuLink
-                        className={`flex flex-col items-center justify-center gap-[0.21vw] p-[0.69vw] font-bold text-[1.11vw] transition-all duration-300 ease-in-out ${
+                        className={`flex flex-col items-center justify-center gap-[0.21vw] py-[0.69vw] px-0 font-bold text-[1.11vw] transition-all duration-300 ease-in-out ${
                           !isScrolled 
-                            ? `text-white hover:text-white ${item.active ? "border-b-[0.14vw] border-white" : ""}`
-                            : `text-[#0c46e6] hover:text-[#0c46e6] ${item.active ? "border-b-[0.14vw] border-[#0c46e6]" : ""}`
+                            ? `text-white hover:text-[#003CFF] ${item.active ? "border-b-[0.14vw] border-[#FEDC0B]" : ""}`
+                            : `text-[#0c46e6] hover:text-[#0DFFC0] ${item.active ? "border-b-[0.14vw] border-[#FEDC0B]" : ""}`
                         }`}
                       >
                         {item.label}

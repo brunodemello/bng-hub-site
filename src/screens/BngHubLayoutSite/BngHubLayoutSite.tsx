@@ -175,7 +175,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* About Us Section */}
         <motion.section 
-          className="relative w-full py-16"
+          className="relative w-full py-16 h-[42vw]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -185,59 +185,40 @@ export const BngHubLayoutSite = (): JSX.Element => {
             <div className="relative w-[79.17vw] mx-auto">
               <AboutUsSection />
 
-              <img
-                className="w-[79.17vw] h-[31.81vw]"
-                alt="Group"
-                src="/group-84.png"
+             
+
+              <motion.img
+                className="absolute w-[2.78vw] h-[2.78vw] top-[2vw] left-[0.42vw] opacity-90"
+                alt="Cruz decorativa"
+                src="/10414.png"
+                animate={{
+                  scale: [1, 1.6, 1],
+                  opacity: [0.6, 1, 0.6]
+                }} 
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
               />
 
-              <div className="absolute w-[2.78vw] h-[2.78vw] top-[6vw] left-[8vw]">
-                <img
-                  className="absolute w-[0.83vw] h-[0.9vw] top-0 left-[0.97vw]"
-                  alt="Vector"
-                  src="/vector.svg"
-                />
-                <img
-                  className="absolute w-[0.83vw] h-[0.9vw] top-[1.88vw] left-[0.97vw]"
-                  alt="Vector"
-                  src="/vector-49.svg"
-                />
-                <img
-                  className="absolute w-[0.9vw] h-[0.83vw] top-[0.97vw] left-0"
-                  alt="Vector"
-                  src="/vector-1.svg"
-                />
-                <img
-                  className="absolute w-[0.9vw] h-[0.83vw] top-[0.97vw] left-[1.88vw]"
-                  alt="Vector"
-                  src="/vector-27.svg"
-                />
-              </div>
+              <motion.img
+                className="absolute w-[1.94vw] h-[1.94vw] top-[4.2vw] right-[3vw] opacity-100"
+                alt="Cruz decorativa"
+                src="/10414.png"
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [1, 0.8, 1]
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+              />
 
-              <div className="absolute w-[1.94vw] h-[1.94vw] top-[8vw] right-[8vw]">
-                <img
-                  className="absolute w-[0.56vw] h-[0.63vw] top-0 left-[0.69vw]"
-                  alt="Vector"
-                  src="/vector.svg"
-                />
-                <img
-                  className="absolute w-[0.56vw] h-[0.63vw] top-[1.32vw] left-[0.69vw]"
-                  alt="Vector"
-                  src="/vector-2.svg"
-                />
-                <img
-                  className="absolute w-[0.63vw] h-[0.56vw] top-[0.69vw] left-0"
-                  alt="Vector"
-                  src="/vector-1.svg"
-                />
-                <img
-                  className="absolute w-[0.63vw] h-[0.56vw] top-[0.69vw] left-[1.32vw]"
-                  alt="Vector"
-                  src="/vector-27.svg"
-                />
-              </div>
-
-              <div className="absolute w-[32.01vw] top-[19.1vw] left-0 font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw]">
+              <div className="absolute w-[27.01vw] top-[19.1vw] left-0 font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw]">
                 Conectamos instituições de saúde, equipes médicas e inovação
                 para entregar performance assistencial que faz a diferença.
                 Somos a ponte entre excelência clínica
@@ -251,57 +232,41 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 src="/group-86.png"
               />
 
-              <Button className="absolute top-[29.24vw] left-0 bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
+              <Button className="absolute top-[29.24vw] left-0 bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw] hover:bg-[#003CFF]">
                 Saiba mais
               </Button>
 
-              {/* Cruz pequena inferior esquerda */}
-              <div className="absolute w-[1.5vw] h-[1.5vw] top-[32vw] left-[25vw] opacity-60">
-                <img
-                  className="absolute w-[0.45vw] h-[0.5vw] top-0 left-[0.52vw]"
-                  alt="Vector"
-                  src="/vector.svg"
-                />
-                <img
-                  className="absolute w-[0.45vw] h-[0.5vw] top-[1vw] left-[0.52vw]"
-                  alt="Vector"
-                  src="/vector-49.svg"
-                />
-                <img
-                  className="absolute w-[0.5vw] h-[0.45vw] top-[0.52vw] left-0"
-                  alt="Vector"
-                  src="/vector-1.svg"
-                />
-                <img
-                  className="absolute w-[0.5vw] h-[0.45vw] top-[0.52vw] left-[1vw]"
-                  alt="Vector"
-                  src="/vector-27.svg"
-                />
-              </div>
+              <motion.img
+                className="absolute w-[1.5vw] h-[1.5vw] top-[29vw] left-[25vw] opacity-100"
+                alt="Cruz decorativa"
+                src="/10414.png"
+                animate={{
+                  scale: [1, 2, 1],
+                  opacity: [1, 0.8, 1]
+                }}
+                transition={{
+                  duration: 2.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              /> 
 
-              {/* Cruz grande inferior direita */}
-              <div className="absolute w-[3.5vw] h-[3.5vw] bottom-[4vw] right-[4vw] opacity-40">
-                <img
-                  className="absolute w-[1.05vw] h-[1.17vw] top-0 left-[1.22vw]"
-                  alt="Vector"
-                  src="/vector.svg"
-                />
-                <img
-                  className="absolute w-[1.05vw] h-[1.17vw] top-[2.33vw] left-[1.22vw]"
-                  alt="Vector"
-                  src="/vector-2.svg"
-                />
-                <img
-                  className="absolute w-[1.17vw] h-[1.05vw] top-[1.22vw] left-0"
-                  alt="Vector"
-                  src="/vector-1.svg"
-                />
-                <img
-                  className="absolute w-[1.17vw] h-[1.05vw] top-[1.22vw] right-0"
-                  alt="Vector"
-                  src="/vector-27.svg"
-                />
-              </div>
+              <motion.img
+                className="absolute w-[3.5vw] h-[3.5vw] top-[29vw] right-[1vw] opacity-100"
+                alt="Cruz decorativa"
+                src="/10414.png"
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [1, 0.8, 1]
+                }}
+                transition={{
+                  duration: 3.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1.5
+                }}
+              />
             </div>
           </div>
         </motion.section>
@@ -343,10 +308,10 @@ export const BngHubLayoutSite = (): JSX.Element => {
         >
           <div className="w-[90%] mx-auto text-center">
             <div className="flex flex-col items-center justify-center mb-[0.56vw]">
-              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)]">
+              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
                 NOSSAS MARCAS
               </div>
-              <Separator className="w-[6.94vw] h-[0.14vw] bg-[#fedc0b] rounded-sm mt-[0.28vw]" />
+             
             </div>
 
             <h2 className="w-[42.43vw] mx-auto font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[2.92vw] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.39vw]">
@@ -358,7 +323,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               da saúde no Brasil.
             </p>
 
-            <div className="flex justify-center items-center gap-[1.67vw] relative overflow-hidden">
+            <div className="flex justify-center items-center gap-[0.9vw] relative overflow-visible">
               {/* Navigation Arrow Left */}
               <button 
                 onClick={prevBrand}
@@ -375,11 +340,11 @@ export const BngHubLayoutSite = (): JSX.Element => {
               <motion.div
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
-                <Card className={`w-[20.83vw] h-[20.28vw] rounded-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out ${brandsData[getBrandIndex('left')].bgColor} ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
+                <Card className={`w-[17.83vw] h-[20.28vw] rounded-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#0000bf] ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
                 <CardContent className="p-0 relative w-full h-full flex items-center justify-center">
                   <img
                     className={`${brandsData[getBrandIndex('left')].logoWidth} ${brandsData[getBrandIndex('left')].logoHeight} object-contain transition-all duration-500 ease-in-out ${
-                      brandsData[getBrandIndex('left')].bgColor !== 'bg-[#F2F2F2]' ? 'filter brightness-0 invert' : ''
+                      'filter brightness-0 invert'
                     }`}
                     alt={brandsData[getBrandIndex('left')].name}
                     src={brandsData[getBrandIndex('left')].logoSrc}
@@ -390,15 +355,15 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
               {/* Card Central - Aberto (logo + título + texto) */}
               <motion.div
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }} 
               >
-                <Card className={`w-[38.75vw] h-[23.61vw] bg-white rounded-[1.11vw] flex shadow-[0_0.56vw_2.22vw_rgba(0,0,0,0.15)] transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30 scale-98' : 'opacity-100 scale-100'}`}>
+                <Card className={`w-[38.75vw] h-[23.61vw] bg-white rounded-[1.11vw] flex shadow-[0px_6px_6px_2px_rgba(0,0,0,0.59)] transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30 scale-98' : 'opacity-100 scale-100'}`}>
                 <CardContent className="flex p-0">
                   {/* Logo Section */}
-                  <div className={`w-[15.21vw] rounded-l-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out ${brandsData[getBrandIndex('center')].bgColor}`}>
+                  <div className={`w-[15.21vw] rounded-l-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#F2F2F2]`}>
                     <img
                       className={`${brandsData[getBrandIndex('center')].logoWidth} ${brandsData[getBrandIndex('center')].logoHeight} object-contain transition-all duration-500 ease-in-out ${
-                        brandsData[getBrandIndex('center')].bgColor !== 'bg-[#F2F2F2]' ? 'filter brightness-0 invert' : ''
+                        ''
                       }`}
                       alt={brandsData[getBrandIndex('center')].name}
                       src={brandsData[getBrandIndex('center')].logoSrc}
@@ -423,11 +388,11 @@ export const BngHubLayoutSite = (): JSX.Element => {
               <motion.div
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
-                <Card className={`w-[20.83vw] h-[20.28vw] rounded-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out ${brandsData[getBrandIndex('right')].bgColor} ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
+                <Card className={`w-[17.83vw] h-[20.28vw] rounded-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#003cff] ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
                 <CardContent className="p-0 relative w-full h-full flex items-center justify-center">
                   <img
                     className={`${brandsData[getBrandIndex('right')].logoWidth} ${brandsData[getBrandIndex('right')].logoHeight} object-contain transition-all duration-500 ease-in-out ${
-                      brandsData[getBrandIndex('right')].bgColor !== 'bg-[#F2F2F2]' ? 'filter brightness-0 invert' : ''
+                      'filter brightness-0 invert'
                     }`}
                     alt={brandsData[getBrandIndex('right')].name}
                     src={brandsData[getBrandIndex('right')].logoSrc}
@@ -452,146 +417,8 @@ export const BngHubLayoutSite = (): JSX.Element => {
         </motion.section>
 
         {/* Hero Numbers Section - NOSSOS NÚMEROS */}
-        <section className="w-full bg-gradient-to-b from-[#003CFF] to-[#0000BF] py-[5.56vw]">
+        <section className="w-full bg-gradient-to-b from-[#003CFF] to-[#0000BF]">
           <div className="container mx-auto relative">
-            <div className="absolute w-[3.89vw] h-[3.96vw] top-[5vw] left-0 opacity-30">
-              <img
-                className="absolute w-[1.18vw] h-[1.32vw] top-0 left-[1.39vw]"
-                alt="Vector"
-                src="/vector.svg"
-              />
-              <img
-                className="absolute w-[1.18vw] h-[1.32vw] top-[2.64vw] left-[1.39vw]"
-                alt="Vector"
-                src="/vector-2.svg"
-              />
-              <img
-                className="absolute w-[1.32vw] h-[1.18vw] top-[1.39vw] left-0"
-                alt="Vector"
-                src="/vector-1.svg"
-              />
-              <img
-                className="absolute w-[1.32vw] h-[1.18vw] top-[1.39vw] left-[2.57vw]"
-                alt="Vector"
-                src="/vector-27.svg"
-              />
-            </div>
-
-            <div className="absolute w-[9.03vw] h-[9.03vw] top-0 right-0 opacity-30">
-              <img
-                className="absolute w-[2.64vw] h-[3.06vw] top-0 left-[3.19vw]"
-                alt="Vector"
-                src="/vector.svg"
-              />
-              <img
-                className="absolute w-[2.64vw] h-[3.06vw] top-[5.97vw] left-[3.19vw]"
-                alt="Vector"
-                src="/vector-2.svg"
-              />
-              <img
-                className="absolute w-[3.06vw] h-[2.64vw] top-[3.19vw] left-0"
-                alt="Vector"
-                src="/vector-1.svg"
-              />
-              <img
-                className="absolute w-[3.06vw] h-[2.64vw] top-[3.19vw] left-[5.97vw]"
-                alt="Vector"
-                src="/vector-27.svg"
-              />
-            </div>
-
-            <div className="absolute w-[6.81vw] h-[6.46vw] bottom-0 left-[6.94vw] opacity-30">
-              <img
-                className="absolute w-[2.01vw] h-[2.15vw] top-0 left-[2.43vw]"
-                alt="Vector"
-                src="/vector.svg"
-              />
-              <img
-                className="absolute w-[2.01vw] h-[2.15vw] top-[4.31vw] left-[2.43vw]"
-                alt="Vector"
-                src="/vector-49.svg"
-              />
-              <img
-                className="absolute w-[2.29vw] h-[1.88vw] top-[2.29vw] left-0"
-                alt="Vector"
-                src="/vector-1.svg"
-              />
-              <img
-                className="absolute w-[2.29vw] h-[1.88vw] top-[2.29vw] left-[4.51vw]"
-                alt="Vector"
-                src="/vector-27.svg"
-              />
-            </div>
-
-            <div className="absolute w-[2.57vw] h-[2.57vw] bottom-[6.94vw] left-[38.01vw] opacity-30">
-              <img
-                className="absolute w-[0.76vw] h-[0.83vw] top-0 left-[0.9vw]"
-                alt="Vector"
-                src="/vector.svg"
-              />
-              <img
-                className="absolute w-[0.76vw] h-[0.83vw] top-[1.67vw] left-[0.9vw]"
-                alt="Vector"
-                src="/vector-2.svg"
-              />
-              <img
-                className="absolute w-[0.83vw] h-[0.76vw] top-[0.9vw] left-0"
-                alt="Vector"
-                src="/vector-1.svg"
-              />
-              <img
-                className="absolute w-[0.83vw] h-[0.76vw] top-[0.9vw] left-[1.67vw]"
-                alt="Vector"
-                src="/vector-27.svg"
-              />
-            </div>
-
-            <div className="absolute w-[3.61vw] h-[3.61vw] top-[12.5vw] right-[13.89vw] opacity-30">
-              <img
-                className="absolute w-[1.04vw] h-[1.25vw] top-0 left-[1.25vw]"
-                alt="Vector"
-                src="/vector.svg"
-              />
-              <img
-                className="absolute w-[1.04vw] h-[1.25vw] top-[2.43vw] left-[1.25vw]"
-                alt="Vector"
-                src="/vector-9.svg"
-              />
-              <img
-                className="absolute w-[1.25vw] h-[1.04vw] top-[1.25vw] left-0"
-                alt="Vector"
-                src="/vector-4.svg"
-              />
-              <img
-                className="absolute w-[1.25vw] h-[1.04vw] top-[1.25vw] left-[2.43vw]"
-                alt="Vector"
-                src="/vector-8.svg"
-              />
-            </div>
-
-            <div className="absolute w-[3.33vw] h-[3.33vw] bottom-[3.47vw] right-[3.47vw] opacity-30">
-              <img
-                className="absolute w-[0.97vw] h-[1.11vw] top-0 left-[1.18vw]"
-                alt="Vector"
-                src="/vector.svg"
-              />
-              <img
-                className="absolute w-[0.97vw] h-[1.11vw] top-[2.22vw] left-[1.18vw]"
-                alt="Vector"
-                src="/vector-9.svg"
-              />
-              <img
-                className="absolute w-[1.11vw] h-[0.97vw] top-[1.18vw] left-0"
-                alt="Vector"
-                src="/vector-4.svg"
-              />
-              <img
-                className="absolute w-[1.11vw] h-[0.97vw] top-[1.18vw] left-[2.22vw]"
-                alt="Vector"
-                src="/vector-8.svg"
-              />
-            </div>
-
             <HeroSection />
           </div>
         </section>
@@ -606,17 +433,17 @@ export const BngHubLayoutSite = (): JSX.Element => {
         >
           <div className="container mx-auto text-center">
             <div className="flex flex-col items-center justify-center mb-4">
-              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)]">
+              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
                 NOSSAS SOLUÇÕES
               </div>
-              <Separator className="w-[6.94vw] h-[0.14vw] bg-[#fedc0b] rounded-sm" />
+             
             </div>
 
             <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.39vw]">
               Soluções sob medida para impactar a&nbsp;&nbsp;assistência
             </h2>
 
-            <p className="max-w-[55.28vw] mx-auto font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw] mb-[4.17vw]">
+            <p className="max-w-[55.28vw] mx-auto font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw] mb-[1vw]">
               Tecnologia, expertise técnica e inovação à serviço da saúde
             </p>
 
@@ -627,7 +454,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Button className="bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
+              <Button className="bg-[#00009b] hover:bg-[#003CFF] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
               Falar com um especialista
               </Button>
             </motion.div>
@@ -709,7 +536,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                   aliam eficiência, tecnologia e humanização.
                 </p>
 
-                <Button className="w-fit bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
+                <Button className="w-fit bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw] hover:bg-[#003CFF]">
                   Saiba mais
                 </Button>
               </motion.div>

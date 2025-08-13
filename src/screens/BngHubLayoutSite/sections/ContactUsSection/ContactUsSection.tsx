@@ -18,7 +18,7 @@ export const ContactUsSection = (): JSX.Element => {
         <div className="flex items-center gap-[0.69vw]">
           <div className="flex w-[24vw] items-center gap-[0.69vw] pl-[1.81vw] pr-[0.69vw] py-[0.69vw] bg-white rounded-[4.17vw]">
             <Input
-              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)]"
+              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)] font-light"
               type="text"
               placeholder="seu nome:"
             />
@@ -26,13 +26,13 @@ export const ContactUsSection = (): JSX.Element => {
 
           <div className="flex w-[24vw] items-center gap-[0.69vw] pl-[1.81vw] pr-[0.69vw] py-[0.69vw] bg-white rounded-[4.17vw]">
             <Input
-              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)]"
+              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)] font-light"
               type="email"
               placeholder="Seu e-mail:"
             />
           </div>
 
-          <Button className="w-[8.54vw] h-[2.85vw] bg-[#003cff] rounded-[6.94vw] font-BNG-bot-o-02 font-[number:var(--BNG-bot-o-02-font-weight)] text-white text-[0.83vw] text-center tracking-[var(--BNG-bot-o-02-letter-spacing)] leading-[var(--BNG-bot-o-02-line-height)] [font-style:var(--BNG-bot-o-02-font-style)]">
+          <Button className="w-[8.54vw] h-[2.85vw] bg-[#003cff] rounded-[6.94vw] font-BNG-bot-o-02 font-[number:var(--BNG-bot-o-02-font-weight)] text-white text-[0.83vw] text-center tracking-[var(--BNG-bot-o-02-letter-spacing)] leading-[var(--BNG-bot-o-02-line-height)] [font-style:var(--BNG-bot-o-02-font-style)] hover:bg-[#00009b] hover:border-white hover:border-2">
             CADASTRAR
           </Button>
         </div>
@@ -45,7 +45,7 @@ export const ContactUsSection = (): JSX.Element => {
           {/* Main footer content */}
           <div className="flex justify-between gap-[4vw]">
             {/* Coluna 1 - Company info card */}
-            <Card className="w-[18.542vw] h-[16.667vw] bg-[#00009b] rounded-[1.11vw] relative p-[2.08vw]">
+            <Card className="w-[18.542vw] h-[16.667vw] bg-[#00009b] rounded-[1.11vw] relative p-[2.08vw] border-none">
               <CardContent className="p-0 text-center">
                 <img
                   className="w-[11.35vw] h-[4.24vw] mx-auto mb-[2.43vw]"

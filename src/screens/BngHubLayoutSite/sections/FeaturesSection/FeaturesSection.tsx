@@ -5,7 +5,7 @@ import { Card, CardContent } from "../../../../components/ui/card";
 
 export const FeaturesSection = (): JSX.Element => {
   return (
-    <section className="w-full py-[3vw] relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #0C46E6 0%, #0C46E6 21%, #00009B 22%, #00009B 100%)' }}>
+    <section className="w-full py-[3vw] relative overflow-hidden rounded-tl-xl rounded-tr-xl" style={{ background: 'linear-gradient(to bottom, #0C46E6 0%, #0C46E6 21%, #00009B 22%, #00009B 100%)' }}>
       <div className="container mx-auto relative max-w-[83%]">
         <div className="flex flex-row items-center justify-between gap-[4vw]">
           <div className="flex flex-col gap-[1.67vw] flex-1 max-w-[45%] z-10">

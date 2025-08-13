@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useKeenSlider } from "keen-slider/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "keen-slider/keen-slider.min.css";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 
-// Dados dos cards de soluções
+// Dados dos cards de soluções (expandido com cards mock)
 const solutionsData = [
   {
     id: "gestao-saude",
@@ -85,6 +87,60 @@ const solutionsData = [
         description: "Estruturação e melhoria dos fluxos de atendimento, garantindo alta performance em produtividade médica, além de agilidade, qualidade e satisfação do paciente."
       }
     ]
+  },
+  {
+    id: "analytics-saude",
+    title: "Analytics em Saúde",
+    iconSrc: "/vector-30.svg",
+    items: [
+      {
+        id: "business-intelligence",
+        title: "Business Intelligence",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        id: "dashboards",
+        title: "Dashboards Interativos",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      {
+        id: "relatorios",
+        title: "Relatórios Automatizados",
+        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      },
+      {
+        id: "kpis",
+        title: "Monitoramento de KPIs",
+        description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    ]
+  },
+  {
+    id: "inovacao-digital",
+    title: "Inovação Digital",
+    iconSrc: "/vector-51.svg",
+    items: [
+      {
+        id: "ia-medicina",
+        title: "IA aplicada à Medicina",
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+      },
+      {
+        id: "automacao",
+        title: "Automação de Processos",
+        description: "Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt."
+      },
+      {
+        id: "iot-saude",
+        title: "IoT em Saúde",
+        description: "Explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
+      },
+      {
+        id: "blockchain",
+        title: "Blockchain Médico",
+        description: "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est."
+      }
+    ]
   }
 ];
 
@@ -92,7 +148,27 @@ export const SolutionsSection = (): JSX.Element => {
   const [expandedItems, setExpandedItems] = useState<Record<string, string | null>>({
     "gestao-saude": null,
     "fast-ops": null,
-    "telemedicina": null
+    "telemedicina": null,
+    "analytics-saude": null,
+    "inovacao-digital": null
+  });
+
+  // Configuração do keen-slider
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    mode: "snap",
+    slides: {
+      perView: 3,
+      spacing: 32,
+    },
+    breakpoints: {
+      "(max-width: 1200px)": {
+        slides: { perView: 2, spacing: 20 },
+      },
+      "(max-width: 768px)": {
+        slides: { perView: 1, spacing: 16 },
+      },
+    },
   });
 
   const toggleItem = (cardId: string, itemId: string) => {
@@ -100,119 +176,118 @@ export const SolutionsSection = (): JSX.Element => {
       ...prev,
       [cardId]: prev[cardId] === itemId ? null : itemId
     }));
+    
+    // Atualizar o slider após a mudança de altura
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        instanceRef.current?.update();
+      });
+    });
   };
 
   const isItemExpanded = (cardId: string, itemId: string) => {
     return expandedItems[cardId] === itemId;
   };
 
-  const getCardHeight = (cardId: string) => {
-    const expandedItem = expandedItems[cardId];
-    if (!expandedItem) return "auto"; // Altura mínima quando fechado
-    
-    // Altura adicional quando expandido (aproximadamente)
-    return "auto";
-  };
-
   return (
-    <div className="flex justify-center gap-[2.22vw] mb-[4.44vw] relative overflow-visible mt-[8.4vw]">
+    <div className="relative w-full mb-[4.44vw] mt-[1.4vw]">
       {/* Imagem decorativa */}
-      <motion.img
+      <img
         src="/banner-hero-bg.png"
         alt=""
         className="absolute top-[2vw] left-[-2vw] w-[12vw] h-auto z-[1] opacity-20"
-        initial={{ opacity: 0, scale: 0.8, x: -50 }}
-        whileInView={{ opacity: 0.2, scale: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        viewport={{ once: true }}
       />
-      
-      {solutionsData.map((card) => (
-        <motion.div
-          key={card.id}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: solutionsData.findIndex(c => c.id === card.id) * 0.1 }}
-          viewport={{ once: true }}
-          whileHover={{ y: -5 }}
+
+      {/* Container do carrossel */}
+      <div className="relative max-w-[80vw] mx-auto">
+        {/* Botão de navegação esquerda */}
+        <button
+          onClick={() => instanceRef.current?.prev()}
+          className="absolute left-[-4vw] top-1/2 -translate-y-1/2 w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30"
         >
-          <Card 
-            className="w-[23.89vw] bg-[#0000bf] rounded-[1.11vw] relative transition-all duration-300 ease-in-out z-[2]"
-            style={{ minHeight: getCardHeight(card.id) }}
-          >
-            <CardContent className="p-[1.67vw] pt-[4.17vw] text-white">
-              {/* Ícone azul no topo */}
-              <div className="absolute w-[9.24vw] h-[6.94vw] -top-[3.47vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw] flex items-center justify-center">
-                <img
-                  className="w-[4.86vw] h-[4.86vw] filter brightness-0 invert"
-                  alt={card.title}
-                  src={card.iconSrc}
-                />
-              </div>
+          <ChevronLeft className="w-[1.2vw] h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
+        </button>
 
-              <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[2.78vw] mt-[2.78vw]">
-                {card.title}
-              </h3>
-
-              <div className="flex flex-col gap-[0.83vw]">
-                {card.items.map((item, index) => (
-                  <div key={item.id} className="flex flex-col">
-                    <motion.button
-                      onClick={() => toggleItem(card.id, item.id)}
-                      className="flex justify-between items-center py-[0.42vw] text-left hover:opacity-80 transition-opacity"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <span 
-                        className={`font-sans font-semibold text-[1.11vw] leading-[1.66vw] ${
-                          isItemExpanded(card.id, item.id) ? 'text-[#0dffc0]' : 'text-white'
-                        }`}
-                      >
-                        {item.title}
-                      </span>
-                      <motion.svg 
-                        className={`w-[0.83vw] h-[0.83vw] transition-all duration-300 ${
-                          isItemExpanded(card.id, item.id) 
-                            ? 'text-[#0dffc0]' 
-                            : 'text-[#fedc0b]'
-                        }`} 
-                        fill="currentColor" 
-                        viewBox="0 0 20 20"
-                        animate={{ rotate: isItemExpanded(card.id, item.id) ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </motion.svg>
-                    </motion.button>
-                    
-                    {/* Separador - não aparece no último item quando expandido */}
-                    {!(index === card.items.length - 1 && isItemExpanded(card.id, item.id)) && (
-                      <Separator className="h-[0.07vw] bg-white" />
-                    )}
-                    
-                    {/* Conteúdo expandido */}
-                    <AnimatePresence>
-                      {isItemExpanded(card.id, item.id) && (
-                        <motion.div 
-                          className="mt-[1.11vw] p-[1.11vw] bg-[#003cff] rounded-[0.56vw]"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                        >
-                          <p className="text-white text-[0.97vw] leading-[1.45vw] text-left">
-                            {item.description}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+        {/* Slider */}
+        <div ref={sliderRef} className="keen-slider">
+          {solutionsData.map((card) => (
+            <div
+              key={card.id}
+              className="keen-slider__slide pt-[5vw] z-10"
+            >
+              <Card className="bg-[#0000bf] rounded-[1.11vw] relative transition-all duration-300 ease-in-out z-10 overflow-visible min-h-[23.61vw]">
+                <CardContent className="p-[1.67vw] pt-[4.17vw] text-white">
+                  {/* Ícone azul no topo */}
+                  <div className="absolute w-[9.24vw] h-[6.94vw] top-[-2.5vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw] flex items-center justify-center">
+                    <img
+                      className="w-[4.86vw] h-[4.86vw] filter brightness-0 invert"
+                      alt={card.title}
+                      src={card.iconSrc}
+                    />
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
+
+                  <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[2.78vw] mt-[2.78vw]">
+                    {card.title}
+                  </h3>
+
+                  <div className="flex flex-col gap-[0.83vw]">
+                    {card.items.map((item, index) => (
+                      <div key={item.id} className="flex flex-col border-b border-solid border-white">
+                        <button
+                          onClick={() => toggleItem(card.id, item.id)}
+                          className="flex justify-between items-center py-[0.42vw] text-left hover:opacity-80 transition-opacity"
+                        >
+                          <span 
+                            className={`font-sans font-semibold text-[1.11vw] leading-[1.66vw] ${
+                              isItemExpanded(card.id, item.id) ? 'text-[#0dffc0]' : 'text-white'
+                            }`}
+                          >
+                            {item.title}
+                          </span>
+                          <svg 
+                            className={`w-[1.83vw] h-[2.83vw] transition-all duration-300 ${
+                              isItemExpanded(card.id, item.id) 
+                                ? 'text-[#0dffc0] rotate-180' 
+                                : 'text-[#fedc0b] rotate-0'
+                            }`} 
+                            fill="currentColor" 
+                            viewBox="0 0 20 20"
+                          >
+                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </button>
+                        
+                        
+                        
+                        {/* Conteúdo expandido */}
+                        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                          isItemExpanded(card.id, item.id) 
+                            ? 'max-h-[200px] opacity-100 mt-[1.11vw]' 
+                            : 'max-h-0 opacity-0 mt-0'
+                        }`}>
+                          <div className="p-[1.11vw] bg-[#003cff] rounded-[0.56vw] mb-[1.42vw]">
+                            <p className="text-white text-[0.97vw] leading-[1.45vw] text-left">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        {/* Botão de navegação direita */}
+        <button
+          onClick={() => instanceRef.current?.next()}
+          className="absolute right-[-4vw] top-1/2 -translate-y-1/2 w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30"
+        >
+          <ChevronRight className="w-[1.2vw] h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
+        </button>
+      </div>
     </div>
   );
 };

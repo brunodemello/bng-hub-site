@@ -5,7 +5,7 @@ import { Card, CardContent } from "../../components/ui/card";
 import { Separator } from "../../components/ui/separator";
 import { HeaderSection } from "../BngHubLayoutSite/sections/HeaderSection";
 import { ContactUsSection } from "../BngHubLayoutSite/sections/ContactUsSection";
-import TimelineSlider  from "../../components/TimelineSlider";
+import { TimelineCircular } from "../../components/TimelineCircular";
 
 export const QuemSomosPage = (): JSX.Element => {
   return (
@@ -50,7 +50,7 @@ export const QuemSomosPage = (): JSX.Element => {
               >
                 <div className="mb-[2vw]">
                   <motion.div 
-                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.24vw]"
+                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.24vw] border-b-2 border-solid border-[#FEDC0B] w-fit"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -58,7 +58,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   >
                     QUEM SOMOS
                   </motion.div>
-                  <Separator className="w-[6.94vw] h-[0.14vw] bg-[#fedc0b] rounded-sm" />
+                  
                 </div>
 
                 <motion.h2 
@@ -193,12 +193,12 @@ export const QuemSomosPage = (): JSX.Element => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <TimelineSlider />
+          <TimelineCircular />
         </motion.div>
 
         {/* We Are Comunidade Section */}
         <motion.section 
-          className="w-full py-[5vw] bg-white relative overflow-hidden"
+          className="w-full pt-[5vw] pb-[11vw] bg-white relative overflow-hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -246,7 +246,7 @@ export const QuemSomosPage = (): JSX.Element => {
               >
                 <div className="mb-[2vw]">
                   <motion.div 
-                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.5vw]"
+                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.5vw] border-b-2 border-solid border-[#FEDC0B] w-fit"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -254,7 +254,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   >
                     NOSSO TIME
                   </motion.div>
-                  <Separator className="w-[6.94vw] h-[0.14vw] bg-[#fedc0b] rounded-sm" />
+                 
                 </div>
 
                 <motion.h2 
@@ -345,7 +345,7 @@ export const QuemSomosPage = (): JSX.Element => {
           <div 
             className="w-full h-[36.11vw] bg-cover bg-center relative"
             style={{ 
-              backgroundImage: `url('/reuniao-de-brainstorming-grupo-de-jovens-empresarios-multietnicos-diversos-de-pe-juntos-em-escritorios-modernos-compartilhando-ideias-e-discutindo-o-trabalho-de-longa-duracao-conceito-de-cooperacao-d 1.png')` 
+              backgroundImage: `url('/bgFixed.png')` 
             }}
           >
             <motion.div
@@ -353,14 +353,14 @@ export const QuemSomosPage = (): JSX.Element => {
               transition={{ duration: 0.3 }}
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true }} 
               style={{ transitionDelay: '0.3s' }}
             >
-              <Card className="border shadow absolute bg-[#0000bf] rounded-[1.39vw] text-white z-10 w-[38.75vw] h-[34.722vw] -top-[3.44vw] left-[10vw]">
-              <CardContent className="p-[2.78vw] flex flex-col justify-center h-full">
-                <div className="mb-[1.39vw]">
+              <Card className="border-none flex justify-center shadow absolute bg-[#00009B] rounded-[1.39vw] text-white z-10 w-[38.75vw] h-[34.722vw] -top-[3.44vw] left-[10vw]">
+              <CardContent className="p-[2.78vw] w-fit flex flex-col justify-center h-full">
+                <div className="mb-[1.39vw] w-fit">
                   <motion.div 
-                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0dffc0] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.28vw] w-fit text-white"
+                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0dffc0] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.28vw] w-fit text-white border-b-2 border-solid border-[#FEDC0B] w-fit"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -368,18 +368,19 @@ export const QuemSomosPage = (): JSX.Element => {
                   >
                     ESG
                   </motion.div>
-                  <Separator className="w-[2vw] h-[0.14vw] bg-[#fedc0b] rounded-sm" />
+                  
                 </div>
 
                 <motion.h2 
-                  className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.39vw] text-[#0DFFC0] font-bold"
+                  className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[0DFFC0] text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.39vw] text-[#0DFFC0] font-bold"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
                   viewport={{ once: true }}
                 >
                   Ações que conectam <br />
-                  SAÚDE com responsabilidade
+                  
+                 <span className="ml-[0.42vw]">SAÚDE com responsabilidade</span>
                 </motion.h2>
 
                 <motion.div 
