@@ -66,6 +66,10 @@
   color: var(--cor-descricao-secao);
 }
 
+.pessoas-page section.carreira .carreira__content{
+  width: 20%;
+}
+
 .pessoas-page section.carreira {
   display: flex;
   align-items: center;
@@ -121,7 +125,6 @@
 }
 
 .pessoas-page section.nossa-cultura .nossa-cultura__vantagens {
-  display: flex;
   justify-content: center;
   gap: 35px;
   height: 313px;
@@ -162,6 +165,7 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--cor-descricao-secao);
+  width: 65%;
 }
 
 .pessoas-page section.time {
@@ -176,7 +180,7 @@
   z-index: 1;
   width: 50%;
   box-sizing: border-box;
-  padding-left: 150px;
+  padding: 0 150px;
 }
 
 .pessoas-page section.time .time__imgWrapper {
@@ -374,6 +378,14 @@
   font-size: 15px;
 }
 
+.pessoas-page section.cultura-cards .card-main:hover .icone-virar {
+  display: none !important;
+}
+
+.pessoas-page section.cultura-cards .icone-virar {
+  display: none;
+}
+
 .pessoas-page .trabalhe-conosco-btn a {
   text-decoration: none;
   font-size: 14px;
@@ -405,7 +417,6 @@
 }
 
 .pessoas-page .nossas-vagas .vagas__card-container {
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
   margin-top: 42.5px;
@@ -428,6 +439,7 @@
   z-index: 999;
   min-width: 180px;
   max-width: 220px;
+  width: 220px;
 }
 
 .pessoas-page .card__vaga:hover {
@@ -453,6 +465,14 @@
   justify-content: center;
   gap: 0 69px;
   padding-bottom: 163px;
+}
+
+.pessoas-page section.trabalhe-conosco .carreira__content{
+  width: 23%;
+}
+
+.conteudo-mobile {
+  display: none;
 }
 
 .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form {
@@ -630,40 +650,248 @@
 }
 
 @media (max-width: 768px) {
+  .pessoas-page section {
+    margin-top: 0;
+  }
+
   .pessoas-page section.carreira {
     flex-direction: column;
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 42px;
+    overflow: visible;
+    padding-top: 0 !important;
+  }
+
+  .pessoas-page section.carreira .cruz-small {
+    right: 5%;
+    bottom: 1%;
+    top: initial;
+    left: initial;
+  }
+
+  .pessoas-page section.carreira .cruz-small svg {
+    width: 30px;
+  }
+
+  .pessoas-page section.carreira .cruz-large {
+    right: 2%;
+    top: 40%;
+    bottom: initial;
+  }
+
+  .pessoas-page section.carreira .cruz-large svg {
+    width: 60px;
   }
   
   .pessoas-page .carreira__imgWrapper {
     width: 100%;
     max-width: 400px;
     height: auto;
+    order: 1;
+    margin-top: 32px;
+  }
+
+  .pessoas-page .carreira__imgWrapper img{
+    border-radius: 16px;
+  }
+
+  .pessoas-page .carreira__imgWrapper svg{
+    bottom: -5vw;
+    left: -4vw;
+    width: 42.77px;
+    height: 47.57px;
+  }
+
+  .pessoas-page section.carreira .carreira__content {
+    width: 100%;
+  }
+
+  .pessoas-page span.secao-titulo {
+    font-size: 12px;
+    position: relative;
+    z-index: 9999999;
   }
   
   .pessoas-page .titulo-grande {
-    font-size: 24px;
+    font-size: 18px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    position: relative;
+    z-index: 9999999;
   }
   
+  .pessoas-page p {
+    font-size: 14px !important;
+    position: relative;
+    z-index: 9999999;
+  }
+
+  
+
+  .pessoas-page section.carreira .titulo-grande,
+  .pessoas-page section.carreira p {
+    text-align: left;
+  }
+  
+  .pessoas-page section.nossa-cultura p {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens .vantagem__card .card__titulo{
+    font-size: 18px !important;
+  }
+
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens .vantagem__card {
+    margin-top: 0 !important;
+    padding: 0 20px !important;
+    gap: 8px;
+  }
+
   .pessoas-page section.time {
     flex-direction: column;
     text-align: center;
+    width: 85%;
+    margin: 0 auto;
   }
   
   .pessoas-page section.time .time__content {
     width: 100%;
-    padding: 40px 20px;
+    padding: 27px 0px;
+    order: 1;
+  }
+
+  .pessoas-page section.time .time__content h2 {
+    font-size: 18px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+  }
+
+  .pessoas-page section.time .time__content p {
+    text-align: left;
+    font-size: 14px !important;
+    font-weight: 400;
+    width: 90%;
+    line-break: auto;
+    white-space: break-spaces;
+    margin: 0 auto;
   }
   
   .pessoas-page section.time .time__imgWrapper {
     width: 100%;
-    height: auto;
+    height: 185.94px;
+    order: 0;
+  }
+
+  .pessoas-page section.time .time__content .content__qntd .qtd__profissionais,
+  .pessoas-page section.time .time__content .content__qntd .qtd__pessoas {
+    padding: 11px 20px;
+  }
+
+  .pessoas-page section.time .time__content .content__qntd .qtd__profissionais .qtd__numbers,
+  .pessoas-page section.time .time__content .content__qntd .qtd__pessoas .qtd__numbers{
+    font-size: 30px !important;
+  }
+
+  .pessoas-page section.time .time__content .content__qntd .qtd__profissionais .qtd__desc,
+  .pessoas-page section.time .time__content .content__qntd .qtd__pessoas .qtd__desc {
+    font-size: 12px !important;
+    text-align: left;
   }
   
+  .pessoas-page section.time .time__content a{
+    padding: 5px 50px;
+  }
+
   .pessoas-page .content__qntd {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px !important;
+    margin-top: 26px !important;
+    margin-bottom: 26px !important;
+    padding: 0 64px;
+  }
+
+  .pessoas-page section.cultura-cards {
+    padding: 50px 30px;
+  }
+
+  .pessoas-page section.cultura-cards .icone-virar {
+    display: block;
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+  }
+  
+  .pessoas-page .card-main {
+    z-index: 999999;
+  }
+
+  .pessoas-page .card-main .card__imgWrapper {
+    width: 90%;
+  }
+
+  .pessoas-page .trabalhe-conosco-btn {
+    position: relative;
+    z-index: 9999;
+  }
+
+  .pessoas-page .trabalhe-conosco-btn a{
+    padding: 5px 55px !important;
+  }
+
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens {
+    justify-content: initial !important;
+    align-items: center !important;
+    gap: 0 !important;
+    height: auto !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    margin-top: 0;
+  }
+
+  .pessoas-page section.nossa-cultura {
+    padding-bottom: 50px;
+  }
+
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__titulo,
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__horario,
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__local{
+    font-size: 12px !important;
+  }
+
+  .pessoas-page .card__vaga:hover {
+    transform: scale(1);
+  }
+  
+  .pessoas-page .slider-wrapper button {
+    width: 34px;
+    height: 34px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #001A70;
+    border-radius: 100%;
+  }
+
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga {
+    min-width: 194px;
+    max-height: 88px;
+  }
+
+
+  .pessoas-page .cultura__cards-container {
+    gap: 122px !important;
+    padding: 0 34px;
+    margin-bottom: 30px !important;
+    margin-top: 122px;
+  }
+
+  .pessoas-page section.cultura-cards p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 16px !important;
   }
   
   .pessoas-page .nossa-cultura__vantagens,
@@ -671,6 +899,25 @@
     flex-direction: column;
     align-items: center;
     height: auto;
+  }
+
+  .pessoas-page section.nossas-vagas {
+    padding-top: 0 !important;
+  }
+
+  .pessoas-page .nossas-vagas h2.titulo-grande {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .pessoas-page .nossas-vagas p {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 16px !important;
+  }
+
+  .pessoas-page .nossas-vagas::after {
+    display: none;
   }
   
   .pessoas-page .vagas__card-container {
@@ -682,18 +929,86 @@
     gap: 40px;
     padding: 50px 20px;
   }
+
+  .pessoas-page .nossas-vagas .vagas__card-container {
+    gap: 0;
+    justify-content: initial;
+    margin-top: 0;
+  }
+  
+  .pessoas-page section.trabalhe-conosco{
+    text-align: center !important;
+    padding: 0 23px !important;
+    padding-bottom: 50px !important;
+  }
+  
+  .pessoas-page section.trabalhe-conosco .carreira__content{
+    width: 100%;
+  }
+
+  .pessoas-page section.trabalhe-conosco h2.titulo-grande {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .pessoas-page section.trabalhe-conosco p {
+    text-align: left;
+    width: 89%;
+    margin: 0 auto;
+    font-size: 16px !important;
+  }
+
+  .pessoas-page section.trabalhe-conosco form p {
+    text-align: left;
+    width: 100%;
+    font-size: 11px !important;
+  }
+
+  .pessoas-page section.trabalhe-conosco .conteudo-mobile {
+    display: block;
+  }
+
+  .pessoas-page section.trabalhe-conosco .conteudo-desk {
+    display: none;
+  }
   
   .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form {
     width: 100%;
     max-width: 500px;
+    padding: 20px 30px !important;
   }
   
   .pessoas-page .two-input {
     flex-direction: column;
   }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input {
+    margin-top: 5px;
+  }
   
-  .pessoas-page .two-input div {
+  .pessoas-page .two-input>div {
+    width: 50% !important;
+    text-align: left;
+  }
+
+  .pessoas-page .two-input>div label,
+  .pessoas-page .two-input>div .custom-label {
+    white-space: nowrap;
+    margin-bottom: 5px;
+    font-size: 12px !important;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input .file-input-wrapper {
     width: 100% !important;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input .file-input-wrapper .file-wrapper{
+    padding: 9px 9px 10px 12px;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form label,
+  .pessoas-page .custom-label {
+    text-align: left;
   }
 }
 
