@@ -66,6 +66,10 @@
   color: var(--cor-descricao-secao);
 }
 
+.pessoas-page section.carreira .carreira__content{
+  width: 20%;
+}
+
 .pessoas-page section.carreira {
   display: flex;
   align-items: center;
@@ -121,7 +125,6 @@
 }
 
 .pessoas-page section.nossa-cultura .nossa-cultura__vantagens {
-  display: flex;
   justify-content: center;
   gap: 35px;
   height: 313px;
@@ -162,6 +165,7 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--cor-descricao-secao);
+  width: 65%;
 }
 
 .pessoas-page section.time {
@@ -176,7 +180,7 @@
   z-index: 1;
   width: 50%;
   box-sizing: border-box;
-  padding-left: 150px;
+  padding: 0 150px;
 }
 
 .pessoas-page section.time .time__imgWrapper {
@@ -413,7 +417,6 @@
 }
 
 .pessoas-page .nossas-vagas .vagas__card-container {
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
   margin-top: 42.5px;
@@ -436,6 +439,7 @@
   z-index: 999;
   min-width: 180px;
   max-width: 220px;
+  width: 220px;
 }
 
 .pessoas-page .card__vaga:hover {
@@ -461,6 +465,10 @@
   justify-content: center;
   gap: 0 69px;
   padding-bottom: 163px;
+}
+
+.pessoas-page section.trabalhe-conosco .carreira__content{
+  width: 23%;
 }
 
 .conteudo-mobile {
@@ -642,10 +650,6 @@
 }
 
 @media (max-width: 768px) {
-  .pessoas-page {
-    padding: 0 30px;
-  }
-
   .pessoas-page section {
     margin-top: 0;
   }
@@ -653,7 +657,7 @@
   .pessoas-page section.carreira {
     flex-direction: column;
     text-align: center;
-    padding: 50px 12px;
+    padding: 50px 42px;
     overflow: visible;
     padding-top: 0 !important;
   }
@@ -698,6 +702,10 @@
     height: 47.57px;
   }
 
+  .pessoas-page section.carreira .carreira__content {
+    width: 100%;
+  }
+
   .pessoas-page span.secao-titulo {
     font-size: 12px;
     position: relative;
@@ -718,14 +726,33 @@
     z-index: 9999999;
   }
 
+  
+
   .pessoas-page section.carreira .titulo-grande,
   .pessoas-page section.carreira p {
     text-align: left;
+  }
+  
+  .pessoas-page section.nossa-cultura p {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens .vantagem__card .card__titulo{
+    font-size: 18px !important;
+  }
+
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens .vantagem__card {
+    margin-top: 0 !important;
+    padding: 0 20px !important;
+    gap: 8px;
   }
 
   .pessoas-page section.time {
     flex-direction: column;
     text-align: center;
+    width: 85%;
+    margin: 0 auto;
   }
   
   .pessoas-page section.time .time__content {
@@ -786,7 +813,7 @@
   }
 
   .pessoas-page section.cultura-cards {
-    padding: 50px 0;
+    padding: 50px 30px;
   }
 
   .pessoas-page section.cultura-cards .icone-virar {
@@ -813,6 +840,45 @@
     padding: 5px 55px !important;
   }
 
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens {
+    justify-content: initial !important;
+    align-items: center !important;
+    gap: 0 !important;
+    height: auto !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    margin-top: 0;
+  }
+
+  .pessoas-page section.nossa-cultura {
+    padding-bottom: 50px;
+  }
+
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__titulo,
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__horario,
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__local{
+    font-size: 12px !important;
+  }
+
+  .pessoas-page .card__vaga:hover {
+    transform: scale(1);
+  }
+  
+  .pessoas-page .slider-wrapper button {
+    width: 34px;
+    height: 34px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #001A70;
+    border-radius: 100%;
+  }
+
+  .pessoas-page .nossas-vagas .vagas__card-container .card__vaga {
+    min-width: 194px;
+    max-height: 88px;
+  }
 
 
   .pessoas-page .cultura__cards-container {
@@ -845,7 +911,7 @@
   }
 
   .pessoas-page .nossas-vagas p {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     font-size: 16px !important;
   }
@@ -863,10 +929,21 @@
     gap: 40px;
     padding: 50px 20px;
   }
+
+  .pessoas-page .nossas-vagas .vagas__card-container {
+    gap: 0;
+    justify-content: initial;
+    margin-top: 0;
+  }
   
   .pessoas-page section.trabalhe-conosco{
     text-align: center !important;
-    padding: 0 !important;
+    padding: 0 23px !important;
+    padding-bottom: 50px !important;
+  }
+  
+  .pessoas-page section.trabalhe-conosco .carreira__content{
+    width: 100%;
   }
 
   .pessoas-page section.trabalhe-conosco h2.titulo-grande {

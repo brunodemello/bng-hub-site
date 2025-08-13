@@ -1,11 +1,44 @@
 import React, { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useKeenSlider } from 'keen-slider/react' 
+import 'keen-slider/keen-slider.min.css'
 import { HeaderSection } from "../BngHubLayoutSite/sections/HeaderSection";
 import { ContactUsSection } from "../BngHubLayoutSite/sections/ContactUsSection";
 import "./PessoasPage.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const PessoasPage = (): JSX.Element => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentVantagemSlide, setcurrentVantagemSlide] = useState(0);
+
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+    loop: true,
+    mode: 'snap',
+    slides: {
+      perView: 1.5, // 2 e meio → mostra o central + 0.5 de cada lado
+      spacing: 40,  // espaçamento entre slides
+      origin: "center", // Centraliza o slide ativo
+    },
+    slideChanged(slider) {
+      setCurrentSlide((slider as any).track.details.rel);
+    },
+    }, []
+  )
+
+    const [sliderVantagemRef, instanceVantagemRef] = useKeenSlider(
+    {
+    loop: true,
+    slides: {
+      perView: 1,
+    },
+    slideChanged(slider) {
+      setcurrentVantagemSlide((slider as any).track.details.rel);
+    },
+    }, []
+  )
+
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -61,7 +94,7 @@ export const PessoasPage = (): JSX.Element => {
 
       {/* Main Content - Usando HTML original */}
       <div className="pessoas-content" style={{ paddingTop: '120px' }}>
-        <section className="carreira" data-aos="fade-up" data-aos-duration="3000">
+      <section className="carreira" data-aos="fade-up" data-aos-duration="3000">
         <div className="carreira__imgWrapper">
           <img src="/pessoas/assets/secao-carreira.png" alt="Imagem da seção carreira" className="w-full h-full object-cover object-center rounded-lg" />
           <svg width="78" height="86" viewBox="0 0 78 86" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +153,7 @@ export const PessoasPage = (): JSX.Element => {
         <span className="secao-titulo">Nossa Cultura</span>
         <h2 className="titulo-grande">Conectados pelo nosso propósito</h2>
         <p>Construímos todos os dias uma cultura sólida, baseada em valores que são inegociáveis.</p>
-        <div className="nossa-cultura__vantagens">
+        <div className="nossa-cultura__vantagens hidden md:flex">
           <div className="vantagem__card" data-aos="fade-up">
             <div className="card__imgWrapper">
               <img src="/icon-cultura-01.png" alt="" className="w-full h-full object-contain" />
@@ -163,6 +196,78 @@ export const PessoasPage = (): JSX.Element => {
             <div className="card__titulo">PERFORMANCE</div>
             <div className="card__text">É a direção que nos guia para resultados.</div>
           </div>
+        </div>
+        <div className="slider-wrapper relative md:hidden mt-[40px] w-full">
+          <button className="btn-left absolute top-[35%] left-[15%] translate-y-[-50%] z-[9999] pr-[2px]" onClick={() => instanceVantagemRef.current?.prev()}>
+              <ChevronLeft
+                style={{ width: "9vw", height: "9vw" }}
+                color={"#001A70"}
+                className="transition-colors duration-200"
+              />
+          </button>
+          <div ref={sliderVantagemRef} className="keen-slider nossa-cultura__vantagens flex relative w-full overflow-visible">
+            <div className="keen-slider__slide">
+              <div className="vantagem__card w-[50%] mx-auto">
+                <div className="card__imgWrapper">
+                  <img src="/icon-cultura-01.png" alt="" className="w-full h-full object-contain" />
+                </div>
+                <div className="card__titulo">RESPEITO</div>
+                <div className="card__text">Para nós, vem a frente de <strong>TUDO</strong>.</div>
+              </div>
+            </div>
+            <div className="keen-slider__slide">
+              <div className="vantagem__card w-[50%] mx-auto">
+                <div className="card__imgWrapper">
+                  <img src="/icon-cultura-02.png" alt="" className="w-full h-full object-contain" />
+                </div>
+                <div className="card__titulo">RELACIONAMENTO</div>
+                <div className="card__text">É a nossa razão de ser.</div>
+              </div>
+            </div>
+            <div className="keen-slider__slide">
+              <div className="vantagem__card w-[50%] mx-auto">
+                <div className="card__imgWrapper">
+                  <img src="/icon-cultura-03.png" alt="" className="w-full h-full object-contain" />
+                </div>
+                <div className="card__titulo">HUMANIZAÇÃO</div>
+                <div className="card__text">Reflete a nossa essência.</div>
+              </div>
+            </div>
+            <div className="keen-slider__slide">
+              <div className="vantagem__card w-[50%] mx-auto">
+                <div className="card__imgWrapper">
+                  <img src="/icon-cultura-04.png" alt="" className="w-full h-full object-contain" />
+                </div>
+                <div className="card__titulo">PRECISÃO</div>
+                <div className="card__text">Nosso modo de agir.</div>
+              </div>
+            </div>
+            <div className="keen-slider__slide">
+              <div className="vantagem__card w-[50%] mx-auto">
+                <div className="card__imgWrapper">
+                  <img src="/icon-cultura-05.png" alt="" className="w-full h-full object-contain" />
+                </div>
+                <div className="card__titulo">INOVAÇÃO</div>
+                <div className="card__text">Representa a nossa visão de futuro.</div>
+              </div>
+            </div>
+            <div className="keen-slider__slide">
+              <div className="vantagem__card w-[50%] mx-auto">
+                <div className="card__imgWrapper">
+                  <img src="/icon-cultura-06.png" alt="" className="w-full h-full object-contain" />
+                </div>
+                <div className="card__titulo">PERFORMANCE</div>
+                <div className="card__text">É a direção que nos guia para resultados.</div>
+              </div>
+            </div>
+          </div>
+          <button className="btn-right absolute top-[35%] right-[15%] translate-y-[-50%] z-[9999] pl-[2px]" onClick={() => instanceVantagemRef.current?.next()}>
+            <ChevronRight
+              style={{ width: "9vw", height: "9vw" }}
+              color={"#001A70"}
+              className="transition-colors duration-200"
+            />
+          </button>
         </div>
         <div className="cruz-small hidden md:block">
           <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -392,7 +497,7 @@ export const PessoasPage = (): JSX.Element => {
         <span className="secao-titulo">NOSSAS VAGAS</span>
         <h2 className="titulo-grande">E aí, quer se conectar também?</h2>
         <p>Confira as oportunidades disponíveis para decolar a sua carreira com a gente.</p>
-        <div className="vagas__card-container">
+        <div className="vagas__card-container hidden md:grid">
           {[...Array(8)].map((_, index) => (
             <div key={index} className="card__vaga" data-aos="flip-right">
               <span className="vaga__titulo">Analista Financeiro</span>
@@ -400,6 +505,33 @@ export const PessoasPage = (): JSX.Element => {
               <span className="vaga__local">Campinas - SP</span>
             </div>
           ))}
+        </div>
+        <div className="slider-wrapper relative overflow-visible md:hidden mt-[30px] w-full">
+          <button className="btn-left absolute top-[50%] left-[8.5%] translate-y-[-50%] z-[9999] pr-[2px]" onClick={() => instanceRef.current?.prev()}>
+                <ChevronLeft
+                  style={{ width: "9vw", height: "9vw" }}
+                  color={"#001A70"}
+                  className="transition-colors duration-200"
+                />
+          </button>
+          <div ref={sliderRef} className="keen-slider vagas__card-container flex relative w-full overflow-visible">
+            {[...Array(8)].map((_, index) => (
+              <div className="keen-slider__slide">
+                <div key={index} className="card__vaga mx-auto" style={currentSlide === index ? {backgroundColor: "#003CFF"}: {backgroundColor: "#B3C5FF"}}>
+                  <span className="vaga__titulo">Analista Financeiro</span>
+                  <span className="vaga__horario">Híbrido - Seg a sex.</span>
+                  <span className="vaga__local">Campinas - SP</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button className="btn-right absolute top-[50%] right-[8.5%] translate-y-[-50%] z-[9999] pl-[2px]" onClick={() => instanceRef.current?.next()}>
+              <ChevronRight
+                style={{ width: "9vw", height: "9vw" }}
+                color={"#001A70"}
+                className="transition-colors duration-200"
+              />
+          </button>
         </div>
       </section>
 
