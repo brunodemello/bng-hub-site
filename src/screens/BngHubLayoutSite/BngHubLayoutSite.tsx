@@ -182,7 +182,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <div className="container mx-auto">
-            <div className="relative w-[90%] md:w-[79.17vw] mx-auto">
+            <div className="relative w-[90%] w-[79.17vw] mx-auto">
               <AboutUsSection />
 
               <motion.img
@@ -201,7 +201,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               />
 
               <motion.img
-                className="absolute w-[1.94vw] h-[1.94vw] top-[4.2vw] right-[3vw] opacity-100 md:block hidden"
+                className="absolute w-[1.94vw] h-[1.94vw] top-[4.2vw] right-[3vw] opacity-100"
                 alt="Cruz decorativa"
                 src="/10414.png"
                 animate={{
@@ -222,13 +222,14 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 Somos a ponte entre excelência clínica
                 <br className="hidden md:block" />e gestão estratégica, promovendo saúde com qualidade e
                 altos níveis de satisfação.
-              </div>
 
-              <div className="static w-full mt-6 px-4 md:hidden">
-                <button className="bg-[#00009b] hover:bg-[#003CFF] text-white rounded-full px-6 py-3 text-sm font-semibold">
+                <button style={{ marginTop: "2vw" }} className="bg-[#00009b] hover:bg-[#003CFF] text-white rounded-full px-[1vw] py-[0.24vw] mt-[2vw] block text-sm font-semibold">
                   Saiba mais
                 </button>
               </div>
+
+              
+                
 
               <img
                 className="static w-full h-auto mt-6 px-4 md:absolute md:w-[30.97vw] md:h-[34.24vw] md:top-[1.32vw] md:left-[42.43vw] md:px-0 md:mt-0"
@@ -488,16 +489,14 @@ export const BngHubLayoutSite = (): JSX.Element => {
             transition={{ 
               duration: 1.2, 
               delay: 0.3,
-              ease: "easeOut"
+              ease: "easeOut",
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              x: { duration: 0 }
             }}
             viewport={{ once: true, margin: "-100px" }}
             animate={{
               y: [0, -10, 0],
               x: 0
-            }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-              x: { duration: 0 }
             }}
           />
         </div>
