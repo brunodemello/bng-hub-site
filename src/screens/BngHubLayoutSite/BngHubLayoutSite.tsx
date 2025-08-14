@@ -360,7 +360,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 <Card className={`w-80 h-auto flex-col md:w-[38.75vw] md:h-[23.61vw] md:flex-row bg-white rounded-[1.11vw] flex shadow-[0px_6px_6px_2px_rgba(0,0,0,0.59)] transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30 scale-98' : 'opacity-100 scale-100'}`}>
                 <CardContent className="flex flex-col p-4 md:flex-row md:p-0">
                   {/* Logo Section */}
-                  <div className={`w-full h-32 rounded-t-[1.11vw] md:w-[15.21vw] md:rounded-l-[1.11vw] md:rounded-t-none flex items-center justify-center transition-all duration-500 ease-in-out bg-[#F2F2F2]`}>
+                  <div className={`w-full h-32 rounded-t-[1.11vw] h-full md:w-[15.21vw] md:rounded-l-[1.11vw] md:rounded-t-none flex items-center justify-center transition-all duration-500 ease-in-out bg-[#F2F2F2]`}>
                     <img
                       className={`${brandsData[getBrandIndex('center')].logoWidth} ${brandsData[getBrandIndex('center')].logoHeight} object-contain transition-all duration-500 ease-in-out ${
                         ''
