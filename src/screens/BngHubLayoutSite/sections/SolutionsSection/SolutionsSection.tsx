@@ -158,15 +158,18 @@ export const SolutionsSection = (): JSX.Element => {
     loop: true,
     mode: "snap",
     slides: {
-      perView: 3,
+      perView: 1,
       spacing: 32,
     },
     breakpoints: {
       "(max-width: 1200px)": {
-        slides: { perView: 2, spacing: 20 },
+        slides: { perView: 1, spacing: 20 },
       },
       "(max-width: 768px)": {
         slides: { perView: 1, spacing: 16 },
+      },
+      "(min-width: 769px)": {
+        slides: { perView: 3, spacing: 32 },
       },
     },
   });
@@ -190,22 +193,22 @@ export const SolutionsSection = (): JSX.Element => {
   };
 
   return (
-    <div className="relative w-full mb-[4.44vw] mt-[1.4vw]">
+    <div className="relative w-full mb-8 md:mb-[4.44vw] mt-4 md:mt-[1.4vw]">
       {/* Imagem decorativa */}
       <img
         src="/banner-hero-bg.png"
         alt=""
-        className="absolute top-[2vw] left-[-2vw] w-[12vw] h-auto z-[1] opacity-20"
+        className="absolute top-[2vw] left-[-2vw] w-[12vw] h-auto z-[1] opacity-20 hidden md:block"
       />
 
       {/* Container do carrossel */}
-      <div className="relative max-w-[80vw] mx-auto">
+      <div className="relative max-w-[90vw] md:max-w-[80vw] mx-auto">
         {/* Botão de navegação esquerda */}
         <button
           onClick={() => instanceRef.current?.prev()}
-          className="absolute left-[-4vw] top-1/2 -translate-y-1/2 w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30"
+          className="absolute left-[-4vw] top-1/2 -translate-y-1/2 w-10 h-10 md:w-[2.43vw] md:h-[2.43vw] rounded-full border-2 md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 hidden md:flex"
         >
-          <ChevronLeft className="w-[1.2vw] h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
+          <ChevronLeft className="w-5 h-5 md:w-[1.2vw] md:h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
         </button>
 
         {/* Slider */}
@@ -213,39 +216,39 @@ export const SolutionsSection = (): JSX.Element => {
           {solutionsData.map((card) => (
             <div
               key={card.id}
-              className="keen-slider__slide pt-[5vw] z-10"
+              className="keen-slider__slide pt-16 md:pt-[5vw] z-10"
             >
-              <Card className="bg-[#0000bf] rounded-[1.11vw] relative transition-all duration-300 ease-in-out z-10 overflow-visible min-h-[23.61vw]">
-                <CardContent className="p-[1.67vw] pt-[4.17vw] text-white">
+              <Card className="bg-[#0000bf] rounded-[1.11vw] relative transition-all duration-300 ease-in-out z-10 overflow-visible min-h-96 md:min-h-[23.61vw]">
+                <CardContent className="p-6 pt-16 md:p-[1.67vw] md:pt-[4.17vw] text-white">
                   {/* Ícone azul no topo */}
-                  <div className="absolute w-[9.24vw] h-[6.94vw] top-[-2.5vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw] flex items-center justify-center">
+                  <div className="absolute w-24 h-16 md:w-[9.24vw] md:h-[6.94vw] top-[-2rem] md:top-[-2.5vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw] flex items-center justify-center">
                     <img
-                      className="w-[4.86vw] h-[4.86vw] filter brightness-0 invert"
+                      className="w-8 h-8 md:w-[4.86vw] md:h-[4.86vw] filter brightness-0 invert"
                       alt={card.title}
                       src={card.iconSrc}
                     />
                   </div>
 
-                  <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[2.78vw] mt-[2.78vw]">
+                  <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-xl md:text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-8 mt-8 md:mb-[2.78vw] md:mt-[2.78vw]">
                     {card.title}
                   </h3>
 
-                  <div className="flex flex-col gap-[0.83vw]">
+                  <div className="flex flex-col gap-3 md:gap-[0.83vw]">
                     {card.items.map((item, index) => (
                       <div key={item.id} className="flex flex-col border-b border-solid border-white">
                         <button
                           onClick={() => toggleItem(card.id, item.id)}
-                          className="flex justify-between items-center py-[0.42vw] text-left hover:opacity-80 transition-opacity"
+                          className="flex justify-between items-center py-2 md:py-[0.42vw] text-left hover:opacity-80 transition-opacity"
                         >
                           <span 
-                            className={`font-sans font-semibold text-[1.11vw] leading-[1.66vw] ${
+                            className={`font-sans font-semibold text-sm md:text-[1.11vw] leading-[1.66vw] ${
                               isItemExpanded(card.id, item.id) ? 'text-[#0dffc0]' : 'text-white'
                             }`}
                           >
                             {item.title}
                           </span>
                           <svg 
-                            className={`w-[1.83vw] h-[2.83vw] transition-all duration-300 ${
+                            className={`w-6 h-8 md:w-[1.83vw] md:h-[2.83vw] transition-all duration-300 ${
                               isItemExpanded(card.id, item.id) 
                                 ? 'text-[#0dffc0] rotate-180' 
                                 : 'text-[#fedc0b] rotate-0'
@@ -262,11 +265,11 @@ export const SolutionsSection = (): JSX.Element => {
                         {/* Conteúdo expandido */}
                         <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
                           isItemExpanded(card.id, item.id) 
-                            ? 'max-h-[200px] opacity-100 mt-[1.11vw]' 
+                            ? 'max-h-[200px] opacity-100 mt-4 md:mt-[1.11vw]' 
                             : 'max-h-0 opacity-0 mt-0'
                         }`}>
-                          <div className="p-[1.11vw] bg-[#003cff] rounded-[0.56vw] mb-[1.42vw]">
-                            <p className="text-white text-[0.97vw] leading-[1.45vw] text-left">
+                          <div className="p-4 md:p-[1.11vw] bg-[#003cff] rounded-[0.56vw] mb-4 md:mb-[1.42vw]">
+                            <p className="text-white text-sm md:text-[0.97vw] leading-[1.45vw] text-left">
                               {item.description}
                             </p>
                           </div>
@@ -283,9 +286,9 @@ export const SolutionsSection = (): JSX.Element => {
         {/* Botão de navegação direita */}
         <button
           onClick={() => instanceRef.current?.next()}
-          className="absolute right-[-4vw] top-1/2 -translate-y-1/2 w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30"
+          className="absolute right-[-4vw] top-1/2 -translate-y-1/2 w-10 h-10 md:w-[2.43vw] md:h-[2.43vw] rounded-full border-2 md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 hidden md:flex"
         >
-          <ChevronRight className="w-[1.2vw] h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
+          <ChevronRight className="w-5 h-5 md:w-[1.2vw] md:h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
         </button>
       </div>
     </div>

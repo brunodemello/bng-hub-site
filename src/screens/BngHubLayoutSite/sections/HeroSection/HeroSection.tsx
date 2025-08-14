@@ -118,10 +118,10 @@ export const HeroSection = (): JSX.Element => {
   }, [isVisible]);
 
   return (
-    <section className="w-full">
+    <section className="w-full py-8 md:py-0">
       <div className="container mx-auto relative">
         <motion.img
-          className="absolute w-[3.89vw] h-[3.96vw] top-[8.4vw] left-[5vw] opacity-30"
+          className="absolute w-[3.89vw] h-[3.96vw] top-[8.4vw] left-[5vw] opacity-30 hidden md:block"
           alt="Cruz decorativa"
           src="/10414.png"
           animate={{
@@ -136,7 +136,7 @@ export const HeroSection = (): JSX.Element => {
         />
 
         <motion.img
-          className="absolute w-[9.03vw] h-[9.03vw] top-[5vw] right-0 opacity-30"
+          className="absolute w-[9.03vw] h-[9.03vw] top-[5vw] right-0 opacity-30 hidden md:block"
           alt="Cruz decorativa"
           src="/10414.png"
           animate={{
@@ -152,7 +152,7 @@ export const HeroSection = (): JSX.Element => {
         />
 
         <motion.img
-          className="absolute w-[5vw] h-[5vw] bottom-[2vw] left-[11.94vw] opacity-30"
+          className="absolute w-[5vw] h-[5vw] bottom-[2vw] left-[11.94vw] opacity-30 hidden md:block"
           alt="Cruz decorativa"
           src="/10414.png"
           animate={{
@@ -168,7 +168,7 @@ export const HeroSection = (): JSX.Element => {
         />
 
         <motion.img
-          className="absolute w-[2.57vw] h-[2.57vw] bottom-[7.94vw] left-[43.01vw] z-10 opacity-30"
+          className="absolute w-[2.57vw] h-[2.57vw] bottom-[7.94vw] left-[43.01vw] z-10 opacity-30 hidden md:block"
           alt="Cruz decorativa"
           src="/10414.png"
           animate={{
@@ -184,7 +184,7 @@ export const HeroSection = (): JSX.Element => {
         />
 
         <motion.img
-          className="absolute w-[3.61vw] h-[3.61vw] top-[15.5vw] right-[20.89vw] z-10 opacity-30"
+          className="absolute w-[3.61vw] h-[3.61vw] top-[15.5vw] right-[20.89vw] z-10 opacity-30 hidden md:block"
           alt="Cruz decorativa"
           src="/10414.png"
           animate={{
@@ -200,7 +200,7 @@ export const HeroSection = (): JSX.Element => {
         />
 
         <motion.img
-          className="absolute w-[3.33vw] h-[3.33vw] bottom-[3.47vw] right-[3.47vw] opacity-30"
+          className="absolute w-[3.33vw] h-[3.33vw] bottom-[3.47vw] right-[3.47vw] opacity-30 hidden md:block"
           alt="Cruz decorativa"
           src="/10414.png"
           animate={{
@@ -215,27 +215,26 @@ export const HeroSection = (): JSX.Element => {
           }}
         />
 
-        <div ref={sectionRef} className="flex flex-col w-full items-center gap-[3.33vw] py-[5.56vw]">
+        <div ref={sectionRef} className="flex flex-col w-full items-center gap-8 md:gap-[3.33vw] py-8 md:py-[5.56vw] px-4 md:px-0">
           <div className="flex flex-col items-center justify-center">
-            <h3 className="font-marca-o font-[number:var(--marca-o-font-weight)] text-white text-[0.97vw] text-center tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
+            <h3 className="font-marca-o font-[number:var(--marca-o-font-weight)] text-white text-sm md:text-[0.97vw] text-center tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
               NOSSOS NÚMEROS
             </h3>
-           
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-[4.17vw] w-full">
+          <div className="flex flex-col items-center justify-center gap-8 md:gap-[4.17vw] w-full">
             <div className="flex flex-col items-center gap-[0.07vw]">
-              <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
+              <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-xl md:text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
                 Construindo conexões para gerar crescimento
               </h2>
             </div>
 
             {/* Cards em linha única */}
-            <div className="flex items-center justify-center gap-[1.39vw] w-full max-w-[90vw]">
+            <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-4 md:gap-[1.39vw] w-full max-w-[90vw]">
               {statsData.map((stat, index) => (
                 <Card
                   key={index}
-                  className="flex flex-col w-[20.69vw] h-[22.92vw] items-center justify-center bg-no-repeat bg-contain bg-center border-none shadow-none relative"
+                  className="flex flex-col w-full h-48 md:w-[20.69vw] md:h-[22.92vw] items-center justify-center bg-no-repeat bg-contain bg-center border-none shadow-none relative"
                   style={{
                     backgroundImage: "url('/frame-15.png')",
                     backgroundSize: 'contain',
@@ -244,10 +243,10 @@ export const HeroSection = (): JSX.Element => {
                   }}
                 >
                   <CardContent className="flex flex-col items-center justify-center gap-[0.39vw] px-[0.47vw] border-none h-full relative z-10">
-                    <h2 className="w-[19.65vw] font-BNG-display-02 font-[number:var(--BNG-display-02-font-weight)] text-white text-[3.33vw] text-center tracking-[var(--BNG-display-02-letter-spacing)] leading-[var(--BNG-display-02-line-height)] [font-style:var(--BNG-display-02-font-style)]">
+                    <h2 className="w-full md:w-[19.65vw] font-BNG-display-02 font-[number:var(--BNG-display-02-font-weight)] text-white text-2xl md:text-[3.33vw] text-center tracking-[var(--BNG-display-02-letter-spacing)] leading-[var(--BNG-display-02-line-height)] [font-style:var(--BNG-display-02-font-style)]">
                       <AnimatedValue value={stat.value} shouldAnimate={isVisible} />
                     </h2>
-                    <p className="w-[15.63vw] font-BNG-subt-tulo font-[number:var(--BNG-subt-tulo-font-weight)] text-white text-[1.05vw] text-center tracking-[var(--BNG-subt-tulo-letter-spacing)] leading-[var(--BNG-subt-tulo-line-height)] [font-style:var(--BNG-subt-tulo-font-style)] whitespace-pre-line">
+                    <p className="w-full md:w-[15.63vw] font-BNG-subt-tulo font-[number:var(--BNG-subt-tulo-font-weight)] text-white text-xs md:text-[1.05vw] text-center tracking-[var(--BNG-subt-tulo-letter-spacing)] leading-[var(--BNG-subt-tulo-line-height)] [font-style:var(--BNG-subt-tulo-font-style)] whitespace-pre-line">
                       {stat.description}
                     </p>
                   </CardContent>

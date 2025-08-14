@@ -52,7 +52,7 @@ export const ContatoPage = (): JSX.Element => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="container mx-auto max-w-[83.33vw]">
+        <div className="container mx-auto max-w-[79.33vw] mt-[5vw]">
           <div className="flex gap-[5.56vw] items-start">
             {/* Texto - Lado Esquerdo */}
             <motion.div 
@@ -68,7 +68,7 @@ export const ContatoPage = (): JSX.Element => {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <motion.div 
-                  className="font-bold text-[#0000BF] text-[0.97vw] mb-[0.28vw] tracking-[0.1em] uppercase border-b border-[#FEDC0B] w-fit pb-[0.24vw]"
+                  className="font-bold text-[#0000BF] text-[0.97vw] mb-[0.28vw] tracking-[0.1em] uppercase border-b-2 border-solid border-[#FEDC0B] w-fit"
                   initial={{ width: 0 }}
                   animate={{ width: "fit-content" }}
                   transition={{ duration: 0.6, delay: 0.5 }}
@@ -314,7 +314,7 @@ export const ContatoPage = (): JSX.Element => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-[#003cff] rounded-[1.39vw] p-[2.22vw] text-white">
+                <Card className="bg-[#00009B] rounded-[1.39vw] p-[2.22vw] text-white">
                 <CardContent className="p-0 space-y-[1.67vw]">
                   {/* Endereço */}
                   <motion.div 
@@ -393,7 +393,7 @@ export const ContatoPage = (): JSX.Element => {
               transition={{ duration: 0.6, delay: 0.9 }}
             >
               <motion.div 
-                className="w-full h-[22.22vw] bg-gray-100 rounded-[1.39vw] overflow-hidden relative"
+                className="w-[97%] h-[15.9vw] bg-gray-100 rounded-[1.39vw] overflow-hidden relative ml-[1vw]]"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >

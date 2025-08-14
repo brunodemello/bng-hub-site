@@ -175,20 +175,18 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* About Us Section */}
         <motion.section 
-          className="relative w-full py-16 h-[42vw]"
+          className="relative w-full py-8 md:py-16 h-auto md:h-[42vw]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <div className="container mx-auto">
-            <div className="relative w-[79.17vw] mx-auto">
+            <div className="relative w-[90%] md:w-[79.17vw] mx-auto">
               <AboutUsSection />
 
-             
-
               <motion.img
-                className="absolute w-[2.78vw] h-[2.78vw] top-[2vw] left-[0.42vw] opacity-90"
+                className="absolute w-[2.78vw] h-[2.78vw] top-[2vw] left-[0.42vw] opacity-90 md:block hidden"
                 alt="Cruz decorativa"
                 src="/10414.png"
                 animate={{
@@ -203,7 +201,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               />
 
               <motion.img
-                className="absolute w-[1.94vw] h-[1.94vw] top-[4.2vw] right-[3vw] opacity-100"
+                className="absolute w-[1.94vw] h-[1.94vw] top-[4.2vw] right-[3vw] opacity-100 md:block hidden"
                 alt="Cruz decorativa"
                 src="/10414.png"
                 animate={{
@@ -218,26 +216,28 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 }}
               />
 
-              <div className="absolute w-[27.01vw] top-[19.1vw] left-0 font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw]">
+              <div className="static w-full mt-4 px-4 text-sm md:absolute md:w-[27.01vw] md:top-[19.1vw] md:left-0 md:text-[1.11vw] md:px-0 md:mt-0 font-sans font-normal text-[#666666] tracking-[0] leading-[1.66vw]">
                 Conectamos instituições de saúde, equipes médicas e inovação
                 para entregar performance assistencial que faz a diferença.
                 Somos a ponte entre excelência clínica
-                <br />e gestão estratégica, promovendo saúde com qualidade e
+                <br className="hidden md:block" />e gestão estratégica, promovendo saúde com qualidade e
                 altos níveis de satisfação.
               </div>
 
+              <div className="static w-full mt-6 px-4 md:hidden">
+                <button className="bg-[#00009b] hover:bg-[#003CFF] text-white rounded-full px-6 py-3 text-sm font-semibold">
+                  Saiba mais
+                </button>
+              </div>
+
               <img
-                className="absolute w-[30.97vw] h-[34.24vw] top-[1.32vw] left-[42.43vw]"
+                className="static w-full h-auto mt-6 px-4 md:absolute md:w-[30.97vw] md:h-[34.24vw] md:top-[1.32vw] md:left-[42.43vw] md:px-0 md:mt-0"
                 alt="Group"
                 src="/group-86.png"
               />
-
-              <Button className="absolute top-[29.24vw] left-0 bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw] hover:bg-[#003CFF]">
-                Saiba mais
-              </Button>
-
+              
               <motion.img
-                className="absolute w-[1.5vw] h-[1.5vw] top-[29vw] left-[25vw] opacity-100"
+                className="absolute w-[1.5vw] h-[1.5vw] top-[29vw] left-[25vw] opacity-100 md:block hidden"
                 alt="Cruz decorativa"
                 src="/10414.png"
                 animate={{
@@ -253,7 +253,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               /> 
 
               <motion.img
-                className="absolute w-[3.5vw] h-[3.5vw] top-[29vw] right-[1vw] opacity-100"
+                className="absolute w-[3.5vw] h-[3.5vw] top-[29vw] right-[1vw] opacity-100 md:block hidden"
                 alt="Cruz decorativa"
                 src="/10414.png"
                 animate={{
@@ -273,7 +273,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* Blue Banner Section */}
         <motion.section 
-          className="w-full bg-[#0000bf] shadow-[inset_0.28vw_0.28vw_0.28vw_#00000040] py-[3.33vw]"
+          className="w-full bg-[#0000bf] shadow-[inset_0.28vw_0.28vw_0.28vw_#00000040] py-6 md:py-[3.33vw]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -281,7 +281,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
         >
           <div className="container mx-auto text-center">
             <motion.p 
-              className="font-sans text-[1.67vw] leading-[2.57vw]"
+              className="font-sans text-lg leading-relaxed px-4 md:text-[1.67vw] md:leading-[2.57vw]"
               initial={{ scale: 0.9 }}
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -300,34 +300,33 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* Our Brands Section */}
         <motion.section 
-          className="w-full py-[4.44vw]"
+          className="w-full py-8 md:py-[4.44vw]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <div className="w-[90%] mx-auto text-center">
+          <div className="w-[95%] md:w-[90%] mx-auto text-center">
             <div className="flex flex-col items-center justify-center mb-[0.56vw]">
               <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
                 NOSSAS MARCAS
               </div>
-             
             </div>
 
-            <h2 className="w-[42.43vw] mx-auto font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[2.92vw] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.39vw]">
+            <h2 className="w-full px-4 text-xl leading-tight mb-4 md:w-[42.43vw] md:px-0 md:text-[1.94vw] md:leading-[2.92vw] md:mb-[1.39vw] mx-auto font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
               Um ecossistema conectado pelo propósito
             </h2>
 
-            <p className="w-[55.28vw] h-[1.67vw] mx-auto font-['Poppins',Helvetica] font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw] mb-[4.17vw]">
+            <p className="w-full h-auto text-sm leading-relaxed px-4 mb-8 md:w-[55.28vw] md:h-[1.67vw] md:text-[1.11vw] md:leading-[1.66vw] md:mb-[4.17vw] md:px-0 mx-auto font-['Poppins',Helvetica] font-normal text-[#666666] tracking-[0]">
               Reunimos marcas estratégicas e comprometidas com a transformação
               da saúde no Brasil.
             </p>
 
-            <div className="flex justify-center items-center gap-[0.9vw] relative overflow-visible">
+            <div className="flex flex-col gap-6 md:flex-row md:justify-center md:items-center md:gap-[0.9vw] relative overflow-visible">
               {/* Navigation Arrow Left */}
               <button 
                 onClick={prevBrand}
-                className="w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer"
+                className="hidden md:flex w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer"
               >
                 <img
                   className="w-[0.69vw] h-[1.18vw] rotate-180 filter group-hover:brightness-0 group-hover:invert transition-all ml-[-0.05vw]"
@@ -339,6 +338,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               {/* Card Esquerda - Fechado (apenas logo) */}
               <motion.div
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="hidden md:block"
               >
                 <Card className={`w-[17.83vw] h-[20.28vw] rounded-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#0000bf] ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
                 <CardContent className="p-0 relative w-full h-full flex items-center justify-center">
@@ -357,10 +357,10 @@ export const BngHubLayoutSite = (): JSX.Element => {
               <motion.div
                 whileHover={{ y: -8, transition: { duration: 0.3 } }} 
               >
-                <Card className={`w-[38.75vw] h-[23.61vw] bg-white rounded-[1.11vw] flex shadow-[0px_6px_6px_2px_rgba(0,0,0,0.59)] transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30 scale-98' : 'opacity-100 scale-100'}`}>
-                <CardContent className="flex p-0">
+                <Card className={`w-80 h-auto flex-col md:w-[38.75vw] md:h-[23.61vw] md:flex-row bg-white rounded-[1.11vw] flex shadow-[0px_6px_6px_2px_rgba(0,0,0,0.59)] transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30 scale-98' : 'opacity-100 scale-100'}`}>
+                <CardContent className="flex flex-col p-4 md:flex-row md:p-0">
                   {/* Logo Section */}
-                  <div className={`w-[15.21vw] rounded-l-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#F2F2F2]`}>
+                  <div className={`w-full h-32 rounded-t-[1.11vw] md:w-[15.21vw] md:rounded-l-[1.11vw] md:rounded-t-none flex items-center justify-center transition-all duration-500 ease-in-out bg-[#F2F2F2]`}>
                     <img
                       className={`${brandsData[getBrandIndex('center')].logoWidth} ${brandsData[getBrandIndex('center')].logoHeight} object-contain transition-all duration-500 ease-in-out ${
                         ''
@@ -371,12 +371,12 @@ export const BngHubLayoutSite = (): JSX.Element => {
                   </div>
                   
                   {/* Content Section */}
-                  <div className="w-[23.54vw] bg-white rounded-r-[1.11vw] p-[3.33vw] flex flex-col justify-center">
-                    <h3 className={`font-bold text-[#666666] text-[1.39vw] leading-[1.67vw] mb-[1.11vw] text-left transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
+                  <div className="w-full p-4 rounded-b-[1.11vw] md:w-[23.54vw] md:rounded-r-[1.11vw] md:rounded-b-none md:p-[3.33vw] bg-white flex flex-col justify-center">
+                    <h3 className={`text-lg leading-tight mb-2 md:text-[1.39vw] md:leading-[1.67vw] md:mb-[1.11vw] font-bold text-[#666666] text-left transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
                       {brandsData[getBrandIndex('center')].title}
                     </h3>
                     
-                    <p className={`font-normal text-[#666666] text-[1.11vw] leading-[1.67vw] text-left max-w-[16.5vw] transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
+                    <p className={`text-sm leading-relaxed max-w-none md:text-[1.11vw] md:leading-[1.67vw] md:max-w-[16.5vw] font-normal text-[#666666] text-left transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
                       {brandsData[getBrandIndex('center')].description}
                     </p>
                   </div>
@@ -387,6 +387,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               {/* Card Direita - Fechado (apenas logo) */}
               <motion.div
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="hidden md:block"
               >
                 <Card className={`w-[17.83vw] h-[20.28vw] rounded-[1.11vw] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#003cff] ${isTransitioning ? 'opacity-30' : 'opacity-100'}`}>
                 <CardContent className="p-0 relative w-full h-full flex items-center justify-center">
@@ -404,7 +405,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               {/* Navigation Arrow Right */}
               <button 
                 onClick={nextBrand}
-                className="w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-all duration-300 ease-in-out group cursor-pointer disabled:opacity-50"
+                className="hidden md:flex w-[2.43vw] h-[2.43vw] rounded-full border-[0.21vw] border-[#003cff] bg-white items-center justify-center hover:bg-[#003cff] transition-all duration-300 ease-in-out group cursor-pointer disabled:opacity-50"
               >
                 <img
                   className="w-[0.69vw] h-[1.18vw] filter group-hover:brightness-0 group-hover:invert transition-all ml-[0.05vw]"
@@ -412,6 +413,22 @@ export const BngHubLayoutSite = (): JSX.Element => {
                   src="/vector-14.svg"
                 />
               </button>
+
+              {/* Mobile Navigation Dots */}
+              <div className="flex gap-2 mt-4 md:hidden">
+                {brandsData.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentBrandIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      currentBrandIndex === index 
+                        ? 'bg-[#003cff]' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Ir para marca ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </motion.section>
@@ -425,25 +442,24 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* Solutions Section */}
         <motion.section 
-          className="w-full py-[4.44vw]"
+          className="w-full py-8 md:py-[4.44vw]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className="container mx-auto text-center">
+          <div className="container mx-auto text-center px-4 md:px-0">
             <div className="flex flex-col items-center justify-center mb-4">
-              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
+              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-sm md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
                 NOSSAS SOLUÇÕES
               </div>
-             
             </div>
 
-            <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.39vw]">
+            <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] text-xl md:text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-4 md:mb-[1.39vw]">
               Soluções sob medida para impactar a&nbsp;&nbsp;assistência
             </h2>
 
-            <p className="max-w-[55.28vw] mx-auto font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw] mb-[1vw]">
+            <p className="max-w-full md:max-w-[55.28vw] mx-auto font-sans font-normal text-[#666666] text-sm md:text-[1.11vw] tracking-[0] leading-[1.66vw] mb-4 md:mb-[1vw]">
               Tecnologia, expertise técnica e inovação à serviço da saúde
             </p>
 
@@ -454,7 +470,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Button className="bg-[#00009b] hover:bg-[#003CFF] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw]">
+              <Button className="bg-[#00009b] hover:bg-[#003CFF] rounded-full md:rounded-[4.17vw] text-white font-BNG-bot-o text-sm md:text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-6 py-3 md:px-[1.67vw] md:py-[0.83vw]">
               Falar com um especialista
               </Button>
             </motion.div>
@@ -483,67 +499,53 @@ export const BngHubLayoutSite = (): JSX.Element => {
               y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
               x: { duration: 0 }
             }}
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ 
-              duration: 1.8, 
-              delay: 0.3,
-              ease: "easeOut"
-            }}
-            viewport={{ once: true, margin: "-100px" }}
-            animate={{
-              y: [0, -10, 0]
-            }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-            }}
           />
         </div>
 
         {/* Where We Are Section */}
         <motion.section 
-          className="w-full py-[4.44vw]"
+          className="w-full py-8 md:py-[4.44vw]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <div className="container mx-auto">
-            <div className="flex items-center justify-between px-[10.42vw]">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-[10.42vw] gap-8 md:gap-0">
               {/* Conteúdo de texto à esquerda */}
               <motion.div 
-                className="flex flex-col w-[32.01vw]"
+                className="flex flex-col w-full md:w-[32.01vw]"
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="flex flex-col items-start mb-[1.39vw]">
-                  <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#00009b] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)]">
+                <div className="flex flex-col items-start mb-4 md:mb-[1.39vw]">
+                  <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#00009b] text-sm md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)]">
                     ONDE ESTAMOS
                   </div>
-                  <Separator className="w-[6.94vw] h-[0.14vw] bg-[#fedc0b] rounded-sm" />
+                  <Separator className="w-16 h-0.5 md:w-[6.94vw] md:h-[0.14vw] bg-[#fedc0b] rounded-sm" />
                 </div>
 
-                <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-black text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.67vw]">
+                <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-black text-xl md:text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-4 md:mb-[1.67vw]">
                   SEM FRONTEIRAS para a alta peformance assistencial
                 </h2>
 
-                <p className="font-sans font-normal text-[#666666] text-[1.11vw] tracking-[0] leading-[1.66vw] mb-[2.22vw]">
+                <p className="font-sans font-normal text-[#666666] text-sm md:text-[1.11vw] tracking-[0] leading-[1.66vw] mb-6 md:mb-[2.22vw]">
                   A BNG Hub rompe barreiras geográficas e operacionais para entregar
                   soluções de saúde que geram impacto nas instituições. Atuamos em
                   todo o território nacional com estratégias personalizadas que
                   aliam eficiência, tecnologia e humanização.
                 </p>
 
-                <Button className="w-fit bg-[#00009b] rounded-[4.17vw] text-white font-BNG-bot-o text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-[1.67vw] py-[0.83vw] hover:bg-[#003CFF]">
+                <Button className="w-fit bg-[#00009b] rounded-full md:rounded-[4.17vw] text-white font-BNG-bot-o text-sm md:text-[0.97vw] tracking-[var(--BNG-bot-o-letter-spacing)] leading-[var(--BNG-bot-o-line-height)] [font-style:var(--BNG-bot-o-font-style)] px-6 py-3 md:px-[1.67vw] md:py-[0.83vw] hover:bg-[#003CFF]">
                   Saiba mais
                 </Button>
               </motion.div>
 
               {/* Mapa do Brasil à direita */}
               <motion.div 
-                className="relative w-[40.42vw] h-[40.49vw]"
+                className="relative w-full md:w-[40.42vw] h-auto md:h-[40.49vw]"
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -555,7 +557,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                   src="/group-60.png"
                 />
 
-                <div className="absolute w-[25.76vw] h-[25.76vw] top-[35.83vw] left-[26.6vw]">
+                <div className="hidden md:block absolute w-[25.76vw] h-[25.76vw] top-[35.83vw] left-[26.6vw]">
                   <img
                     className="w-[25.76vw] h-[25.76vw]"
                     alt="Ellipse"

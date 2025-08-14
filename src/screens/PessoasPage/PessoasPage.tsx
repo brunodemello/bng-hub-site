@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRef } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useKeenSlider } from 'keen-slider/react' 
@@ -8,9 +9,80 @@ import { ContactUsSection } from "../BngHubLayoutSite/sections/ContactUsSection"
 import "./PessoasPage.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// Hook personalizado para animação de contador
+const useCounterAnimation = (endValue: number, duration: number = 2500, shouldStart: boolean = false) => {
+  const [currentValue, setCurrentValue] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (!shouldStart || isAnimating || hasAnimated) return;
+
+    setIsAnimating(true);
+    setHasAnimated(true);
+    const startTime = Date.now();
+    const startValue = 0;
+
+    const animate = () => {
+      const now = Date.now();
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Função de easing para suavizar a animação
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const value = Math.floor(startValue + (endValue - startValue) * easeOutQuart);
+
+      setCurrentValue(value);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCurrentValue(endValue);
+        setIsAnimating(false);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [endValue, duration, shouldStart, isAnimating, hasAnimated]);
+
+  return currentValue;
+};
+
+// Componente para renderizar valor animado
+const AnimatedValue = ({ value, shouldAnimate }: { value: string; shouldAnimate: boolean }) => {
+  // Extrair número e texto do valor
+  const parseValue = (val: string) => {
+    if (val === "+10.000") {
+      return { number: 10000, prefix: "+", suffix: "" };
+    } else if (val === "+180") {
+      return { number: 180, prefix: "+", suffix: "" };
+    }
+    return { number: 0, prefix: "", suffix: val };
+  };
+
+  const { number, prefix, suffix } = parseValue(value);
+  const animatedNumber = useCounterAnimation(number, 2500, shouldAnimate);
+
+  // Formatar o número com pontos para milhares
+  const formatNumber = (num: number) => {
+    if (num >= 1000) {
+      return num.toLocaleString('pt-BR');
+    }
+    return num.toString();
+  };
+
+  return (
+    <>
+      {prefix}{formatNumber(animatedNumber)}{suffix}
+    </>
+  );
+};
+
 export const PessoasPage = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentVantagemSlide, setcurrentVantagemSlide] = useState(0);
+  const [isCounterVisible, setIsCounterVisible] = useState(false);
+  const counterSectionRef = useRef<HTMLDivElement>(null);
 
   const [sliderRef, instanceRef] = useKeenSlider(
     {
@@ -55,6 +127,29 @@ export const PessoasPage = (): JSX.Element => {
       once: true,
       offset: 100
     });
+
+    // Observer para animação do contador
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isCounterVisible) {
+          setIsCounterVisible(true);
+        }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (counterSectionRef.current) {
+      observer.observe(counterSectionRef.current);
+    }
+
+    return () => {
+      if (counterSectionRef.current) {
+        observer.unobserve(counterSectionRef.current);
+      }
+    };
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -97,7 +192,7 @@ export const PessoasPage = (): JSX.Element => {
       <section className="carreira" data-aos="fade-up" data-aos-duration="3000">
         <div className="carreira__imgWrapper">
           <img src="/pessoas/assets/secao-carreira.png" alt="Imagem da seção carreira" className="w-full h-full object-cover object-center rounded-lg" />
-          <svg width="78" height="86" viewBox="0 0 78 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="78" height="86" viewBox="0 0 78 86" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin" style={{ animation: 'spin 8s linear infinite' }}>
             <path
               d="M66.2466 11.4082C58.886 4.05099 49.0946 0 38.685 0C28.2754 0 18.484 4.05099 11.1233 11.4082C4.97799 17.5507 1.13649 25.3833 0.0374053 33.8549C-0.306058 36.4905 1.76 38.8196 4.41788 38.8196H11.4193C13.5646 38.8196 15.4193 37.2827 15.768 35.1701C17.5805 24.1632 27.171 15.7444 38.685 15.7444C50.1989 15.7444 59.7842 24.1632 61.6019 35.1701C61.9507 37.2827 63.8054 38.8196 65.9507 38.8196H72.9521C75.61 38.8196 77.676 36.4905 77.3326 33.8549C76.2335 25.3833 72.392 17.5507 66.2466 11.4082Z"
               fill="#0DFFC0" />
@@ -304,7 +399,7 @@ export const PessoasPage = (): JSX.Element => {
       </section>
 
       {/* Time Section */}
-      <section className="time" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+      <section ref={counterSectionRef} className="time" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
         {/* Imagem decorativa de fundo */}
         <img 
           src="/bg-secao-qtd.png" 
@@ -321,11 +416,15 @@ export const PessoasPage = (): JSX.Element => {
           </p>
           <div className="content__qntd">
             <div className="qtd__profissionais" data-aos="fade-in">
-              <span className="qtd__numbers">+10.000</span>
+              <span className="qtd__numbers">
+                <AnimatedValue value="+10.000" shouldAnimate={isCounterVisible} />
+              </span>
               <span className="qtd__desc">Profissionais da saúde conectados com nosso propósito.</span>
             </div>
             <div className="qtd__pessoas" data-aos="fade-in">
-              <span className="qtd__numbers">+180</span>
+              <span className="qtd__numbers">
+                <AnimatedValue value="+180" shouldAnimate={isCounterVisible} />
+              </span>
               <span className="qtd__desc">pessoas em nosso Time fazendo a diferença.</span>
             </div>
           </div>
