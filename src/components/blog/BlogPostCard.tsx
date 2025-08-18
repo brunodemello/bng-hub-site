@@ -10,13 +10,13 @@ interface BlogPostCardProps {
 export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
   return (
     <motion.article 
-      className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+      className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 w-[25.278vw]"
       whileHover={{ y: -3, scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
       {/* Featured Image */}
       <motion.div 
-        className="relative w-full h-[12vw] overflow-hidden"
+        className="relative w-full h-[13.889vw] overflow-hidden rounded-[16px]"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
       >
@@ -28,10 +28,10 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
       </motion.div>
 
       {/* Content */}
-      <div className="p-[1.5vw]">
+      <div className="p-[1.5vw] font-['Poppins']">
         {/* Date */}
         <motion.div 
-          className="text-gray-500 text-[0.8vw] mb-[0.5vw]"
+          className="text-[#666666] text-[0.97vw] mb-[0.5vw]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}
@@ -41,7 +41,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
 
         {/* Title */}
         <motion.h2 
-          className="text-[1.3vw] font-semibold text-gray-900 mb-[1vw] leading-tight hover:text-[#003cff] transition-colors"
+          className="text-[1.3vw] font-semibold text-[#212121] font-medium mb-[1vw] leading-tight hover:text-[#003cff] transition-colors"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
@@ -86,7 +86,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
             {post.tag_names.slice(0, 2).map((tagName, index) => (
               <motion.span
                 key={index}
-                className="inline-block bg-[#f0f8ff] text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-full text-[0.7vw] font-medium"
+                className="inline-block bg-[#ffffff] border border-solid border-[#003CFF] text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-[4px] text-[0.84vw] font-medium"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}

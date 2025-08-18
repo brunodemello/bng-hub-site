@@ -119,7 +119,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Card className="bg-[#0000bf] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
+                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
                   <CardContent className="p-0 flex items-start gap-[1vw]">
                     <div className="rounded-lg flex items-center justify-center flex-shrink-0">
                       <img src="/quemSomos_icon3.png" alt="Missão" className="w-[5.833vw] h-[5.833vw] mr-[2.014vw]" />
@@ -143,7 +143,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   viewport={{ once: true }}
                   style={{ transitionDelay: '0.1s' }}
                 >
-                  <Card className="bg-[#0000bf] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
+                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
                   <CardContent className="p-0 flex items-start gap-[1vw]">
                     <div className="rounded-lg flex items-center justify-center flex-shrink-0">
                       <img src="/quemSomos_icon2.png" alt="Valores" className="w-[5.833vw] h-[5.833vw] mr-[2.014vw]" />
@@ -167,7 +167,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   viewport={{ once: true }}
                   style={{ transitionDelay: '0.2s' }}
                 >
-                  <Card className="bg-[#0000bf] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
+                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
                   <CardContent className="p-0 flex items-start gap-[1vw]">
                     <div className="rounded-lg flex items-center justify-center flex-shrink-0">
                       <img src="/quemSomos_icon1.png" alt="Visão" className="w-[5.833vw] h-[5.833vw] mr-[2.014vw]" />
@@ -222,7 +222,7 @@ export const QuemSomosPage = (): JSX.Element => {
           <motion.img
             src="/10414.png"
             alt=""
-            className="absolute bottom-[6vw] left-[49vw] w-auto h-auto"
+            className="absolute bottom-[11vw] left-[49vw] w-auto h-auto"
             animate={{
               scale: [1, 1.15, 1],
               opacity: [0.6, 1, 0.6]
@@ -258,7 +258,7 @@ export const QuemSomosPage = (): JSX.Element => {
                 </div>
 
                 <motion.h2 
-                  className="text-[#0000bf] text-[3vw] font-black mb-[0.5vw]"
+                  className="text-[#003CFF] text-[3vw] font-black mb-[0.5vw]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
@@ -310,7 +310,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   viewport={{ once: true }}
                   style={{ transitionDelay: '1.1s' }}
                 >
-                  <Button className="bg-[#0000bf] hover:bg-[#0000bf]/90 text-white rounded-[4vw] px-[2vw] py-[0.8vw] font-semibold text-[0.9vw]">
+                  <Button className="bg-[#00009B] hover:bg-[#003CFF] text-white rounded-[4vw] px-[2vw] py-[0.8vw] font-semibold text-[0.9vw]">
                   Faça parte do nosso time!
                   </Button>
                 </motion.div>
@@ -343,7 +343,7 @@ export const QuemSomosPage = (): JSX.Element => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <div 
-            className="w-full h-[36.11vw] bg-cover bg-center relative"
+            className="w-full h-[44.11vw] bg-cover bg-center relative"
             style={{ 
               backgroundImage: `url('/bgFixed.png')` 
             }}

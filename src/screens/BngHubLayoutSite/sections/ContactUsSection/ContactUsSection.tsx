@@ -10,7 +10,7 @@ export const ContactUsSection = (): JSX.Element => {
     <section className="w-full relative">
       {/* Newsletter subscription bar */}
       <div className="flex w-full items-center justify-center gap-4 md:gap-[3.47vw] py-4 md:py-[1.39vw] bg-[#00009b]">
-        <div className="container mx-auto max-w-[83%] flex flex-col md:flex-row items-center justify-between gap-4 md:gap-[3.47vw] px-4 md:px-0">
+        <div className="container mx-auto max-w-[83%] flex flex-col md:flex-row items-center justify-between gap-4 md:gap-[3.47vw] px-4 md:px-[1.4vw]">
         <div className="relative w-fit [font-family:'Poppins',Helvetica] font-semibold text-white text-sm md:text-[1.08vw] tracking-[0] leading-[1.66vw] whitespace-pre-line text-center md:text-left">
           Cadastre-se para receber{"\n"}notícias e novidades!
         </div>

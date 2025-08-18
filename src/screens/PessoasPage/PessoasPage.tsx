@@ -189,9 +189,9 @@ export const PessoasPage = (): JSX.Element => {
 
       {/* Main Content - Usando HTML original */}
       <div className="pessoas-content" style={{ paddingTop: '120px' }}>
-      <section className="carreira" data-aos="fade-up" data-aos-duration="3000">
+      <section className="carreira !mt-[2.20vw]" data-aos="fade-up" data-aos-duration="3000">
         <div className="carreira__imgWrapper">
-          <img src="/pessoas/assets/secao-carreira.png" alt="Imagem da seção carreira" className="w-full h-full object-cover object-center rounded-lg" />
+          <img src="/pessoas/assets/secao-carreira.png" alt="Imagem da seção carreira" className="w-full h-full object-cover object-center rounded-[16px]" />
           <svg width="78" height="86" viewBox="0 0 78 86" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin" style={{ animation: 'spin 8s linear infinite' }}>
             <path
               d="M66.2466 11.4082C58.886 4.05099 49.0946 0 38.685 0C28.2754 0 18.484 4.05099 11.1233 11.4082C4.97799 17.5507 1.13649 25.3833 0.0374053 33.8549C-0.306058 36.4905 1.76 38.8196 4.41788 38.8196H11.4193C13.5646 38.8196 15.4193 37.2827 15.768 35.1701C17.5805 24.1632 27.171 15.7444 38.685 15.7444C50.1989 15.7444 59.7842 24.1632 61.6019 35.1701C61.9507 37.2827 63.8054 38.8196 65.9507 38.8196H72.9521C75.61 38.8196 77.676 36.4905 77.3326 33.8549C76.2335 25.3833 72.392 17.5507 66.2466 11.4082Z"
@@ -203,7 +203,7 @@ export const PessoasPage = (): JSX.Element => {
         </div>
         <div className="carreira__content">
           <span className="secao-titulo">Carreiras</span>
-          <h2 className="titulo-grande">Faça parte de um Time movido pela conexão.</h2>
+          <h2 className="titulo-grande">Faça parte de um Time movido pela conexão</h2>
           <p>Somos apaixonados por construir, conectar, 
             crescer, criar e desenvolver soluções que estão 
             transformando a saúde no Brasil.
@@ -261,7 +261,7 @@ export const PessoasPage = (): JSX.Element => {
               <img src="/icon-cultura-02.png" alt="" className="w-full h-full object-contain" />
             </div>
             <div className="card__titulo">RELACIONAMENTO</div>
-            <div className="card__text">É a nossa razão de ser.</div>
+            <div className="card__text">É a nossa <br /> razão de ser.</div>
           </div>
           <div className="vantagem__card" data-aos="fade-up">
             <div className="card__imgWrapper">
@@ -275,7 +275,7 @@ export const PessoasPage = (): JSX.Element => {
               <img src="/icon-cultura-04.png" alt="" className="w-full h-full object-contain" />
             </div>
             <div className="card__titulo">PRECISÃO</div>
-            <div className="card__text">Nosso modo de agir.</div>
+            <div className="card__text">Nosso modo <br></br> de agir.</div>
           </div>
           <div className="vantagem__card" data-aos="fade-up">
             <div className="card__imgWrapper">
@@ -428,7 +428,7 @@ export const PessoasPage = (): JSX.Element => {
               <span className="qtd__desc">pessoas em nosso Time fazendo a diferença.</span>
             </div>
           </div>
-          <a href="#trabalhe-conosco">Faça parte do nosso time!</a>
+          <a className="hover:!bg-[#0dffc0]" href="#trabalhe-conosco">Faça parte do nosso time!</a>
         </div>
         <div className="time__imgWrapper">
           <img src="/pessoas/assets/secao-time.png" alt="Imagem do time reunido" className="w-full h-full object-cover object-center rounded-lg" />
@@ -451,7 +451,7 @@ export const PessoasPage = (): JSX.Element => {
               sempre ligados e dedicados 
               em <strong>fazer acontecer</strong>. São pró- 
               ativos, dinâmicos e 
-              <strong>resolutivos</strong>. Não descansam 
+              <strong> resolutivos</strong>. Não descansam 
               enquanto não colocam um 
               projeto de pé, um teste para 
               rodar ou uma solução para 
@@ -539,7 +539,7 @@ export const PessoasPage = (): JSX.Element => {
           </div>
         </div>
         <div className="trabalhe-conosco-btn">
-          <a href="#trabalhe-conosco">Trabalhe conosco!</a>
+          <a className="hover:!bg-[#003CFF]" href="#trabalhe-conosco">Trabalhe conosco!</a>
         </div>
         <div className="cruz-super-small hidden md:block">
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -645,7 +645,7 @@ export const PessoasPage = (): JSX.Element => {
             profissionais que compartilhem nosso propósito de 
             transformar a saúde por meio da excelência, da 
             tecnologia e do cuidado com as pessoas. 
-
+            <br /><br />
             Se você quer fazer parte de um ecossistema que 
             valoriza o desenvolvimento contínuo, o trabalho em 
             equipe e o impacto positivo na vida de milhares de 
@@ -757,7 +757,7 @@ export const PessoasPage = (): JSX.Element => {
             <p>Li e concordo com a Política de Privacidade da BNG e autorizo o uso dos meus dados para fins relacionados a
               este contato.</p>
           </div>
-          <button type="submit">Enviar mensagem</button>
+          <button className="hover:!bg-[#0dffc0]" type="submit">Enviar mensagem</button>
         </form>
         <div className="cruz-super-small hidden md:block">
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

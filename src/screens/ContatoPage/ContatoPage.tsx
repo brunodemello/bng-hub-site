@@ -53,7 +53,7 @@ export const ContatoPage = (): JSX.Element => {
         transition={{ duration: 0.8 }}
       >
         <div className="container mx-auto max-w-[79.33vw] mt-[5vw]">
-          <div className="flex gap-[5.56vw] items-start">
+          <div className="flex gap-[0] items-start">
             {/* Texto - Lado Esquerdo */}
             <motion.div 
               className="flex-1 max-w-[36.11vw] mt-[3vw]"
@@ -88,7 +88,7 @@ export const ContatoPage = (): JSX.Element => {
               </motion.h1>
 
               <motion.div 
-                className="w-[26.792vw] pl-0"
+                className="w-[24.792vw] pl-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -133,7 +133,7 @@ export const ContatoPage = (): JSX.Element => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-[#003cff] rounded-[8px] p-[2.22vw] text-white h-[36.806vw] flex justify-center items-center">
+                <Card className="bg-[#003CFF] rounded-[8px] p-[2.22vw] text-white h-[36.806vw] flex justify-center items-center">
                 <CardContent className="p-0 w-[82%]">
                   <motion.form 
                     onSubmit={handleSubmit} 
@@ -216,7 +216,7 @@ export const ContatoPage = (): JSX.Element => {
                         value={formData.assunto}
                         onChange={handleInputChange}
                         required
-                        className="w-[50%] px-[1.11vw] py-[0.6vw] border-none rounded-[0.42vw] text-[0.83vw] bg-white text-gray-700 h-[2.15vw]"
+                        className="w-[50%] px-[1vw] font-light py-[0.6vw] border-none rounded-[0.42vw] text-[0.83vw] bg-white text-gray-700 h-[2.15vw]"
                       >
                         <option value="">Selecionar</option>
                         <option value="gestao-medica">Gestão de Equipes Médicas</option>
@@ -283,7 +283,7 @@ export const ContatoPage = (): JSX.Element => {
                       >
                         <Button
                           type="submit"
-                          className="bg-[#fedc0b] hover:bg-[#fedc0b]/90 text-[#003cff] rounded-[2.78vw] px-[2.22vw] py-[0.69vw] font-bold text-[0.83vw] w-fit h-[2.78vw]"
+                          className="bg-[#fedc0b] hover:bg-[#fedc0b]/90 text-[#003cff] rounded-[2.78vw] px-[2.22vw] py-[0.69vw] font-bold text-[0.83vw] w-fit h-[1.94vw]"
                         >
                           Enviar mensagem
                         </Button>
@@ -298,7 +298,7 @@ export const ContatoPage = (): JSX.Element => {
 
           {/* Seção Inferior - Card de Informações + Mapa */}
           <motion.div 
-            className="flex gap-[5.56vw] items-start mt-[5.56vw]"
+            className="flex gap-[0] items-start mt-[5.56vw]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -314,22 +314,20 @@ export const ContatoPage = (): JSX.Element => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-[#00009B] rounded-[1.39vw] p-[2.22vw] text-white">
+                <Card className="bg-[#00009B] rounded-[1.39vw] p-[2.22vw] text-white w-[34.37vw]">
                 <CardContent className="p-0 space-y-[1.67vw]">
                   {/* Endereço */}
                   <motion.div 
-                    className="flex items-start gap-[1.11vw]"
+                    className="flex items-center gap-[0.42vw]"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.0 }}
                   >
-                    <div className="w-[2.22vw] h-[2.22vw] bg-[#0dffc0] rounded-full flex items-center justify-center flex-shrink-0 mt-[0.14vw]">
-                      <svg className="w-[1.11vw] h-[1.11vw] text-[#003cff]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
+                    <div className="w-[2.22vw] h-[2.22vw] rounded-full flex items-center justify-center flex-shrink-0 mt-[0.14vw]">
+                      <img className="w-[1.45vw] h-auto" src="/contatoIcon_1.png" alt="" />
                     </div>
                     <div>
-                      <address className="not-italic text-white text-[0.97vw] leading-[1.4] font-medium">
+                      <address className="not-italic text-white text-[1.11vw] leading-[1.4] font-medium">
                         Av. Eng. Luis Carlos Berrini, 1748 - Cj. 1710<br />
                         Cidade Monções, São Paulo - SP
                       </address>
@@ -338,21 +336,19 @@ export const ContatoPage = (): JSX.Element => {
 
                   {/* Horário */}
                   <motion.div 
-                    className="flex items-start gap-[1.11vw]"
+                    className="flex items-center gap-[0.42vw]"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.1 }}
                   >
-                    <div className="w-[2.22vw] h-[2.22vw] bg-[#0dffc0] rounded-full flex items-center justify-center flex-shrink-0 mt-[0.14vw]">
-                      <svg className="w-[1.11vw] h-[1.11vw] text-[#003cff]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
+                    <div className="w-[2.22vw] h-[2.22vw] rounded-full flex items-center justify-center flex-shrink-0 mt-[0.14vw]">
+                      <img className="w-[1.45vw] h-auto" src="/contatoIcon_2.png" alt="" />
                     </div>
                     <div>
-                      <p className="text-white text-[0.97vw] leading-[1.4] font-medium">
+                      <p className="text-white text-[1.11vw] leading-[1.4] font-medium">
                         Horário de funcionamento
                       </p>
-                      <p className="text-white text-[0.83vw] leading-[1.3] opacity-90">
+                      <p className="text-white text-[1.11vw] leading-[1.3] opacity-90">
                         de Segunda a Sexta, das 7h às 17h.
                       </p>
                     </div>
@@ -360,21 +356,18 @@ export const ContatoPage = (): JSX.Element => {
 
                   {/* E-mail */}
                   <motion.div 
-                    className="flex items-start gap-[1.11vw]"
+                    className="flex items-center gap-[0.42vw]"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 1.2 }}
                   >
-                    <div className="w-[2.22vw] h-[2.22vw] bg-[#0dffc0] rounded-full flex items-center justify-center flex-shrink-0 mt-[0.14vw]">
-                      <svg className="w-[1.11vw] h-[1.11vw] text-[#003cff]" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                      </svg>
+                    <div className="w-[2.22vw] h-[2.22vw] ounded-full flex items-center justify-center flex-shrink-0 mt-[0.14vw]">
+                      <img className="w-[1.45vw] h-auto" src="/contatoIcon_3.png" alt="" />
                     </div>
                     <div>
                       <a
                         href="mailto:marketing@boasnovasgestao.com"
-                        className="text-white text-[0.97vw] leading-[1.4] hover:text-[#0dffc0] transition-colors font-medium"
+                        className="text-white text-[1.11vw] leading-[1.4] hover:text-[#0dffc0] transition-colors font-medium"
                       >
                         marketing@boasnovasgestao.com
                       </a>
@@ -387,13 +380,13 @@ export const ContatoPage = (): JSX.Element => {
 
             {/* Mapa - Direita */}
             <motion.div 
-              className="flex-1 max-w-[41.67vw]"
+              className="flex-1 w-[41.67vw]"
               initial={{ x: 30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
               <motion.div 
-                className="w-[97%] h-[15.9vw] bg-gray-100 rounded-[1.39vw] overflow-hidden relative ml-[1vw]]"
+                className="w-[34.37vw] h-[15.9vw] bg-gray-100 rounded-[1.39vw] overflow-hidden relative ml-[1vw]]"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >

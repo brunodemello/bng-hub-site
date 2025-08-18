@@ -29,36 +29,14 @@ export const BlogHomePage = (): JSX.Element => {
 
       {/* Hero Banner */}
       <motion.section 
-        className="relative w-full h-[25vw] bg-gradient-to-r from-[#003cff] to-[#0052ff] flex items-center justify-center mt-[5vw] overflow-hidden"
+        className="relative w-full h-fit bg-gradient-to-r from-[#003cff] to-[#0052ff] rounded-bl-[60px] rounded-br-[60px] flex items-center justify-center mt-0 overflow-hidden"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <motion.div 
-          className="text-center text-white"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <h1 className="text-[2.5vw] font-bold mb-[1vw]">
-            We are <motion.span 
-              className="text-[#0dffc0]"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              #Informação
-            </motion.span>
-          </h1>
-        </motion.div>
+        <img className='w-full' src="/blogHomeCover.png" alt="" />
         
-        {/* Decorative elements */}
-        <motion.div 
-          className="absolute bottom-0 right-0 w-[15vw] h-[15vw] bg-[#fedc0b] rounded-full opacity-20 transform translate-x-1/2 translate-y-1/2"
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-        />
+        
       </motion.section>
 
       {/* Main Content */}

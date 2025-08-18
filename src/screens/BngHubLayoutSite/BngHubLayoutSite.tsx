@@ -484,7 +484,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
             src="/home_forma_elipse.png"
             alt=""
             className="absolute left-0 bottom-[-8vw] w-[15vw] h-auto z-[1]"
-            initial={{ opacity: 0, x: -100, rotate: -15 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ 
               duration: 1.2, 
