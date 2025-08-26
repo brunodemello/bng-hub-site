@@ -1,3 +1,4 @@
+// src/index.tsx
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -7,10 +8,12 @@ import { ContatoPage } from "./screens/ContatoPage";
 import { PessoasPage } from "./screens/PessoasPage";
 import { PrivacyPolicyPage } from "./screens/PrivacyPolicyPage";
 import { BlogHomePage, BlogCategoryPage, BlogPostPage, BlogSearchPage, BlogTagPage } from "./screens/BlogPages";
+import { ScrollToTop } from "./components/utils/ScrollToTop"; // Importe o novo componente
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <Router>
+      <ScrollToTop /> {/* Adicione o componente aqui */}
       <Routes>
         <Route path="/" element={<BngHubLayoutSite />} />
         <Route path="/quem-somos" element={<QuemSomosPage />} />

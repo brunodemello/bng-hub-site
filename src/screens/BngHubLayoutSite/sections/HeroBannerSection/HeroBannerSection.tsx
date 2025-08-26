@@ -7,18 +7,21 @@ export const HeroBannerSection = (): JSX.Element => {
   const slides = [
     {
       id: 1,
-      title: "Somos a força por trás da assistência de qualidade",
-      image: "/rectangle-178.png"
+      line1: "Somos a força por trás da",
+      line2: "assistência de qualidade",
+      image: "/home_banner_full.png"
     },
     {
-      id: 2,
-      title: "Transformamos a saúde através de conexões de valor",
-      image: "/rectangle-178.png"
+       id: 2,
+      line1: "Somos a força por trás da",
+      line2: "assistência de qualidade 2",
+      image: "/home_banner_full.png"
     },
     {
-      id: 3,
-      title: "Inovação e tecnologia a serviço da vida",
-      image: "/rectangle-178.png"
+       id: 3,
+      line1: "Somos a força por trás da",
+      line2: "assistência de qualidade 3",
+      image: "/home_banner_full.png"
     }
   ];
 
@@ -48,7 +51,7 @@ export const HeroBannerSection = (): JSX.Element => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="relative w-full h-[45.07vw] md:h-[45.07vw] h-[60vh] rounded-b-[2vw] md:rounded-b-[2vw] rounded-b-[1rem] overflow-hidden">
+      <div className="relative w-full h-[45.07vw] md:h-[45.07vw] h-[21vh] rounded-b-[2vw] md:rounded-b-[2vw] rounded-b-[1rem] overflow-hidden">
         {/* Slides Container */}
         <div 
           className="flex transition-transform duration-500 ease-in-out h-full"
@@ -57,22 +60,27 @@ export const HeroBannerSection = (): JSX.Element => {
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className="w-full h-full flex-shrink-0 relative rounded-b-[2vw] md:rounded-b-[2vw] rounded-b-[1rem] overflow-hidden"
+              className="w-full h-full flex-shrink-0 relative rounded-b-[30px] md:rounded-b-[2vw] rounded-b-[1rem] overflow-hidden"
             >
               {/* Background Image */}
               <div 
-                className="w-full h-full bg-cover bg-center rounded-b-[2vw] md:rounded-b-[2vw] rounded-b-[1rem]"
+                className="w-full h-full bg-cover bg-center rounded-b-[30px] md:rounded-b-[2vw] rounded-b-[1rem]"
                 style={{ backgroundImage: `url('${slide.image}')` }}
               >
                 {/* Custom Overlay for darkening effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40 rounded-b-[2vw] md:rounded-b-[2vw] rounded-b-[1rem]" />
                 
                 {/* Hero Content */}
-                <div className="absolute w-[34.44vw] h-[7.5vw] top-[24.24vw] left-[55.14vw] md:w-[34.44vw] md:h-[7.5vw] md:top-[24.24vw] md:left-[55.14vw] w-[90%] h-auto top-[40%] left-[5%]">
-                  <div className="relative w-[34.31vw] h-[7.5vw] md:w-[34.31vw] md:h-[7.5vw] w-full h-auto">
-                    <div className="absolute w-[34.31vw] h-[3.54vw] top-[3.96vw] left-0 bg-[#003cff] rounded-lg md:absolute md:w-[34.31vw] md:h-[3.54vw] md:top-[3.96vw] md:left-0 static w-full h-auto p-4 mt-2" />
-                    <div className="absolute w-[32.85vw] top-0 left-[0.76vw] font-BNG-t-tulo-01-h1 font-[number:var(--BNG-t-tulo-01-h1-font-weight)] text-white text-[2.5vw] tracking-[var(--BNG-t-tulo-01-h1-letter-spacing)] leading-[var(--BNG-t-tulo-01-h1-line-height)] [font-style:var(--BNG-t-tulo-01-h1-font-style)] z-10 md:absolute md:w-[32.85vw] md:top-0 md:left-[0.76vw] md:text-[2.5vw] static w-full text-xl px-2">
-                      {slide.title}
+                <div className="absolute w-[34.44vw] h-[7.5vw] top-[24.24vw] left-[31.14vw] md:w-[42vw] md:h-[7.5vw] md:top-[24.24vw] md:left-[55.14vw] w-[90%] h-auto top-[40%] left-[5%]">
+                  <div className="relative w-full h-auto flex flex-col items-start gap-[0.5vw]">
+                    {/* Primeira linha - sem fundo */}
+                    <div className="font-BNG-t-tulo-01-h1 font-[number:var(--BNG-t-tulo-01-h1-font-weight)] text-white text-[2.5vw] tracking-[var(--BNG-t-tulo-01-h1-letter-spacing)] leading-[var(--BNG-t-tulo-01-h1-line-height)] [font-style:var(--BNG-t-tulo-01-h1-font-style)] md:text-[2.5vw] text-[4.20vw] ">
+                      {slide.line1}
+                    </div>
+                    
+                    {/* Segunda linha - com fundo azul dinâmico */}
+                    <div className="font-BNG-t-tulo-01-h1 font-[number:var(--BNG-t-tulo-01-h1-font-weight)] text-white text-[2.5vw] tracking-[var(--BNG-t-tulo-01-h1-letter-spacing)] leading-[var(--BNG-t-tulo-01-h1-line-height)] [font-style:var(--BNG-t-tulo-01-h1-font-style)] md:text-[2.5vw] text-[4.20vw] inline-block bg-[#003cff] rounded-lg px-[0.76vw] py-[0.4vw] md:px-[0.76vw] md:py-[0.4vw] px-3 py-2">
+                      {slide.line2}
                     </div>
                   </div>
                 </div>
@@ -84,7 +92,7 @@ export const HeroBannerSection = (): JSX.Element => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-[2vw] top-1/2 -translate-y-1/2 w-[3vw] h-[3vw] bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm md:w-[3vw] md:h-[3vw] w-10 h-10"
+          className="md:hidden absolute left-[2vw] top-1/2 -translate-y-1/2 w-[3vw] h-[3vw] bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm md:w-[3vw] md:h-[3vw] w-10 h-10"
           aria-label="Slide anterior"
         >
           <svg className="w-[1.5vw] h-[1.5vw] text-white md:w-[1.5vw] md:h-[1.5vw] w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +102,7 @@ export const HeroBannerSection = (): JSX.Element => {
 
         <button
           onClick={nextSlide}
-          className="absolute right-[2vw] top-1/2 -translate-y-1/2 w-[3vw] h-[3vw] bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm md:w-[3vw] md:h-[3vw] w-10 h-10"
+          className="md:hidden absolute right-[2vw] top-1/2 -translate-y-1/2 w-[3vw] h-[3vw] bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm md:w-[3vw] md:h-[3vw] w-10 h-10"
           aria-label="Próximo slide"
         >
           <svg className="w-[1.5vw] h-[1.5vw] text-white md:w-[1.5vw] md:h-[1.5vw] w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,15 +125,6 @@ export const HeroBannerSection = (): JSX.Element => {
             />
           ))}
         </div>
-
-        {/* Scroll Indicator - só aparece no último slide */}
-        {currentSlide === slides.length - 1 && (
-          <img
-            className="absolute w-[4.17vw] h-[2.08vw] top-[41.32vw] left-[47.92vw] animate-bounce md:w-[4.17vw] md:h-[2.08vw] md:top-[41.32vw] md:left-[47.92vw] w-12 h-6 bottom-16 left-1/2 -translate-x-1/2"
-            alt="Scroll down indicator"
-            src="/frame-158.svg"
-          />
-        )}
       </div>
     </section>
   );

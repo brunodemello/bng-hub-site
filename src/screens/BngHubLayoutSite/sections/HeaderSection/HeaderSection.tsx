@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../../../../components/ui/button";
+import { Logo } from "../../../../components/ui/Logo";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -24,9 +25,8 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
     }
     
     const handleScroll = () => {
-      // Detecta se saiu da área do hero banner (45.07vw + padding top 5.56vw)
-      const heroHeight = (window.innerWidth * 0.4507) + (window.innerWidth * 0.0556);
-      setIsScrolled(window.scrollY > heroHeight);
+      // Muda a aparência do menu após um scroll mínimo de 10 pixels
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -63,17 +63,20 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
       !isScrolled 
-        ? 'bg-black/10 backdrop-blur-sm'
+        ? 'bg-transparent'
         : 'bg-white shadow-md'
     }`}>
+
+    
+
       <div className="flex w-full items-center justify-between px-[6.94vw] py-[1.67vw] md:px-[6.94vw] md:py-[1.67vw] px-4 py-3">
-        <div className="flex items-center gap-[22.71vw] md:gap-[22.71vw] w-full justify-between md:justify-start">
+        <div className="flex items-center gap-[22.71vw] md:gap-[14.84vw] w-full justify-between md:justify-start">
           {/* Logo */}
           <Link to="/">
-            <img
-              className="w-[3.82vw] h-[3.82vw] md:w-[3.82vw] md:h-[3.82vw] w-12 h-12 object-contain"
-              alt="BNG Hub Logo"
-              src="/ativo-2dgbcvn-1.png"
+            <Logo
+              className="md:ml-[6vw] w-[22vw] h-[10.933vw] md:w-[10.208vw] md:h-auto w-12 h-12 object-contain relative top-[1.24vw] md:top-0"
+             color={!isScrolled ? '#0c46e6' : 'white'}
+             textColor={!isScrolled ? 'white' : '#0c46e6'}
             />
           </Link>
 
@@ -104,7 +107,7 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
                   <NavigationMenuItem key={index}>
                     <Link to={item.href}>
                       <NavigationMenuLink
-                        className={`flex flex-col items-center justify-center gap-[0.21vw] py-[0.69vw] px-0 font-bold text-[1.11vw] transition-all duration-300 ease-in-out ${
+                        className={`flex font-['Poppins'] flex-col items-center justify-center gap-[0.21vw] pt-[0.69vw] pb-0 px-0 font-bold text-[1.11vw] transition-all duration-300 ease-in-out ${
                           !isScrolled 
                             ? `text-white hover:text-[#003CFF] ${item.active ? "border-b-[0.14vw] border-[#FEDC0B]" : ""}`
                             : `text-[#0c46e6] hover:text-[#0DFFC0] ${item.active ? "border-b-[0.14vw] border-[#FEDC0B]" : ""}`
@@ -120,10 +123,10 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
 
             {/* Hub News Button */}
             <Link to="/hub-news">
-              <Button className={`rounded-[6.94vw] px-[1.67vw] py-[0.35vw] transition-all duration-300 ${
+              <Button className={`font-['Poppins'] rounded-[6.94vw] px-[1.67vw] py-[0.35vw] transition-all duration-300 hover:bg-[#003CFF] ${
                 isHubNewsPage 
-                  ? 'bg-[#fedc0b] text-[#0c46e6] hover:bg-[#fedc0b]/90' 
-                  : 'bg-[#0c46e6] text-white hover:bg-[#0c46e6]/90'
+                  ? 'bg-[#fedc0b] text-[#0c46e6] hover:bg-[#fedc0b]/70' 
+                  : 'bg-[#0c46e6] text-white '
               }`}>
                 <span className="font-semibold text-[0.97vw] leading-[1.45vw]">
                   Hub News
@@ -139,24 +142,19 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
         isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`} style={{ top: '0px' }}>
         {/* Menu Panel - 70% width from right */}
-        <div className={`absolute right-0 top-0 w-[70%] h-full bg-[#003CFF] shadow-lg transition-all duration-300 transform ${
+        <div className={`absolute right-0 top-0 w-[70%] h-fit pb-[20vw] rounded-bl-[16px] rounded-br-[16px] bg-[#003CFF] shadow-lg transition-all duration-300 transform ${
           isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}>
           {/* Header with Logo and Close Button */}
-          <div className="flex items-center justify-between p-6 border-b border-white/20">
-            {/* Logo */}
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <span className="text-[#003CFF] font-bold text-lg">b</span>
-            </div>
-            
+          <div className="flex items-center justify-end p-6 pb-0">
             {/* Close Button */}
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-8 h-8 flex items-center justify-center text-white"
               aria-label="Fechar menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-[10vw] h-[10vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
@@ -167,28 +165,25 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
               <Link
                 key={index}
                 to={item.href}
-                className={`py-4 text-xl font-semibold transition-all duration-200 relative ${
+                className={`py-[1vw] my-[2vw] text-xl font-semibold transition-all duration-200 relative ${
                   item.active 
-                    ? 'text-white' 
-                    : 'text-white/80 hover:text-white'
+                    ? 'border-b-[3px] border-solid border-[#fedc0b] text-white w-fit pr-[3vw]' 
+                    : 'text-white'
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
-                {item.active && (
-                  <div className="absolute bottom-2 left-0 w-12 h-0.5 bg-[#FEDC0B]"></div>
-                )}
               </Link>
             ))}
           </nav>
           
           {/* Separator Line */}
-          <div className="mx-6 h-px bg-white/30"></div>
+          <div className="mx-6 h-[2px] bg-white mt-[6vw]"></div>
           
           {/* Mobile Hub News Button */}
           <div className="px-6 py-8">
             <Link to="/hub-news" onClick={() => setIsMobileMenuOpen(false)}>
-              <button className="w-full bg-[#00009B] hover:bg-[#00009B]/90 text-white rounded-full py-4 px-6 font-semibold text-lg transition-all duration-300">
+              <button className="w-full bg-[#00009B] hover:bg-[#00009B]/90 text-white rounded-full py-[2vw] px-6 font-semibold text-lg transition-all duration-300">
                 Hub News
               </button>
             </Link>
@@ -196,7 +191,7 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
         </div>
         {/* Left side - clickable area to close menu */}
         <div 
-          className="absolute left-0 top-0 w-[30%] h-full bg-black/20 backdrop-blur-sm"
+          className="absolute left-0 top-0 w-[30%] h-full"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       </div>

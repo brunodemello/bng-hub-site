@@ -118,12 +118,12 @@ export const HeroSection = (): JSX.Element => {
   }, [isVisible]);
 
   return (
-    <section className="w-full py-8 md:py-0">
-      <div className="container mx-auto relative">
+    <section className="w-full py-8 md:py-0 md:rounded-0 rounded-[16px]">
+      <div className="md:container mx-auto relative">
         <motion.img
-          className="absolute w-[3.89vw] h-[3.96vw] top-[8.4vw] left-[5vw] opacity-30 hidden md:block"
+          className="absolute md:w-[3.89vw] w-[14.89vw] h-[14.89vw] md:h-[3.96vw] md:top-[8.4vw] top-[31.42vw] left-[5vw] opacity-30 md:block"
           alt="Cruz decorativa"
-          src="/10414.png"
+          src="/novaCruz.svg"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3]
@@ -136,9 +136,9 @@ export const HeroSection = (): JSX.Element => {
         />
 
         <motion.img
-          className="absolute w-[9.03vw] h-[9.03vw] top-[5vw] right-0 opacity-30 hidden md:block"
+          className="absolute w-[9.03vw] h-[9.03vw] md:top-[5vw] top-[24vw] right-[10vw] md:right-0 opacity-30 md:block"
           alt="Cruz decorativa"
-          src="/10414.png"
+          src="/novaCruz.svg"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.7, 0.3]
@@ -152,9 +152,9 @@ export const HeroSection = (): JSX.Element => {
         />
 
         <motion.img
-          className="absolute w-[5vw] h-[5vw] bottom-[2vw] left-[11.94vw] opacity-30 hidden md:block"
+          className="absolute w-[5vw] h-[5vw] bottom-[2vw] md:left-[11.94vw] left-[88.94vw] opacity-30 md:block"
           alt="Cruz decorativa"
-          src="/10414.png"
+          src="/novaCruz.svg"
           animate={{
             scale: [1, 1.4, 1],
             opacity: [0.3, 0.8, 0.3]
@@ -170,7 +170,7 @@ export const HeroSection = (): JSX.Element => {
         <motion.img
           className="absolute w-[2.57vw] h-[2.57vw] bottom-[7.94vw] left-[43.01vw] z-10 opacity-30 hidden md:block"
           alt="Cruz decorativa"
-          src="/10414.png"
+          src="/novaCruz.svg"
           animate={{
             scale: [1, 1.6, 1],
             opacity: [0.3, 0.9, 0.3]
@@ -186,7 +186,7 @@ export const HeroSection = (): JSX.Element => {
         <motion.img
           className="absolute w-[3.61vw] h-[3.61vw] top-[15.5vw] right-[20.89vw] z-10 opacity-30 hidden md:block"
           alt="Cruz decorativa"
-          src="/10414.png"
+          src="/novaCruz.svg"
           animate={{
             scale: [1, 1.5, 1],
             opacity: [0.3, 0.8, 0.3]
@@ -202,7 +202,7 @@ export const HeroSection = (): JSX.Element => {
         <motion.img
           className="absolute w-[3.33vw] h-[3.33vw] bottom-[3.47vw] right-[3.47vw] opacity-30 hidden md:block"
           alt="Cruz decorativa"
-          src="/10414.png"
+          src="/novaCruz.svg"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.7, 0.3]
@@ -215,22 +215,22 @@ export const HeroSection = (): JSX.Element => {
           }}
         />
 
-        <div ref={sectionRef} className="flex flex-col w-full items-center gap-8 md:gap-[3.33vw] py-8 md:py-[5.56vw] px-4 md:px-0">
+        <div ref={sectionRef} className="flex flex-col w-full items-center gap-2 md:gap-[3.33vw] py-8 md:py-[5.56vw] px-0 md:px-0">
           <div className="flex flex-col items-center justify-center">
-            <h3 className="font-marca-o font-[number:var(--marca-o-font-weight)] text-white text-sm md:text-[0.97vw] text-center tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
+            <h3 className="font-marca-o font-[number:var(--marca-o-font-weight)] text-white text-[3.74vw] md:text-[0.97vw] text-center tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
               NOSSOS NÚMEROS
             </h3>
           </div>
 
           <div className="flex flex-col items-center justify-center gap-8 md:gap-[4.17vw] w-full">
             <div className="flex flex-col items-center gap-[0.07vw]">
-              <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-xl md:text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
+              <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] md:w-full w-[70%] text-white text-[4.20vw] md:text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
                 Construindo conexões para gerar crescimento
               </h2>
             </div>
 
             {/* Cards em linha única */}
-            <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-4 md:gap-[1.39vw] w-full max-w-[90vw]">
+            <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-2 md:gap-[1.39vw] w-full max-w-[90vw]">
               {statsData.map((stat, index) => (
                 <Card
                   key={index}
@@ -242,11 +242,11 @@ export const HeroSection = (): JSX.Element => {
                     backgroundPosition: 'center'
                   }}
                 >
-                  <CardContent className="flex flex-col items-center justify-center gap-[0.39vw] px-[0.47vw] border-none h-full relative z-10">
-                    <h2 className="w-full md:w-[19.65vw] font-BNG-display-02 font-[number:var(--BNG-display-02-font-weight)] text-white text-2xl md:text-[3.33vw] text-center tracking-[var(--BNG-display-02-letter-spacing)] leading-[var(--BNG-display-02-line-height)] [font-style:var(--BNG-display-02-font-style)]">
+                  <CardContent className="flex flex-col items-center justify-center gap-[0.39vw] px-[0.47vw] md:w-auto w-[88%] border-none h-full relative z-10">
+                    <h2 className="w-full md:w-[19.65vw] font-BNG-display-02 font-[number:var(--BNG-display-02-font-weight)] text-white text-[7.467vw] md:text-[3.33vw] text-center tracking-[var(--BNG-display-02-letter-spacing)] leading-[var(--BNG-display-02-line-height)] [font-style:var(--BNG-display-02-font-style)]">
                       <AnimatedValue value={stat.value} shouldAnimate={isVisible} />
                     </h2>
-                    <p className="w-full md:w-[15.63vw] font-BNG-subt-tulo font-[number:var(--BNG-subt-tulo-font-weight)] text-white text-xs md:text-[1.05vw] text-center tracking-[var(--BNG-subt-tulo-letter-spacing)] leading-[var(--BNG-subt-tulo-line-height)] [font-style:var(--BNG-subt-tulo-font-style)] whitespace-pre-line">
+                    <p className="w-full md:w-[15.63vw] font-BNG-subt-tulo font-[number:var(--BNG-subt-tulo-font-weight)] text-white text-[3vw] md:text-[1.05vw] text-center tracking-[var(--BNG-subt-tulo-letter-spacing)] leading-[var(--BNG-subt-tulo-line-height)] [font-style:var(--BNG-subt-tulo-font-style)] whitespace-pre-line">
                       {stat.description}
                     </p>
                   </CardContent>

@@ -11,15 +11,15 @@ export const PrivacyPolicyPage = (): JSX.Element => {
 
       {/* Main Content */}
       <motion.section 
-        className="w-full pt-[8.33vw] pb-[5.56vw] bg-white"
+        className="w-full pt-[20vw] md:pt-[8.33vw] pb-[5.56vw] bg-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="container mx-auto max-w-[55.56vw]">
+        <div className="container mx-auto max-w-[84vw] md:max-w-[55.56vw]">
           {/* Page Title */}
           <motion.h1 
-            className="text-[#003cff] text-[2.22vw] font-semibold mb-[3.33vw] text-left"
+            className="text-[#003cff] text-[5.2vw] md:text-[2.22vw] font-semibold mb-[3.33vw] text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -29,14 +29,14 @@ export const PrivacyPolicyPage = (): JSX.Element => {
 
           {/* Content Sections */}
           <motion.div 
-            className="space-y-[2.22vw] text-[#666666] text-[1.11vw] leading-[1.6] font-normal"
+            className="space-y-[4vw] md:space-y-[2.22vw] text-[#666666] text-[3.8vw] md:text-[1.11vw] leading-[1.6] font-normal"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             {/* O que são Cookies? */}
             <div>
-              <h2 className="text-[#333333] text-[1.39vw] font-semibold mb-[1.11vw]">
+              <h2 className="text-[#333333] text-[4.2vw] md:text-[1.39vw] font-semibold mb-[1.11vw]">
                 O que são Cookies?
               </h2>
               <p className="mb-[1.11vw]">
@@ -53,7 +53,7 @@ export const PrivacyPolicyPage = (): JSX.Element => {
 
             {/* Por que usamos Cookies na BNG? */}
             <div>
-              <h2 className="text-[#333333] text-[1.39vw] font-semibold mb-[1.11vw]">
+              <h2 className="text-[#333333] text-[4.2vw] md:text-[1.39vw] font-semibold mb-[1.11vw]">
                 Por que usamos Cookies na BNG?
               </h2>
               <p className="mb-[1.11vw]">
@@ -74,7 +74,7 @@ export const PrivacyPolicyPage = (): JSX.Element => {
 
             {/* Como você pode gerenciar os Cookies? */}
             <div>
-              <h2 className="text-[#333333] text-[1.39vw] font-semibold mb-[1.11vw]">
+              <h2 className="text-[#333333] text-[4.2vw] md:text-[1.39vw] font-semibold mb-[1.11vw]">
                 Como você pode gerenciar os Cookies?
               </h2>
               <p className="mb-[1.11vw]">
@@ -94,7 +94,7 @@ export const PrivacyPolicyPage = (): JSX.Element => {
 
             {/* Compromisso com a transparência */}
             <div>
-              <h2 className="text-[#333333] text-[1.39vw] font-semibold mb-[1.11vw]">
+              <h2 className="text-[#333333] text-[4.2vw] md:text-[1.39vw] font-semibold mb-[1.11vw]">
                 Compromisso com a transparência
               </h2>
               <p className="mb-[1.11vw]">

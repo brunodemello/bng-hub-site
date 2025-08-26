@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { HeaderSection } from '../BngHubLayoutSite/sections/HeaderSection';
@@ -6,26 +6,24 @@ import { ContactUsSection } from '../BngHubLayoutSite/sections/ContactUsSection'
 import { BlogSidebar } from '../../components/blog/BlogSidebar';
 import { BlogPostCard } from '../../components/blog/BlogPostCard';
 import { BlogPagination } from '../../components/blog/BlogPagination';
-import { mockTags, mockPosts } from '../../data/mockBlogData';
+import { useTagPosts } from '../../hooks/useBlogData';
 
 export const BlogTagPage = (): JSX.Element => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { tagSlug } = useParams<{ tagSlug: string }>();
   const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const { posts, tag, loading, totalPages, totalPosts } = useTagPosts(tagSlug || '', currentPage, 6);
 
-  // Simular busca por tag
-  const tag = mockTags.find(t => t.slug === tagSlug);
-  const tagPosts = mockPosts.filter(post => 
-    post.tag_names?.some(tagName => 
-      tagName.toLowerCase().replace(/\s+/g, '') === tagSlug?.replace(/-/g, '')
-    )
-  );
-
-  const perPage = 6;
-  const startIndex = (currentPage - 1) * perPage;
-  const endIndex = startIndex + perPage;
-  const paginatedPosts = tagPosts.slice(startIndex, endIndex);
-  const totalPages = Math.ceil(tagPosts.length / perPage);
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -35,7 +33,7 @@ export const BlogTagPage = (): JSX.Element => {
   if (loading) {
     return (
       <div className="bg-white w-full min-h-screen">
-        <HeaderSection isQuemSomosPage={true} />
+        <HeaderSection isQuemSomosPage={true} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
         <div className="container mx-auto max-w-[90%] py-[8vw]">
           <div className="animate-pulse space-y-4">
             <div className="h-8 bg-gray-200 rounded w-1/4"></div>
@@ -60,7 +58,7 @@ export const BlogTagPage = (): JSX.Element => {
   if (!tag) {
     return (
       <div className="bg-white w-full min-h-screen">
-        <HeaderSection isQuemSomosPage={true} />
+        <HeaderSection isQuemSomosPage={true} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
         <div className="container mx-auto max-w-[90%] py-[8vw] text-center">
           <h1 className="text-[2vw] font-bold text-gray-900 mb-[2vw]">
             Tag não encontrada
@@ -74,7 +72,7 @@ export const BlogTagPage = (): JSX.Element => {
   return (
     <div className="bg-white w-full min-h-screen">
       {/* Header */}
-      <HeaderSection isQuemSomosPage={true} />
+      <HeaderSection isQuemSomosPage={true} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
 
       {/* Main Content */}
       <section className="container mx-auto max-w-[90%] py-[8vw]">
@@ -87,7 +85,7 @@ export const BlogTagPage = (): JSX.Element => {
         <div className="flex gap-[3vw]">
           {/* Posts Grid */}
           <main className="flex-1">
-            {paginatedPosts.length === 0 ? (
+            {posts.length === 0 ? (
               <div className="text-center py-[4vw]">
                 <h2 className="text-[1.5vw] font-semibold text-gray-900 mb-[1vw]">
                   Nenhum post encontrado
@@ -99,7 +97,7 @@ export const BlogTagPage = (): JSX.Element => {
             ) : (
               <>
                 <div className="grid grid-cols-2 gap-[2vw]">
-                  {paginatedPosts.map((post) => (
+                  {posts.map((post) => (
                     <BlogPostCard key={post.id} post={post} />
                   ))}
                 </div>

@@ -2,18 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { style } from "framer-motion/client";
 
 export const FeaturesSection = (): JSX.Element => {
   return (
-    <section className="w-full py-8 md:py-[3vw] relative overflow-hidden rounded-tl-xl rounded-tr-xl" style={{ background: 'linear-gradient(to bottom, #0C46E6 0%, #0C46E6 21%, #00009B 22%, #00009B 100%)' }}>
-      <div className="container mx-auto relative max-w-[83%]">
+
+
+    <section className="w-full py-8 md:py-[3vw] relative overflow-hidden rounded-tl-xl rounded-tr-xl bg-gradient-to-b from-[#0C46E6] to-[#00000A]
+    md:bg-[linear-gradient(to_bottom,#0C46E6_0%,#0C46E6_21%,#00000A_22%,#00000A_100%)]" style={{ background: 'linear-gradient(to bottom, #0C46E6 0%, #0C46E6 21%, #00006A 22%, #00006A 100%)' }}>
+      <div className="container mx-auto relative max-w-[100%] md:max-w-[83%]">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-[4vw]">
           <div className="flex flex-col gap-6 md:gap-[1.67vw] flex-1 md:max-w-[40%] z-10 px-4 md:px-0">
-            <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-xl md:text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
+            <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-[4.8vw] md:text-[1.94vw] md:mt-[8vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
               Conheça as nossas soluções
             </h2>
 
-            <p className="font-['Poppins',Helvetica] font-normal text-white text-sm md:text-[1.11vw] tracking-[0] leading-[1.66vw]">
+            <p className="font-['Poppins',Helvetica] font-normal text-white text-sm md:text-[1.11vw] tracking-[0] md:mt-0 mt-[17vw] md:leading-[1.66vw]">
               Descubra como podemos alavancar a performance assistencial da
               sua unidade de saúde com gestão médica eficiente e outras
               soluções que aliam cuidado e tecnologia.
@@ -34,12 +38,12 @@ export const FeaturesSection = (): JSX.Element => {
             />
           </div>
         </div>
-        
+
         {/* Elemento decorativo verde */}
         <motion.img
           src="/formaVerde.png"
           alt=""
-          className="absolute -bottom-[2vw] -right-[1vw] w-[9.306vw] h-auto z-[99] hidden md:block"
+          className="absolute  right-[5vw] w-[20vw] -bottom-[2vw] md:-right-[1vw] md:w-[9.306vw] h-auto z-[99] block"
           initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -51,7 +55,7 @@ export const FeaturesSection = (): JSX.Element => {
             y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }
           }}
         />
-        
+
         {/* Nova imagem decorativa */}
         <motion.img
           src="/banner-hero-bg.png"

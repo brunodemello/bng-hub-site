@@ -577,8 +577,46 @@ p.conteudo-desk {
 span.file-name {
   font-size: 0.97vw;
   font-family: 'Poppins';
-  font-weight: 300;
+  font-weight: 500;
+  color: #C3C4C5;
 }
+
+/* Remover bordas de foco para inputs, selects e textareas */
+.pessoas-page section.trabalhe-conosco .trabalhe-conosco__form input:focus,
+.pessoas-page section.trabalhe-conosco .trabalhe-conosco__form select:focus,
+.pessoas-page section.trabalhe-conosco .trabalhe-conosco__form textarea:focus,
+.pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .file-wrapper:focus-within {
+  outline: none;
+  /* Remove o contorno padrão do navegador */
+  border-color: transparent;
+  /* Garante que a borda não mude de cor */
+  box-shadow: none;
+  /* Remove qualquer sombra de foco */
+}
+
+/* Para o input de tipo file, que é customizado */
+.pessoas-page .file-wrapper input[type="file"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.pessoas-page textarea#mensagem {
+  width: 100%;
+  min-height: 126px;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.972vw;
+  box-sizing: border-box;
+  padding-left: 10px;
+  resize: none;
+  /* Adiciona esta linha para desabilitar o redimensionamento */
+  overflow: auto;
+  /* Adiciona esta linha para habilitar a rolagem automática */
+}
+
+
 
 .file-input-wrapper {
   width: 100% !important;
@@ -739,6 +777,13 @@ section.trabalhe-conosco.aos-init.aos-animate {
     margin-top: 0;
   }
 
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens .vantagem__card .card__text {
+    font-size: 3.4vw;
+    font-weight: 400;
+    color: var(--cor-descricao-secao);
+    width: 38vw;
+  }
+
   .pessoas-page section.carreira {
     flex-direction: column;
     text-align: center;
@@ -872,6 +917,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
   .pessoas-page section.time .time__content .content__qntd .qtd__profissionais,
   .pessoas-page section.time .time__content .content__qntd .qtd__pessoas {
     padding: 11px 20px;
+    width: 100%;
   }
 
   .pessoas-page section.time .time__content .content__qntd .qtd__profissionais .qtd__numbers,
@@ -1113,5 +1159,92 @@ section.trabalhe-conosco.aos-init.aos-animate {
   .pessoas-page .card-main {
     width: 100%;
     max-width: 300px;
+    height: 67vw;
+  }
+
+  .pessoas-page span.card-titulo {
+    font-size: 7.893vw;
+  }
+
+  .pessoas-page .card-main:hover .desc {
+    height: 100%;
+    font-size: 3.24vw;
+  }
+
+  .pessoas-page .trabalhe-conosco-btn a {
+    text-decoration: none;
+    font-size: 3.14vw;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--cor-texto-time-botao);
+    padding: 5px 24px;
+    border-radius: 100px;
+    width: 64.542vw;
+    display: block;
+    margin: auto;
+    height: 8.267vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form input,
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form select,
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form input::placeholder {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 5px;
+    border-radius: 4px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.972vw;
+    height: 3vw;
+    color: #C3C4C5;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input .file-input-wrapper .file-wrapper {
+    padding: 0;
+  }
+
+  span.file-name {
+    font-size: 1.97vw;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: #C3C4C5;
+    margin-left: 2vw;
+  }
+
+  .pessoas-page textarea#mensagem {
+    width: 100%;
+    min-height: 126px;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.972vw;
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form label,
+  .pessoas-page .custom-label {
+    font-size: 2.972vw;
+    font-weight: 500;
+    color: #fff;
+    padding: 5px;
+  }
+
+  .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form button[type="submit"] {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2.84vw;
+    border-radius: 100px;
+    padding: 5px 16px;
+    border: none;
+    background-color: var(--cor-borda-titulo-secao);
+    color: var(--cor-texto-time-botao);
+    margin-top: 6vw;
   }
 }

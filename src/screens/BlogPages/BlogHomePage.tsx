@@ -29,7 +29,7 @@ export const BlogHomePage = (): JSX.Element => {
 
       {/* Hero Banner */}
       <motion.section 
-        className="relative w-full h-fit bg-gradient-to-r from-[#003cff] to-[#0052ff] rounded-bl-[60px] rounded-br-[60px] flex items-center justify-center mt-0 overflow-hidden"
+        className="relative w-full h-fit bg-gradient-to-r from-[#003cff] to-[#0052ff] rounded-bl-[20px] rounded-br-[20px] md:rounded-bl-[60px] md:rounded-br-[60px] flex items-center justify-center mt-0 overflow-hidden"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -47,7 +47,7 @@ export const BlogHomePage = (): JSX.Element => {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <motion.div 
-          className="flex gap-[3vw]"
+          className="flex gap-[3vw] md:flex-row flex-col"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -56,7 +56,7 @@ export const BlogHomePage = (): JSX.Element => {
           <main className="flex-1">
             {loading ? (
               <motion.div 
-                className="grid grid-cols-2 gap-[2vw]"
+                className="grid grid-cols-1 md:grid-cols-2 gap-[2vw]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4 }}
@@ -82,7 +82,7 @@ export const BlogHomePage = (): JSX.Element => {
             ) : (
               <>
                 <motion.div 
-                  className="grid grid-cols-2 gap-[2vw]"
+                  className="grid md:grid-cols-2 grid-cols-1 gap-[2vw]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6 }}

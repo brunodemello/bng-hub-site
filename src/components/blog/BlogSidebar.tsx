@@ -22,13 +22,13 @@ export const BlogSidebar = (): JSX.Element => {
     return (
       <div>
         <motion.aside
-          className="w-[20vw] bg-[#D9D9D9] p-[1.5vw] rounded-lg"
+          className="w-full md:w-[20vw] bg-[#f5f5f5] p-[1.5vw] rounded-lg"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
           <div className="animate-pulse space-y-4">
-            <div className="h-12 bg-gray-200 rounded"></div>
+            <div className="h-12 bg-[#f5f5f5] rounded"></div> 
             <div className="space-y-2">
               <div className="h-4 bg-gray-200 rounded"></div>
               <div className="h-4 bg-gray-200 rounded"></div>
@@ -49,14 +49,14 @@ export const BlogSidebar = (): JSX.Element => {
   return (
     <div>
       <motion.aside
-        className="w-[20vw] bg-[#D9D9D9] p-[1.5vw] rounded-lg space-y-[2vw]"
+        className="w-full md:w-[20vw] bg-[#f5f5f5] p-[1.5vw] rounded-lg space-y-[2vw]"
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
         {/* Search Box */}
         <motion.div
-          className="relative"
+          className="relative mb-[4.20vw] md:mb-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -67,15 +67,14 @@ export const BlogSidebar = (): JSX.Element => {
               placeholder="Digite sua busca"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 px-[1vw] py-[0.5vw] border border-gray-300 rounded-l-lg text-[0.9vw] focus:outline-none focus:ring-2 focus:ring-[#003cff] focus:border-transparent"
+              className="flex-1 px-[1vw] py-[0.5vw] border border-gray-300 h-[12.8vw] md:h-auto rounded-l-lg text-[4.20vw] md:text-[0.9vw] focus:outline-none outline-none focus:ring-0 focus:ring-offset-0"
             />
             <motion.button
               type="submit"
-              className="bg-[#003cff] text-white px-[1vw] py-[0.5vw] rounded-r-lg hover:bg-[#0052ff] transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-[#003cff] text-white px-[1vw] py-[0.5vw] rounded-r-lg hover:bg-[#0052ff] transition-colors w-[12.8vw] md:w-auto md:block flex items-center justify-center"
+              
             >
-              <Search className="w-[1.2vw] h-[1.2vw]" />
+              <Search className="w-[6.933vw] h-[6.933vw] md:w-[1.2vw] md:h-[1.2vw]" />
             </motion.button>
           </form>
         </motion.div>
@@ -93,19 +92,10 @@ export const BlogSidebar = (): JSX.Element => {
           >
             <Link
               to="/hub-news"
-              className="block text-[#00009B] font-semibold text-[1vw] hover:text-[#0052ff] transition-colors border-b border-[#00009B] pb-[0.5vw]"
+              className="block text-[#00009B] font-semibold text-[3.733vw] md:text-[1vw] hover:text-[#0052ff] transition-colors border-b border-[#00009B] pb-[0.5vw]"
             >
               ARTIGOS
             </Link>
-          </motion.div>
-
-          <motion.div
-            className={cn("text-[#00009B] font-semibold text-[1vw] border-b border-[#00009B] pb-[0.5vw]")}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-          >
-            NEWS LETTER
           </motion.div>
 
           <motion.div
@@ -114,7 +104,19 @@ export const BlogSidebar = (): JSX.Element => {
           >
             <Link
               to="/hub-news"
-              className="block text-[#00009B] font-semibold text-[1vw] hover:text-[#0052ff] transition-colors border-b border-[#00009B] pb-[0.5vw]"
+              className="block text-[#00009B] font-semibold text-[3.733vw] md:text-[1vw] hover:text-[#0052ff] transition-colors border-b border-[#00009B] pb-[0.5vw]"
+            >
+              NEWS LETTER
+            </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ x: 5 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link
+              to="/hub-news"
+              className="block text-[#00009B] font-semibold text-[3.733vw] md:text-[1vw] hover:text-[#0052ff] transition-colors border-b border-[#00009B] pb-[0.5vw]"
             >
               TODAS AS NOTÍCIAS
             </Link>
@@ -128,7 +130,7 @@ export const BlogSidebar = (): JSX.Element => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <motion.h3
-            className={cn("text-[#003cff] font-bold text-[1.1vw] mb-[1vw] border-b border-gray-300 pb-[0.5vw]")}
+            className={cn("text-[#003cff] font-bold text-[3.733vw] md:text-[1.1vw] mt-[8vw] md:mt-0  mb-[1vw] border-b border-gray-300 pb-[0.5vw]")}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
@@ -146,7 +148,7 @@ export const BlogSidebar = (): JSX.Element => {
               >
                 <Link
                   to={`/hub-news/categoria/${category.slug}`}
-                  className="text-[#000000] text-[0.9vw] hover:text-[#003cff] transition-colors flex items-center"
+                  className="text-[#000000] text-[3.42vw] md:text-[0.9vw] hover:text-[#003cff] transition-colors flex items-center"
                 >
                   <span className="w-[0.3vw] h-[0.3vw] bg-[#000000] rounded-full mr-[0.5vw]"></span>
                   {category.name}
@@ -163,7 +165,7 @@ export const BlogSidebar = (): JSX.Element => {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <motion.h3
-            className={cn("text-[#003cff] font-bold text-[1.1vw] mb-[1vw] border-b border-gray-300 pb-[0.5vw]")}
+            className={cn("text-[#003cff] font-bold text-[3.733vw] md:text-[1.1vw] mb-[1vw] border-b border-gray-300 pb-[0.5vw]")}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.6 }}
@@ -181,7 +183,7 @@ export const BlogSidebar = (): JSX.Element => {
               >
                 <Link
                   to={`/hub-news/tag/${tag.slug}`}
-                  className="inline-block bg-transparent border border-[#003cff] text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-[4px] text-[0.8vw] hover:bg-[#003cff] hover:text-white transition-colors"
+                  className="inline-block bg-transparent border border-[#003cff] text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-[4px] text-[3.2vw] md:text-[0.8vw] hover:bg-[#003cff] hover:text-white transition-colors"
                 >
                   {tag.name}
                 </Link>

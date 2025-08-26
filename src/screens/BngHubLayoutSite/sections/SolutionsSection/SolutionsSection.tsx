@@ -145,13 +145,7 @@ const solutionsData = [
 ];
 
 export const SolutionsSection = (): JSX.Element => {
-  const [expandedItems, setExpandedItems] = useState<Record<string, string | null>>({
-    "gestao-saude": null,
-    "fast-ops": null,
-    "telemedicina": null,
-    "analytics-saude": null,
-    "inovacao-digital": null
-  });
+  const [openItemId, setOpenItemId] = useState<string | null>(null);
 
   // Configuração do keen-slider
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -175,10 +169,7 @@ export const SolutionsSection = (): JSX.Element => {
   });
 
   const toggleItem = (cardId: string, itemId: string) => {
-    setExpandedItems(prev => ({
-      ...prev,
-      [cardId]: prev[cardId] === itemId ? null : itemId
-    }));
+    setOpenItemId(openItemId === itemId ? null : itemId);
     
     // Atualizar o slider após a mudança de altura
     requestAnimationFrame(() => {
@@ -189,7 +180,7 @@ export const SolutionsSection = (): JSX.Element => {
   };
 
   const isItemExpanded = (cardId: string, itemId: string) => {
-    return expandedItems[cardId] === itemId;
+    return openItemId === itemId;
   };
 
   return (
@@ -205,10 +196,25 @@ export const SolutionsSection = (): JSX.Element => {
       <div className="relative max-w-[90vw] md:max-w-[80vw] mx-auto">
         {/* Botão de navegação esquerda */}
         <button
-          onClick={() => instanceRef.current?.prev()}
-          className="absolute left-[-4vw] top-1/2 -translate-y-1/2 w-10 h-10 md:w-[2.43vw] md:h-[2.43vw] rounded-full border-2 md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 hidden md:flex"
+          onClick={() => {
+            setOpenItemId(null); // Fecha todos os acordeões
+            instanceRef.current?.prev();
+          }}
+          className="absolute left-[-4vw] md:mt-0 mt-[11vw] top-1/2 -translate-y-1/2 w-10 h-10 md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 md:flex"
         >
-          <ChevronLeft className="w-5 h-5 md:w-[1.2vw] md:h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
+           <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="17"
+                  viewBox="0 0 10 17"
+                  className="md:w-[0.69vw] md:h-[1.18vw] rotate-180 transition-all ml-[-0.05vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
+                >
+                  <path
+                    d="M1.60573 1.53583C1.60648 1.53621 1.61452 1.53989 1.6277 1.55281L8.01369 7.80898C8.40698 8.19431 8.40691 8.80565 8.01369 9.19102L1.6277 15.4472C1.61456 15.4601 1.6064 15.4638 1.60573 15.4642C1.60475 15.4646 1.60368 15.4648 1.60174 15.4652C1.59518 15.4662 1.57698 15.4666 1.55381 15.4572C1.545 15.4536 1.53919 15.4492 1.53483 15.4462L1.53683 15.4452L5.68497 11.3819C7.30593 9.79368 7.306 7.20628 5.68497 5.61807L1.53583 1.55381C1.53112 1.54845 1.53372 1.54693 1.53383 1.55281C1.53819 1.54982 1.5449 1.54644 1.55381 1.54282C1.57709 1.53341 1.59525 1.53373 1.60174 1.53483C1.6037 1.53518 1.60466 1.53531 1.60573 1.53583Z"
+          
+                    strokeWidth="3"
+                  />
+                </svg>
         </button>
 
         {/* Slider */}
@@ -218,18 +224,18 @@ export const SolutionsSection = (): JSX.Element => {
               key={card.id}
               className="keen-slider__slide pt-16 md:pt-[5vw] z-10"
             >
-              <Card className="bg-[#0000bf] rounded-[1.11vw] relative transition-all duration-300 ease-in-out z-10 overflow-visible min-h-96 md:min-h-[23.61vw]">
+              <Card className="bg-[#0000bf] border-none rounded-[16px] relative transition-all duration-300 ease-in-out z-10 overflow-visible md:pb-0 pb-[5vw] min-h-fit w-[81%] mx-auto md:w-auto md:min-h-[23.61vw]">
                 <CardContent className="p-6 pt-16 md:p-[1.67vw] md:pt-[4.17vw] text-white">
                   {/* Ícone azul no topo */}
-                  <div className="absolute w-24 h-16 md:w-[9.24vw] md:h-[6.94vw] top-[-2rem] md:top-[-2.5vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[1.11vw] flex items-center justify-center">
+                  <div className="absolute w-[26.667vw] h-[20vw] md:w-[9.24vw] md:h-[6.94vw] top-[-2rem] md:top-[-2.5vw] left-1/2 -translate-x-1/2 bg-[#003cff] rounded-[16px] flex items-center justify-center">
                     <img
-                      className="w-8 h-8 md:w-[4.86vw] md:h-[4.86vw] filter brightness-0 invert"
+                      className="w-[13.867vw] h-[13.867vw] md:w-[4.86vw] md:h-[4.86vw] filter brightness-0 invert"
                       alt={card.title}
                       src={card.iconSrc}
                     />
                   </div>
 
-                  <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-xl md:text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-8 mt-8 md:mb-[2.78vw] md:mt-[2.78vw]">
+                  <h3 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-white text-xl md:text-[1.94vw] text-center tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[4vw] mt-0 md:mb-[2.78vw] md:mt-[2.78vw]">
                     {card.title}
                   </h3>
 
@@ -238,7 +244,7 @@ export const SolutionsSection = (): JSX.Element => {
                       <div key={item.id} className="flex flex-col border-b border-solid border-white">
                         <button
                           onClick={() => toggleItem(card.id, item.id)}
-                          className="flex justify-between items-center py-2 md:py-[0.42vw] text-left hover:opacity-80 transition-opacity"
+                          className="flex justify-between items-center py-0 md:py-0 text-left hover:opacity-80 transition-opacity"
                         >
                           <span 
                             className={`font-sans font-semibold text-sm md:text-[1.11vw] leading-[1.66vw] ${
@@ -269,7 +275,7 @@ export const SolutionsSection = (): JSX.Element => {
                             : 'max-h-0 opacity-0 mt-0'
                         }`}>
                           <div className="p-4 md:p-[1.11vw] bg-[#003cff] rounded-[0.56vw] mb-4 md:mb-[1.42vw]">
-                            <p className="text-white text-sm md:text-[0.97vw] leading-[1.45vw] text-left">
+                            <p className="text-white text-sm md:text-[0.97vw] md:leading-[1.45vw] text-left">
                               {item.description}
                             </p>
                           </div>
@@ -285,10 +291,25 @@ export const SolutionsSection = (): JSX.Element => {
 
         {/* Botão de navegação direita */}
         <button
-          onClick={() => instanceRef.current?.next()}
-          className="absolute right-[-4vw] top-1/2 -translate-y-1/2 w-10 h-10 md:w-[2.43vw] md:h-[2.43vw] rounded-full border-2 md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 hidden md:flex"
+          onClick={() => {
+            setOpenItemId(null); // Fecha todos os acordeões
+            instanceRef.current?.next();
+          }}
+          className="absolute right-[-4vw] md:mt-0 mt-[11vw] top-1/2 -translate-y-1/2 w-10 h-10 md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 md:flex"
         >
-          <ChevronRight className="w-5 h-5 md:w-[1.2vw] md:h-[1.2vw] text-[#003cff] group-hover:text-white transition-colors" />
+           <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="17"
+                  viewBox="0 0 10 17"
+                  className="md:w-[0.69vw] md:h-[1.18vw] transition-all ml-[0.05vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
+                >
+                  <path
+                    d="M1.60573 1.53583C1.60648 1.53621 1.61452 1.53989 1.6277 1.55281L8.01369 7.80898C8.40698 8.19431 8.40691 8.80565 8.01369 9.19102L1.6277 15.4472C1.61456 15.4601 1.6064 15.4638 1.60573 15.4642C1.60475 15.4646 1.60368 15.4648 1.60174 15.4652C1.59518 15.4662 1.57698 15.4666 1.55381 15.4572C1.545 15.4536 1.53919 15.4492 1.53483 15.4462L1.53683 15.4452L5.68497 11.3819C7.30593 9.79368 7.306 7.20628 5.68497 5.61807L1.53583 1.55381C1.53112 1.54845 1.53372 1.54693 1.53383 1.55281C1.53819 1.54982 1.5449 1.54644 1.55381 1.54282C1.57709 1.53341 1.59525 1.53373 1.60174 1.53483C1.6037 1.53518 1.60466 1.53531 1.60573 1.53583Z"
+                    strokeWidth="3"
+                   
+                  />
+                </svg>
         </button>
       </div>
     </div>

@@ -11,28 +11,28 @@ export const ContactUsSection = (): JSX.Element => {
       {/* Newsletter subscription bar */}
       <div className="flex w-full items-center justify-center gap-4 md:gap-[3.47vw] py-4 md:py-[1.39vw] bg-[#00009b]">
         <div className="container mx-auto max-w-[83%] flex flex-col md:flex-row items-center justify-between gap-4 md:gap-[3.47vw] px-4 md:px-[1.4vw]">
-        <div className="relative w-fit [font-family:'Poppins',Helvetica] font-semibold text-white text-sm md:text-[1.08vw] tracking-[0] leading-[1.66vw] whitespace-pre-line text-center md:text-left">
+        <div className="relative w-fit [font-family:'Poppins',Helvetica] font-semibold text-white text-[4.20vw] md:text-[1.08vw] tracking-[0] md:leading-[1.66vw] whitespace-pre-line text-center md:text-left">
           Cadastre-se para receber{"\n"}notícias e novidades!
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-3 md:gap-[0.69vw] w-full md:w-auto">
-          <div className="flex w-full md:w-[24vw] items-center gap-[0.69vw] pl-4 md:pl-[1.81vw] pr-3 md:pr-[0.69vw] py-3 md:py-[0.69vw] bg-white rounded-full md:rounded-[4.17vw]">
+          <div className="flex w-full md:w-[24vw] items-center gap-[0.69vw] pl-4 md:pl-[1.81vw] pr-3 md:pr-[0.69vw] py-[1vw] md:py-[0.69vw] bg-white rounded-full md:rounded-[4.17vw]">
             <Input
-              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-sm md:text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)] font-light"
+              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-sm md:text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)] font-light focus-visible:ring-0 focus-visible:ring-offset-0"
               type="text"
               placeholder="seu nome:"
             />
           </div>
 
-          <div className="flex w-full md:w-[24vw] items-center gap-[0.69vw] pl-4 md:pl-[1.81vw] pr-3 md:pr-[0.69vw] py-3 md:py-[0.69vw] bg-white rounded-full md:rounded-[4.17vw]">
+          <div className="flex w-full md:w-[24vw] items-center gap-[0.69vw] pl-4 md:pl-[1.81vw] pr-3 md:pr-[0.69vw] py-[1vw] md:py-[0.5vw] bg-white rounded-full md:rounded-[4.17vw]">
             <Input
-              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-sm md:text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)] font-light"
+              className="border-none shadow-none font-BNG-TIPOGRAFIA-BNG-corpo-02 font-[number:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-weight)] text-[#666666] text-sm md:text-[1.11vw] tracking-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-letter-spacing)] leading-[var(--BNG-TIPOGRAFIA-BNG-corpo-02-line-height)] [font-style:var(--BNG-TIPOGRAFIA-BNG-corpo-02-font-style)] font-light focus-visible:ring-0 focus-visible:ring-offset-0"
               type="email"
               placeholder="Seu e-mail:"
             />
           </div>
 
-          <Button className="w-full md:w-[8.54vw] h-12 md:h-[2.85vw] bg-[#003cff] rounded-full md:rounded-[6.94vw] font-BNG-bot-o-02 font-[number:var(--BNG-bot-o-02-font-weight)] text-white text-sm md:text-[0.83vw] text-center tracking-[var(--BNG-bot-o-02-letter-spacing)] leading-[var(--BNG-bot-o-02-line-height)] [font-style:var(--BNG-bot-o-02-font-style)] hover:bg-[#00009b] hover:border-white hover:border-2">
+          <Button className="w-full md:w-[8.54vw] py-[3vw] md:py-0 h-auto md:h-[2.85vw] bg-[#003cff] rounded-full md:rounded-[6.94vw] font-BNG-bot-o-02 font-[number:var(--BNG-bot-o-02-font-weight)] text-white text-sm md:text-[0.83vw] text-center tracking-[var(--BNG-bot-o-02-letter-spacing)] leading-[var(--BNG-bot-o-02-line-height)] [font-style:var(--BNG-bot-o-02-font-style)] hover:bg-[#00009b] hover:border-white hover:border-2">
             CADASTRAR
           </Button>
         </div>
@@ -45,15 +45,15 @@ export const ContactUsSection = (): JSX.Element => {
           {/* Main footer content */}
           <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-[4vw]">
             {/* Coluna 1 - Company info card */}
-            <Card className="w-full md:w-[18.542vw] h-auto md:h-[16.667vw] bg-[#00009b] rounded-[1.11vw] relative p-6 md:p-[2.08vw] border-none">
+            <Card className="w-full md:w-[18.542vw] h-auto md:h-[16.667vw] bg-[#00009b] rounded-[16px] md:rounded-[1.11vw] relative p-6 md:p-[2.08vw] border-none">
               <CardContent className="p-0 text-center">
                 <img
-                  className="w-32 h-12 md:w-[11.35vw] md:h-[4.24vw] mx-auto mb-6 md:mb-[2.43vw]"
+                  className="w-[42vw] h-auto md:w-[11.35vw] md:h-[4.24vw] mx-auto mb-6 md:mb-[2.43vw]"
                   alt="BNG Hub Logo"
                   src="/group.png"
                 />
 
-                <div className="font-BNG-corpo-02 font-[number:var(--BNG-corpo-02-font-weight)] text-white text-sm md:text-[0.97vw] tracking-[var(--BNG-corpo-02-letter-spacing)] leading-[var(--BNG-corpo-02-line-height)] [font-style:var(--BNG-corpo-02-font-style)] text-left">
+                <div className="font-BNG-corpo-02 font-[number:var(--BNG-corpo-02-font-weight)] md:mt-0 mt-[11vw] text-white text-sm md:text-[0.97vw] tracking-[var(--BNG-corpo-02-letter-spacing)] leading-[var(--BNG-corpo-02-line-height)] [font-style:var(--BNG-corpo-02-font-style)] text-left">
                   Somos{" "}
                   <span className="font-bold">Builders</span>,{" "}
                   <span className="font-bold">Networkers</span> e{" "}
@@ -65,7 +65,7 @@ export const ContactUsSection = (): JSX.Element => {
               <img
                 src="/footer_spin.png"
                 alt=""
-                className="absolute bottom-[-1vw] right-[-0.7vw] w-8 h-8 md:w-[2.43vw] md:h-[2.701vw] animate-spin"
+                className="absolute bottom-[-4vw] right-[-2.7vw] md:bottom-[-1vw] md:right-[-0.7vw] w-[10vw] h-auto md:w-[2.43vw] md:h-[2.701vw] animate-spin"
                 style={{
                   animation: 'spin 8s linear infinite'
                 }}
@@ -216,8 +216,8 @@ export const ContactUsSection = (): JSX.Element => {
         </div>
 
         {/* Copyright footer */}
-        <div className="w-full h-12 md:h-[3.5vw] bg-[#00009b] rounded-[1.11vw_1.11vw_0px_0px] flex items-center justify-center px-4">
-          <div className="font-BNG-overline font-[number:var(--BNG-overline-font-weight)] text-white text-xs md:text-[0.69vw] tracking-[var(--BNG-overline-letter-spacing)] leading-[var(--BNG-overline-line-height)] [font-style:var(--BNG-overline-font-style)] text-center">
+        <div className="w-full h-12 md:h-[3.5vw] bg-[#00009b] rounded-[1.11vw_1.11vw_0px_0px] flex items-center justify-start px-4">
+          <div className="font-BNG-overline font-[number:var(--BNG-overline-font-weight)] text-white text-xs md:text-[0.69vw] tracking-[var(--BNG-overline-letter-spacing)] leading-[var(--BNG-overline-line-height)] [font-style:var(--BNG-overline-font-style)] text-center md:ml-[8vw]">
             © 2025 - BNG HUB - Todos os direitos reservados.
           </div>
         </div>

@@ -10,13 +10,13 @@ interface BlogPostCardProps {
 export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
   return (
     <motion.article 
-      className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 w-[25.278vw]"
+      className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 mb-[11vw] md:mb-0 w-full md:w-[25.278vw]"
       whileHover={{ y: -3, scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
       {/* Featured Image */}
       <motion.div 
-        className="relative w-full h-[13.889vw] overflow-hidden rounded-[16px]"
+        className="relative w-full h-[42.4vw] md:h-[13.889vw] overflow-hidden rounded-[16px]"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
       >
@@ -31,7 +31,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
       <div className="p-[1.5vw] font-['Poppins']">
         {/* Date */}
         <motion.div 
-          className="text-[#666666] text-[0.97vw] mb-[0.5vw]"
+          className="text-[#666666] text-[2.963vw] md:text-[0.97vw] mb-[5vw] mt-[5vw] md:mt-0 md:mb-[0.5vw]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}
@@ -41,7 +41,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
 
         {/* Title */}
         <motion.h2 
-          className="text-[1.3vw] font-semibold text-[#212121] font-medium mb-[1vw] leading-tight hover:text-[#003cff] transition-colors"
+          className="text-[4.8vw] md:text-[1.3vw] font-semibold text-[#212121] font-medium mb-[4vw] md:mb-[1vw] leading-tight hover:text-[#003cff] transition-colors"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
@@ -53,7 +53,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
 
         {/* Excerpt */}
         <motion.p 
-          className="text-gray-600 text-[0.9vw] leading-relaxed mb-[1.2vw] line-clamp-3"
+          className="text-gray-600 text-[3.733vw] md:text-[0.9vw] leading-relaxed mb-[1.2vw] line-clamp-3"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
@@ -69,7 +69,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
         >
           <Link
             to={`/hub-news/post/${post.slug}`}
-            className="text-[#003cff] text-[0.9vw] font-medium hover:text-[#0052ff] transition-colors"
+            className="text-[#003cff] text-[3.733vw] md:text-[0.9vw] font-medium hover:text-[#0052ff] transition-colors"
           >
             Leia mais...
           </Link>
@@ -86,7 +86,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps): JSX.Element => {
             {post.tag_names.slice(0, 2).map((tagName, index) => (
               <motion.span
                 key={index}
-                className="inline-block bg-[#ffffff] border border-solid border-[#003CFF] text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-[4px] text-[0.84vw] font-medium"
+                className="inline-block bg-[#ffffff] border border-solid border-[#003CFF] mr-[1vw] md:mr-0 text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-[4px] text-[2.667vw] md:text-[0.84vw] font-medium"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}

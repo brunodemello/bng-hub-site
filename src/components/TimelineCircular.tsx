@@ -12,7 +12,7 @@ export const TimelineCircular = (): JSX.Element => {
 
   return (
     <motion.div 
-      className="timeline-circular h-[90vh]"
+      className="timeline-circular h-[74vh] bg-[url(/timelineBG.png)] bg-cover bg-no-repeat bg-bottom"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -24,7 +24,7 @@ export const TimelineCircular = (): JSX.Element => {
           '--items': timelineData.length 
         } as React.CSSProperties}
       >
-        <ul className="cards top-[12vw]">
+        <ul className="cards w-full md:w-auto top-[42vw] md:top-[12vw]">
           {timelineData.map((item, index) => (
             <li 
               key={item.id}

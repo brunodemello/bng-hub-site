@@ -38,19 +38,19 @@ export const QuemSomosPage = (): JSX.Element => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="container mx-auto max-w-[83%]">
-            <div className="flex items-start gap-[8vw]">
+          <div className="container mx-auto max-w-[93%] md:max-w-[83%]">
+            <div className="flex items-start gap-[8vw] flex-col md:flex-row justify-center align-center">
               {/* Texto principal - esquerda */}
               <motion.div 
-                className="flex-1 max-w-[45vw] pt-[4.20vw]"
+                className="flex-1 max-w-full md:max-w-[45vw] pt-[4.20vw]"
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="mb-[2vw]">
+                <div className="mb-[2vw] flex md:block justify-center items-center">
                   <motion.div 
-                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.24vw] border-b-2 border-solid border-[#FEDC0B] w-fit"
+                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[3.2vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.24vw] border-b-2 border-solid border-[#FEDC0B] w-fit"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -62,7 +62,7 @@ export const QuemSomosPage = (): JSX.Element => {
                 </div>
 
                 <motion.h2 
-                  className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1vw]"
+                  className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-center md:text-left text-[#212121] text-[4.8vw] md:text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mt-[3vw] md:mt-0 mb-[4vw] md:mb-[1vw]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
@@ -73,7 +73,7 @@ export const QuemSomosPage = (): JSX.Element => {
                 </motion.h2>
 
                 <motion.div 
-                  className="space-y-[1.5vw] text-[#666666] text-[1.1vw] leading-[1.6] font-normal"
+                  className="space-y-[1.5vw] text-[#666666] text-[3.74vw] md:text-[1.1vw] leading-[1.6] font-normal"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
@@ -91,7 +91,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   </motion.p>
 
                   <motion.p 
-                    className="mt-[1vw]"
+                    className="!mt-[4vw] md:!mt-[1vw]"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.0 }}
@@ -119,14 +119,14 @@ export const QuemSomosPage = (): JSX.Element => {
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
-                  <CardContent className="p-0 flex items-start gap-[1vw]">
+                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[8px] md:rounded-[1vw] p-[2vw] text-white w-[75vw] h-fit md:w-[26.944vw] md:h-[9.583vw]">
+                  <CardContent className="p-0 flex items-center md:items-start gap-[1vw]">
                     <div className="rounded-lg flex items-center justify-center flex-shrink-0">
-                      <img src="/quemSomos_icon3.png" alt="Missão" className="w-[5.833vw] h-[5.833vw] mr-[2.014vw]" />
+                      <img src="/quemSomos_icon3.png" alt="Missão" className="md:w-[5.833vw] p-[3vw] md:p-0 w-[16.533vw] h-[16.533vw] md:h-[5.833vw] mr-[2.014vw]" />
                     </div>
-                    <div className="w-[13.472vw]">
-                      <h3 className="font-bold text-[1.2vw] mb-[0.5vw]">Missão</h3>
-                      <p className="text-[0.9vw] leading-[1.4] font-thin">
+                    <div className="w-full md:w-[13.472vw]">
+                      <h3 className="font-bold md:text-[1.2vw] text-[3.733vw] mb-[0.5vw]">Missão</h3>
+                      <p className="text-[3.733vw] md:text-[0.9vw] leading-[1.4] font-thin">
                         Ser o catalisador de valor para transformar a saúde através da excelência.
                       </p>
                     </div>
@@ -143,14 +143,14 @@ export const QuemSomosPage = (): JSX.Element => {
                   viewport={{ once: true }}
                   style={{ transitionDelay: '0.1s' }}
                 >
-                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
-                  <CardContent className="p-0 flex items-start gap-[1vw]">
+                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[8px] md:rounded-[1vw] p-[2vw] text-white w-[75vw] h-fit md:w-[26.944vw] md:h-[9.583vw]">
+                  <CardContent className="p-0 flex items-center md:items-start gap-[1vw]">
                     <div className="rounded-lg flex items-center justify-center flex-shrink-0">
-                      <img src="/quemSomos_icon2.png" alt="Valores" className="w-[5.833vw] h-[5.833vw] mr-[2.014vw]" />
+                      <img src="/quemSomos_icon2.png" alt="Valores" className="md:w-[5.833vw] p-[3vw] md:p-0 w-[16.533vw] h-[16.533vw] md:h-[5.833vw] mr-[2.014vw]" />
                     </div>
-                    <div className="w-[13.472vw]">
-                      <h3 className="font-bold text-[1.2vw] mb-[0.5vw]">Valores</h3>
-                      <p className="text-[0.9vw] leading-[1.4] font-thin">
+                    <div className="w-full md:w-[13.472vw]">
+                      <h3 className="font-bold md:text-[1.2vw] text-[3.733vw] mb-[0.5vw]">Valores</h3>
+                      <p className="text-[3.733vw] md:text-[0.9vw] leading-[1.4] font-thin">
                         Respeito e reconhecimento, transparência, inovação e excelência.
                       </p>
                     </div>
@@ -167,14 +167,14 @@ export const QuemSomosPage = (): JSX.Element => {
                   viewport={{ once: true }}
                   style={{ transitionDelay: '0.2s' }}
                 >
-                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[1vw] p-[2vw] text-white w-[26.944vw] h-[9.583vw]">
-                  <CardContent className="p-0 flex items-start gap-[1vw]">
+                  <Card className="bg-[#0000bf] hover:bg-[#003CFF] rounded-[8px] md:rounded-[1vw] p-[2vw] text-white w-[75vw] h-fit md:w-[26.944vw] md:h-[9.583vw]">
+                  <CardContent className="p-0 flex items-center md:items-start gap-[1vw]">
                     <div className="rounded-lg flex items-center justify-center flex-shrink-0">
-                      <img src="/quemSomos_icon1.png" alt="Visão" className="w-[5.833vw] h-[5.833vw] mr-[2.014vw]" />
+                      <img src="/quemSomos_icon1.png" alt="Visão" className="md:w-[5.833vw] p-[3vw] md:p-0 w-[16.533vw] h-[16.533vw] md:h-[5.833vw] mr-[2.014vw]" />
                     </div>
-                    <div className="w-[13.472vw]">
-                      <h3 className="font-bold text-[1.2vw] mb-[0.5vw]">Visão</h3>
-                      <p className="text-[0.9vw] leading-[1.4] font-thin">
+                    <div className="w-full md:w-[13.472vw]">
+                      <h3 className="font-bold md:text-[1.2vw] text-[3.733vw] mb-[0.5vw]">Visão</h3>
+                      <p className="text-[3.733vw] md:text-[0.9vw] leading-[1.4] font-thin">
                         Ser reconhecida como a maior e melhor empresa de soluções para a saúde do país.
                       </p>
                     </div>
@@ -192,6 +192,7 @@ export const QuemSomosPage = (): JSX.Element => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-50px" }}
+          
         >
           <TimelineCircular />
         </motion.div>
@@ -234,19 +235,19 @@ export const QuemSomosPage = (): JSX.Element => {
             }}
           />
 
-          <div className="container mx-auto max-w-[83%] relative z-10">
-            <div className="flex items-center gap-[8vw]">
+          <div className="container mx-auto max-w-[93%] md:max-w-[83%] relative z-10">
+            <div className="flex items-center flex-col md:flex-row gap-[8vw]">
               {/* Texto - esquerda */}
               <motion.div 
-                className="flex-1 max-w-[45vw]"
+                className="flex-1 max-w-full md:max-w-[45vw]"
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="mb-[2vw]">
+                <div className="mb-[2vw] mb:block flex justify-center items-center">
                   <motion.div 
-                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.5vw] border-b-2 border-solid border-[#FEDC0B] w-fit"
+                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[3.2vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[4vw] md:mt-0 mt-[4vw] md:mb-[0.5vw] border-b-2 border-solid border-[#FEDC0B] w-fit"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -258,7 +259,7 @@ export const QuemSomosPage = (): JSX.Element => {
                 </div>
 
                 <motion.h2 
-                  className="text-[#003CFF] text-[3vw] font-black mb-[0.5vw]"
+                  className="text-[#003CFF] text-[6.499vw] md:text-[3vw] w-fit font-black mb-[0.5vw]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
@@ -267,7 +268,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   #WEARE
                 </motion.h2>
                 <motion.h3 
-                  className="font-['Poppins',Helvetica] text-[#00009b] text-[4.44vw] font-bold leading-none tracking-normal mb-[2vw]" 
+                  className="font-['Poppins',Helvetica] text-[#00009b] w-fit text-[8.667vw] md:text-[4.44vw] font-bold leading-none tracking-normal mb-[2vw]" 
                   style={{
                   marginLeft: '1.5vw'
                   }}
@@ -280,9 +281,8 @@ export const QuemSomosPage = (): JSX.Element => {
                 </motion.h3>
 
                 <motion.p 
-                  className="text-[#666666] text-[1.1vw] leading-[1.6] mb-[3vw]" 
+                  className="text-[#666666] text-[3.2vw] md:text-[1.1vw] leading-[1.6] w-fit md:w-[32vw] mt-[4.20vw] md:mt-0 mb-[4.20vw] md:mb-[3vw]" 
                   style={{
-                  width: '32vw',
                   fontFamily: 'Poppins'
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -310,7 +310,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   viewport={{ once: true }}
                   style={{ transitionDelay: '1.1s' }}
                 >
-                  <Button className="bg-[#00009B] hover:bg-[#003CFF] text-white rounded-[4vw] px-[2vw] py-[0.8vw] font-semibold text-[0.9vw]">
+                  <Button className="bg-[#00009B] hover:bg-[#003CFF] text-white rounded-[4vw] px-[2vw] py-[0.8vw] font-semibold w-full md:w-auto text-[3.733vw] md:text-[0.9vw]">
                   Faça parte do nosso time!
                   </Button>
                 </motion.div>
@@ -336,14 +336,14 @@ export const QuemSomosPage = (): JSX.Element => {
 
         {/* ESG Section */}
         <motion.section 
-          className="w-full bg-white relative overflow-visible"
+          className="w-full bg-white relative overflow-visible h-fit md:h-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <div 
-            className="w-full h-[44.11vw] bg-cover bg-center relative"
+            className="w-full h-[72.533vw] md:h-[44.11vw] bg-cover bg-right md:bg-center relative"
             style={{ 
               backgroundImage: `url('/bgFixed.png')` 
             }}
@@ -356,11 +356,11 @@ export const QuemSomosPage = (): JSX.Element => {
               viewport={{ once: true }} 
               style={{ transitionDelay: '0.3s' }}
             >
-              <Card className="border-none flex justify-center shadow absolute bg-[#00009B] rounded-[1.39vw] text-white z-10 w-[38.75vw] h-[34.722vw] -top-[3.44vw] left-[10vw]">
-              <CardContent className="p-[2.78vw] w-fit flex flex-col justify-center h-full">
-                <div className="mb-[1.39vw] w-fit">
+              <Card className="border-none flex justify-center shadow absolute bg-[#00009B] rounded-[1.39vw] text-white z-10 w-[81%] h-fit md:w-[38.75vw] md:h-[34.722vw] relative md:absolute bottom-[87vw] md:bottom-auto mt-[97vw] md:mt-auto md:-top-[3.44vw] left-[10vw]">
+              <CardContent className="p-[5.78vw] md:p-[2.78vw] w-fit flex flex-col justify-center h-full">
+                <div className="mb-[1.39vw] w-fit mx-auto md:mx-0">
                   <motion.div 
-                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0dffc0] text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.28vw] w-fit text-white border-b-2 border-solid border-[#FEDC0B] w-fit"
+                    className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0dffc0] text-[3.2vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] mb-[0.28vw] w-fit text-white border-b-2 border-solid border-[#FEDC0B] w-fit"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -372,7 +372,7 @@ export const QuemSomosPage = (): JSX.Element => {
                 </div>
 
                 <motion.h2 
-                  className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[0DFFC0] text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[1.39vw] text-[#0DFFC0] font-bold"
+                  className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[0DFFC0] text-[4.2vw] md:text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-[4.20vw] mt-[4.20vw] md:mt-0 md:mb-[1.39vw] text-[#0DFFC0] font-bold"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
@@ -384,7 +384,7 @@ export const QuemSomosPage = (): JSX.Element => {
                 </motion.h2>
 
                 <motion.div 
-                  className="space-y-[1.11vw] font-['Poppins',Helvetica] font-light text-white text-[1.11vw] tracking-[0] leading-[1.66vw] w-[30vw]"
+                  className="md:space-y-[1.11vw] font-['Poppins',Helvetica] font-light text-white text-[3.5vw] md:text-[1.11vw] tracking-[0] md:leading-[1.66vw] w-full md:w-[30vw]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.9 }}
@@ -401,6 +401,7 @@ export const QuemSomosPage = (): JSX.Element => {
 
                   <motion.p
                     initial={{ opacity: 0 }}
+                    className="mt-[4vw] md:mt-0"
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.2 }}
                     viewport={{ once: true }}

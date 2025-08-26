@@ -300,8 +300,8 @@ export const PessoasPage = (): JSX.Element => {
                 className="transition-colors duration-200"
               />
           </button>
-          <div ref={sliderVantagemRef} className="keen-slider nossa-cultura__vantagens flex relative w-full overflow-visible">
-            <div className="keen-slider__slide">
+          <div ref={sliderVantagemRef} className="keen-slider nossa-cultura__vantagens flex relative w-full overflow-hidden">
+            <div className="keen-slider__slide ">
               <div className="vantagem__card w-[50%] mx-auto">
                 <div className="card__imgWrapper">
                   <img src="/icon-cultura-01.png" alt="" className="w-full h-full object-contain" />
@@ -399,7 +399,7 @@ export const PessoasPage = (): JSX.Element => {
       </section>
 
       {/* Time Section */}
-      <section ref={counterSectionRef} className="time" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+      <section ref={counterSectionRef} className="time">
         {/* Imagem decorativa de fundo */}
         <img 
           src="/bg-secao-qtd.png" 
@@ -657,7 +657,7 @@ export const PessoasPage = (): JSX.Element => {
             preencha o formulário abaixo e envie seu currículo.
           </p>
         </div>
-        <form className="trabalhe-conosco__form" onSubmit={handleSubmit} data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <form className="trabalhe-conosco__form" onSubmit={handleSubmit}>
           <div className="form__group">
             <label htmlFor="nome">Nome</label>
             <input 

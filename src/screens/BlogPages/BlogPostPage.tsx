@@ -91,22 +91,22 @@ export const BlogPostPage = (): JSX.Element => {
 
       {/* Main Content */}
       <motion.section 
-        className="container mx-auto max-w-[90%] py-[8vw]"
+        className="container mx-auto max-w-[90%] py-[20vw] md:py-[8vw]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <motion.div 
-          className="flex gap-[3vw]"
+          className="flex gap-[3vw] flex-col md:flex-row"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {/* Post Content */}
-          <main className="flex-1 max-w-[60vw]">
+          <main className="flex-1 max-w-full md:max-w-[60vw]">
             {/* Featured Image */}
             <motion.div 
-              className="relative w-full h-[25vw] overflow-hidden rounded-lg mb-[2vw]"
+              className="relative w-full h-[42.42vw] md:h-[25vw] overflow-hidden rounded-lg mb-[2vw]"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -127,7 +127,7 @@ export const BlogPostPage = (): JSX.Element => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <motion.span 
-                className="text-gray-500 text-[0.9vw]"
+                className="text-gray-500 text-[2.963vw] md:text-[0.9vw]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
@@ -144,7 +144,7 @@ export const BlogPostPage = (): JSX.Element => {
                   {post.tag_names.slice(0, 2).map((tagName, index) => (
                     <motion.span
                       key={index}
-                      className="inline-block bg-[#f0f8ff] text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-full text-[0.7vw] font-medium"
+                      className="inline-block bg-[#f0f8ff] text-[#003cff] px-[0.8vw] py-[0.3vw] rounded-full text-[2.24vw] md:text-[0.7vw] font-medium"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
@@ -159,7 +159,7 @@ export const BlogPostPage = (): JSX.Element => {
 
             {/* Post Title */}
             <motion.h1 
-              className="text-[2.2vw] font-bold text-gray-900 mb-[2vw] leading-tight"
+              className="text-[4.8vw] md:text-[2.2vw] font-bold text-gray-900 mb-[2vw] leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -169,9 +169,8 @@ export const BlogPostPage = (): JSX.Element => {
 
             {/* Post Content */}
             <motion.div 
-              className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+              className="prose prose-lg max-w-none text-[4.20vw] flex flex-col gap-[6vw] md:block md:text-[1.1vw] text-gray-700 leading-relaxed"
               style={{
-                fontSize: '1.1vw',
                 lineHeight: '1.8'
               }}
               dangerouslySetInnerHTML={{ __html: post.content.rendered }}
@@ -189,7 +188,7 @@ export const BlogPostPage = (): JSX.Element => {
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <motion.h3 
-                  className="text-[1.5vw] font-bold text-gray-900 mb-[2vw]"
+                  className="text-[4.8vw] md:text-[1.5vw] font-bold text-[#003CFF] mt-[10vw] md:mt-0 mb-[2vw]"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 1.0 }}
@@ -206,13 +205,13 @@ export const BlogPostPage = (): JSX.Element => {
                   {relatedPosts.map((relatedPost, index) => (
                     <motion.article 
                       key={relatedPost.id} 
-                      className="flex gap-[1.5vw] bg-gray-50 rounded-lg p-[1.5vw] hover:shadow-md transition-shadow"
+                      className="flex gap-[1.5vw] bg-gray-50 flex-col md:flex-row rounded-lg p-[1.5vw] hover:shadow-md transition-shadow"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                       whileHover={{ y: -3, scale: 1.01 }}
                     >
-                      <div className="w-[12vw] h-[8vw] flex-shrink-0">
+                      <div className="w-full h-[42.24vw] md:w-[12vw] md:h-[8vw] flex-shrink-0">
                         <img
                           src={relatedPost.featured_image_url}
                           alt={relatedPost.title.rendered}
@@ -221,23 +220,23 @@ export const BlogPostPage = (): JSX.Element => {
                       </div>
                       
                       <div className="flex-1">
-                        <div className="text-gray-500 text-[0.8vw] mb-[0.5vw]">
+                        <div className="text-gray-500 text-[2.96vw] md:text-[0.8vw] mt-[2vw] md:mt-0 mb-[0.5vw]">
                           {formatDate(relatedPost.date)}
                         </div>
                         
-                        <h4 className="text-[1.2vw] font-semibold text-gray-900 mb-[0.8vw] leading-tight hover:text-[#003cff] transition-colors">
+                        <h4 className="text-[4.20vw] md:text-[1.2vw] font-semibold text-gray-900 mt-[3vw] mb-[3vw] md:mt-0 md:mb-[0.8vw] leading-tight hover:text-[#003cff] transition-colors">
                           <Link to={`/hub-news/post/${relatedPost.slug}`}>
                             {relatedPost.title.rendered}
                           </Link>
                         </h4>
                         
-                        <p className="text-gray-600 text-[0.9vw] leading-relaxed line-clamp-2">
+                        <p className="text-gray-600 text-[3.8vw] md:text-[0.9vw] leading-relaxed line-clamp-2">
                           {relatedPost.excerpt.rendered.replace(/<[^>]*>/g, '')}
                         </p>
                         
                         <Link
                           to={`/hub-news/post/${relatedPost.slug}`}
-                          className="text-[#003cff] text-[0.8vw] font-medium hover:text-[#0052ff] transition-colors inline-block mt-[0.5vw]"
+                          className="text-[#003cff] text-[3.7vw] md:text-[0.8vw] font-medium hover:text-[#0052ff] transition-colors inline-block mt-[0.5vw]"
                         >
                           Leia mais...
                         </Link>
@@ -247,7 +246,7 @@ export const BlogPostPage = (): JSX.Element => {
                             {relatedPost.tag_names.slice(0, 2).map((tagName, index) => (
                               <span
                                 key={index}
-                                className="inline-block bg-white text-[#003cff] px-[0.6vw] py-[0.2vw] rounded-full text-[0.6vw] font-medium border border-[#003cff]"
+                                className="inline-block bg-white text-[#003cff] px-[0.6vw] mr-[1vw] md:mr-0 py-[0.2vw] rounded-[4px] text-[3.2vw] md:text-[0.6vw] font-medium border border-[#003cff]"
                               >
                                 {tagName}
                               </span>
