@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linha do Tempo Circular</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0047FF;
+      font-family: Arial, sans-serif;
+    }
+
+    .timeline {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #FFD700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .circle.active {
+      background: #fff;
+      color: #0047FF;
+      transform: scale(1.3);
+      z-index: 2;
+    }
+
+    .line {
+      position: absolute;
+      width: 4px;
+      height: 200px;
+      background: #FFD700;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      display: none;
+    }
+
+    .timeline-content {
+      position: absolute;
+      bottom: -80px; /* afastar mais o texto */
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      width: 100%;
+    }
+
+    /* Esconde a bolinha duplicada do ano ativo */
+    .circle.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="timeline" id="timeline">
+    <div class="line" id="line"></div>
+    <div class="timeline-content" id="timeline-content">Clique em um ano</div>
+  </div>
+
+  <script>
+    const years = [
+      { year: 2000, text: "Início da jornada." },
+      { year: 2001, text: "Expansão inicial." },
+      { year: 2002, text: "Novos mercados." },
+      { year: 2003, text: "Reconhecimento." },
+      { year: 2004, text: "Inovação." },
+      { year: 2022, text: "Modernização." },
+      { year: 2023, text: "Transformação digital." },
+      { year: 2024, text: "Novas parcerias." },
+      { year: 2025, text: "Futuro promissor." }
+    ];
+
+    const timeline = document.getElementById("timeline");
+    const line = document.getElementById("line");
+    const content = document.getElementById("timeline-content");
+
+    const radius = 200; // raio do círculo
+    const centerX = 250, centerY = 250;
+
+    years.forEach((item, index) => {
+      const angle = (index / years.length) * (2 * Math.PI) - Math.PI / 2;
+      const x = centerX + radius * Math.cos(angle) - 35;
+      const y = centerY + radius * Math.sin(angle) - 35;
+
+      const circle = document.createElement("div");
+      circle.classList.add("circle");
+      circle.style.left = `${x}px`;
+      circle.style.top = `${y}px`;
+      circle.textContent = item.year;
+
+      circle.addEventListener("click", () => {
+        document.querySelectorAll(".circle").forEach(c => c.classList.remove("active", "hidden"));
+        circle.classList.add("active");
+
+        // esconder duplicado
+        circle.classList.add("hidden");
+
+        content.innerHTML = `<strong>${item.year}</strong><br>${item.text}`;
+        line.style.display = "block";
+      });
+
+      timeline.appendChild(circle);
+    });
+  </script>
+</body>
+</html>

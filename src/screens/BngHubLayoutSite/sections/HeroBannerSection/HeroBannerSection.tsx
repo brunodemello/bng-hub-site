@@ -14,13 +14,13 @@ export const HeroBannerSection = (): JSX.Element => {
     {
        id: 2,
       line1: "Somos a força por trás da",
-      line2: "assistência de qualidade 2",
+      line2: "assistência de qualidade",
       image: "/home_banner_full.png"
     },
     {
        id: 3,
       line1: "Somos a força por trás da",
-      line2: "assistência de qualidade 3",
+      line2: "assistência de qualidade",
       image: "/home_banner_full.png"
     }
   ];
@@ -72,7 +72,7 @@ export const HeroBannerSection = (): JSX.Element => {
                 
                 {/* Hero Content */}
                 <div className="absolute w-[34.44vw] h-[7.5vw] top-[24.24vw] left-[31.14vw] md:w-[42vw] md:h-[7.5vw] md:top-[24.24vw] md:left-[55.14vw] w-[90%] h-auto top-[40%] left-[5%]">
-                  <div className="relative w-full h-auto flex flex-col items-start gap-[0.5vw]">
+                  <div className="relative w-full h-auto flex flex-col items-end md:items-start gap-[0.5vw]">
                     {/* Primeira linha - sem fundo */}
                     <div className="font-BNG-t-tulo-01-h1 font-[number:var(--BNG-t-tulo-01-h1-font-weight)] text-white text-[2.5vw] tracking-[var(--BNG-t-tulo-01-h1-letter-spacing)] leading-[var(--BNG-t-tulo-01-h1-line-height)] [font-style:var(--BNG-t-tulo-01-h1-font-style)] md:text-[2.5vw] text-[4.20vw] ">
                       {slide.line1}

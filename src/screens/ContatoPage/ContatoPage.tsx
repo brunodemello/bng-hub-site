@@ -52,11 +52,11 @@ export const ContatoPage = (): JSX.Element => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="container mx-auto max-w-[90%] md:max-w-[79.33vw] mt-[5vw]">
+        <div className="container mx-auto p-[4vw] md:p-0 max-w-[90%] md:max-w-[79.33vw] mt-[5vw]">
           <div className="flex gap-[0] items-start md:flex-row flex-col">
             {/* Texto - Lado Esquerdo */}
             <motion.div
-              className="flex-1 w-full md:w-auto md:max-w-[36.11vw] mt-[3vw]"
+              className="flex-1 w-full md:ml-[1vw] md:w-auto md:max-w-[36.11vw] mt-[3vw]"
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -68,7 +68,7 @@ export const ContatoPage = (): JSX.Element => {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <motion.div
-                  className="font-bold text-[#0000BF] text-[3.2vw] md:text-[0.97vw] md:mt-0 mt-[10vw] mb-[4.20vw] md:mb-[0.28vw] tracking-[0.1em] uppercase border-b-2 border-solid border-[#FEDC0B] w-fit"
+                  className="font-bold text-[#0000BF] font-['Poppins'] text-[3.2vw] md:text-[0.97vw] md:mt-0 mt-[10vw] mb-[4.20vw] md:mb-[0.28vw] tracking-normal font-bold uppercase border-b-2 border-solid border-[#FEDC0B] w-fit"
                   initial={{ width: 0 }}
                   animate={{ width: "fit-content" }}
                   transition={{ duration: 0.6, delay: 0.5 }}
@@ -78,7 +78,7 @@ export const ContatoPage = (): JSX.Element => {
               </motion.div>
 
               <motion.h1
-                className="font-semibold text-[#212121] text-[4.8vw] md:text-[2.22vw] md:leading-[2.78vw] mb-[4.20vw] md:mb-[1vw] md:mt-[1.5vw]"
+                className="font-semibold text-[#212121] font-['Poppins'] text-[4.8vw] md:text-[2.22vw] md:leading-[2.78vw] mb-[4.20vw] md:mb-[1vw] md:mt-[1.5vw] text-center md:text-left"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -88,35 +88,43 @@ export const ContatoPage = (): JSX.Element => {
               </motion.h1>
 
               <motion.div
-                className="w-full md:w-[24.792vw] pl-0"
+                className="w-full pl-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <div className="space-y-[1.39vw] text-[#666666] text-[3.733vw] md:text-[1.1vw] font-normal tracking-[0] md:leading-[1.73]">
+                <div className="space-y-[1.39vw] font-['Poppins'] text-[#666666] text-[3.733vw] md:text-[1.1vw] font-normal tracking-[0] md:leading-[1.73] text-center md:text-left">
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.0 }}
+                    className="font-['Poppins'] !mb-[5vw] md:!mb-0"
                   >
-                    Se você busca soluções inovadoras para sua unidade de saúde, deseja integrar sua equipe ao nosso ecossistema ou quer saber mais sobre como a BNG Hub pode transformar a assistência com excelência e inteligência, fale com a gente.
+                    Se você busca soluções inovadoras para sua <br className="md:block hidden" />
+                    unidade de saúde, deseja integrar sua equipe ao <br className="md:block hidden" />
+                    nosso ecossistema ou quer saber mais sobre como <br className="md:block hidden" />
+                    a BNG Hub pode transformar a assistência com <br className="md:block hidden" />
+                    excelência e inteligência, fale com a gente.
                   </motion.p>
 
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.2 }}
+                    className="font-['Poppins'] !mb-[5vw] md:!mb-0"
                   >
-                    Estamos aqui para ouvir, entender e criar conexões que geram valor.
+                    Estamos aqui para ouvir, entender e criar conexões <br className="md:block hidden" />
+                    que geram valor.
                   </motion.p>
 
                   <motion.p
-                    className="font-semibold text-[#333]"
+                    className="font-semibold text-[#666666] font-['Poppins']  !mb-[5vw] md:!mb-0"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.4 }}
                   >
-                    Preencha o formulário ao lado e vamos iniciar essa conversa.
+                    Preencha o formulário ao lado e vamos iniciar <br className="md:block hidden" />
+                    essa conversa.
                   </motion.p>
                 </div>
               </motion.div>
@@ -124,18 +132,18 @@ export const ContatoPage = (): JSX.Element => {
 
             {/* Formulário Azul - Lado Direito */}
             <motion.div
-              className="flex-1 mt-[10vw] md:mt-0 max-w-full w-full h-fit md:max-w-[33.33vw] md:w-[32.375vw] md:h-[36.806vw]"
+              className="flex-1 mt-[10vw] md:mt-0 md:ml-[4vw] max-w-full w-full h-fit md:max-w-[33.33vw] md:w-[32.375vw] md:h-[39.806vw] font-['Poppins']"
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <motion.div
               >
-                <Card className="bg-[#003CFF] rounded-[8px] p-[2.22vw] text-white h-fit md:h-[36.806vw] flex justify-center items-center">
+                <Card className="bg-[#003CFF] rounded-[8px] p-[2.22vw] text-white h-fit md:h-[39.806vw] flex justify-center items-center font-['Poppins']">
                   <CardContent className="p-0 w-[82%]">
                     <motion.form
                       onSubmit={handleSubmit}
-                      className="space-y-[0.55vw] text-['Poppins', 'Helvetica'] placeholder-[#C3C4C5]"
+                      className="space-y-[0.55vw] text-['Poppins', 'Helvetica'] !placeholder-[#C3C4C5]"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.6, delay: 0.5 }}
@@ -147,7 +155,7 @@ export const ContatoPage = (): JSX.Element => {
                         transition={{ duration: 0.4, delay: 0.6 }}
                         className="md:mb-0 mb-[2.4vw]"
                       >
-                        <label className="block text-white md:text-[0.83vw] font-medium text-[3.733vw] mt-[6vw] md:mt-0 mb-[2vw] md:mb-[0.42vw]">
+                        <label className="block text-white md:text-[0.973vw] font-medium text-[3.733vw] mt-[6vw] md:mt-0 mb-0 md:mb-[0.42vw]">
                           Nome
                         </label>
                         <Input
@@ -157,7 +165,7 @@ export const ContatoPage = (): JSX.Element => {
                           onChange={handleInputChange}
                           placeholder="Nome*"
                           required
-                          className="w-full px-[2vw] md:px-[1.11vw] py-[0.69vw] border-none rounded-[8px] md:rounded-[0.42vw] text-[3.2vw] md:text-[0.83vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.153vw] font-light"
+                          className="w-full !placeholder-[#c3c4c5] px-[2vw] md:px-[1.11vw] py-[0.69vw] border-none rounded-[4px] md:rounded-[4px] text-[3.2vw] md:text-[0.972vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.153vw] font-light"
                         />
                       </motion.div>
 
@@ -168,7 +176,7 @@ export const ContatoPage = (): JSX.Element => {
                         transition={{ duration: 0.4, delay: 0.7 }}
                         className="md:mb-0 mb-[2.4vw]"
                       >
-                        <label className="block text-white md:text-[0.83vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-[2vw] md:mb-[0.42vw]">
+                        <label className="block text-white md:text-[0.973vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-0 md:mb-[0.42vw]">
                           E-mail
                         </label>
                         <Input
@@ -178,7 +186,7 @@ export const ContatoPage = (): JSX.Element => {
                           onChange={handleInputChange}
                           placeholder="E-mail*"
                           required
-                          className="w-full px-[2vw] md:px-[1.11vw] py-[0.69vw] border-none rounded-[8px] md:rounded-[0.42vw] text-[3.2vw] md:text-[0.83vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.153vw] font-light"
+                          className="w-full !placeholder-[#c3c4c5] px-[2vw] md:px-[1.11vw] py-[0.69vw] border-none rounded-[4px] md:rounded-[4px] text-[3.2vw] md:text-[0.972vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.153vw] font-light"
                         />
                       </motion.div>
 
@@ -189,7 +197,7 @@ export const ContatoPage = (): JSX.Element => {
                         transition={{ duration: 0.4, delay: 0.8 }}
                         className="md:mb-0 mb-[2.4vw]"
                       >
-                        <label className="block text-white md:text-[0.83vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-[2vw] md:mb-[0.42vw]">
+                        <label className="block text-white md:text-[0.973vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-0 md:mb-[0.42vw]">
                           Telefone
                         </label>
                         <Input
@@ -199,7 +207,7 @@ export const ContatoPage = (): JSX.Element => {
                           onChange={handleInputChange}
                           placeholder="Telefone*"
                           required
-                          className="w-full px-[2vw] md:px-[1.11vw] py-[0.69vw] border-none rounded-[8px] md:rounded-[0.42vw] text-[3.2vw] md:text-[0.83vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.153vw] font-light"
+                          className="w-full !placeholder-[#c3c4c5] px-[2vw] md:px-[1.11vw] py-[0.69vw] border-none rounded-[4px] md:rounded-[4px] text-[3.2vw] md:text-[0.972vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.153vw] font-light"
                         />
                       </motion.div>
 
@@ -210,7 +218,7 @@ export const ContatoPage = (): JSX.Element => {
                         transition={{ duration: 0.4, delay: 0.9 }}
                         className="md:mb-0 mb-[2.4vw]"
                       >
-                        <label className="block text-white md:text-[0.83vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-[2vw] md:mb-[0.42vw]">
+                        <label className="block text-white md:text-[0.973vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-0 md:mb-[0.42vw]">
                           Assunto
                         </label>
                         <select
@@ -218,7 +226,7 @@ export const ContatoPage = (): JSX.Element => {
                           value={formData.assunto}
                           onChange={handleInputChange}
                           required
-                          className="w-full md:w-[50%] px-[1vw] font-light py-[0.6vw] border-none rounded-[8px] md:rounded-[0.42vw] text-[3.2vw] md:text-[0.83vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.15vw] outline-none focus:ring-0 focus:ring-offset-0"
+                          className="w-full md:w-[50%] px-[1vw] font-light py-[0.6vw] !placeholder-[#c3c4c5] border-none rounded-[4px] md:rounded-[4px] text-[3.2vw] md:text-[0.972vw] bg-white !text-[#C3C4C5] h-[8.267vw] md:h-[2.15vw] outline-none focus:ring-0 focus:ring-offset-0"
                         >
                           <option className="!text-[#C3C4C5]" value="">Selecionar</option>
                           <option value="gestao-medica">Gestão de Equipes Médicas</option>
@@ -237,7 +245,7 @@ export const ContatoPage = (): JSX.Element => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 1.0 }}
                       >
-                         <label className="block text-white md:text-[0.83vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-[2vw] md:mb-[0.42vw]">
+                         <label className="block text-white md:text-[0.973vw] font-medium text-[3.733vw] mt-[3vw] md:mt-0 mb-0 md:mb-[0.42vw]">
                           Mensagem
                         </label>
                         <textarea
@@ -247,7 +255,7 @@ export const ContatoPage = (): JSX.Element => {
                           placeholder="Mensagem*"
                           required
                           rows={4}
-                          className="w-full px-[2vw] md:px-[1.11vw] py-[0.69vw] border-none rounded-[8px] md:rounded-[0.42vw] text-[3.2vw] md:text-[0.83vw] bg-white !text-[#C3C4C5] resize-vertical min-h-[6.94vw] resize-none overflow-auto font-light outline-none focus:ring-0 focus:ring-offset-0"
+                          className="w-full px-[2vw] !placeholder-[#c3c4c5] md:px-[1.11vw] py-[0.69vw] border-none rounded-[4px] md:rounded-[4px] text-[3.2vw] md:text-[0.972vw] bg-white !text-[#C3C4C5] resize-vertical min-h-[6.94vw] resize-none overflow-auto font-light outline-none focus:ring-0 focus:ring-offset-0"
                         />
                       </motion.div>
 
@@ -264,7 +272,7 @@ export const ContatoPage = (): JSX.Element => {
                           checked={formData.privacidade}
                           onChange={handleInputChange}
                           required
-                          className="mt-[0.14vw] relative left-[3vw] md:left-0 w-[5vw] h-[5vw] md:w-[1.11vw] md:h-[1.11vw] accent-[#fedc0b]"
+                          className="mt-[0.14vw] relative left-[7vw] bottom-[0.42vw] md:bottom-0 md:left-0 w-[5vw] h-[5vw] md:w-[1.11vw] md:h-[1.11vw] accent-[#fedc0b]"
                         />
                         <label className="text-white text-[2.8vw] md:text-left text-center md:text-[0.69vw] leading-[1.63]">
                           Li e concordo com a Política de Privacidade da BNG e autorizo o uso dos meus dados para fins relacionados a este contato.
@@ -283,7 +291,7 @@ export const ContatoPage = (): JSX.Element => {
                         >
                           <Button
                             type="submit"
-                            className="bg-[#fedc0b] hover:bg-[#fedc0b]/90 text-[#003cff] rounded-[2.78vw] px-[2.22vw] mt-[3vw] md:mt-0 mb-[6vw] md:mb-0 py-[0.69vw] font-bold md:text-[0.83vw] w-[90%] md:w-fit md:h-[1.94vw]"
+                            className="bg-[#fedc0b] hover:bg-[#00009B] hover:text-[#ffffff] text-[#00009B] rounded-[100px] md:rounded-[2.78vw] px-[2.22vw] mt-[3vw] md:mt-0 mb-[6vw] md:mb-0 py-[0.69vw] font-medium md:text-[0.972vw] w-[90%] md:w-fit md:h-[1.94vw]"
                           >
                             Enviar mensagem
                           </Button>
@@ -415,7 +423,7 @@ export const ContatoPage = (): JSX.Element => {
                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="font-bold md:text-[0.83vw] text-gray-800">BNG Hub</span>
+                    <span className="font-bold md:text-[0.972vw] text-gray-800">BNG Hub</span>
                   </div>
                   <p className="text-[0.69vw] text-gray-600 mb-[0.69vw] leading-[1.2]">
                     Av. Eng. Luis Carlos Berrini, 1748<br />

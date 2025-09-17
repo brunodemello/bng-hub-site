@@ -76,7 +76,7 @@
 
 .pessoas-page span.secao-titulo {
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--cor-titulo-secao);
   border-bottom: 2px solid var(--cor-borda-titulo-secao);
   font-size: 0.972vw;
@@ -216,10 +216,10 @@
 }
 
 .pessoas-page section.time .time__content {
-  z-index: 1;
-  width: 53%;
-  box-sizing: border-box;
-  padding: 0 150px;
+    z-index: 1;
+    width: 52%;
+    box-sizing: border-box;
+    padding: 0 3vw 0 10vw;
 }
 
 .qtd__profissionais.aos-init.aos-animate {
@@ -285,8 +285,8 @@
 .pessoas-page section.time .time__content a {
   background-color: var(--cor-borda-titulo-secao);
   color: var(--cor-texto-time-botao);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 0.972vw;
+  font-weight: 500;
   text-decoration: none;
   padding: 5px 24px;
   border-radius: 60px;
@@ -442,7 +442,7 @@
 .pessoas-page .trabalhe-conosco-btn a {
   text-decoration: none;
   font-size: 0.972vw;
-  font-weight: 600;
+  font-weight: 500;
   color: #fff;
   background-color: var(--cor-texto-time-botao);
   padding: 5px 24px;
@@ -496,7 +496,7 @@
   flex-direction: column;
   background-color: var(--cor-card-cultura);
   border-radius: 8px;
-  padding: 20px 30.5px;
+  padding: 1.42vw 1vw;
   transition: all 0.2s ease-in-out 0s;
   position: relative;
   z-index: 999;
@@ -564,13 +564,13 @@ p.conteudo-desk {
   width: 100%;
   box-sizing: border-box;
   margin: 0;
-  padding: 10px 5px;
+  padding: 0 5px;
   border-radius: 4px;
   border: none;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 0.972vw;
-  height: 3vw;
+  height: 2.153vw;
   color: #C3C4C5;
 }
 
@@ -638,10 +638,11 @@ span.file-name {
   padding: 9px 70px 10px 12px;
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.972vw;
   color: #B0B0B0;
   width: 100% !important;
   box-sizing: border-box;
+  height: 2.153vw;
 }
 
 .pessoas-page .file-wrapper input[type="file"] {
@@ -697,7 +698,7 @@ span.file-name {
 }
 
 .pessoas-page .form__group p {
-  font-size: 11px;
+  font-size: 0.764vw;
   font-weight: 500;
   color: #FFF;
   line-height: 100%;
@@ -723,14 +724,16 @@ span.file-name {
 
 .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form button[type="submit"] {
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 0.84vw;
+  font-weight: 500;
+  font-size: 0.97vw;
   border-radius: 100px;
   padding: 5px 16px;
   border: none;
   background-color: var(--cor-borda-titulo-secao);
   color: var(--cor-texto-time-botao);
-  margin-top: 0;
+  margin-top: 1vw;
+  width: 13vw;
+  height: 1.944vw;
 }
 
 section.trabalhe-conosco.aos-init.aos-animate {
@@ -860,7 +863,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
 
   .pessoas-page section.carreira .titulo-grande,
   .pessoas-page section.carreira p {
-    text-align: left;
+    text-align: center;
   }
 
   .pessoas-page section.nossa-cultura p {
@@ -899,7 +902,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
   }
 
   .pessoas-page section.time .time__content p {
-    text-align: left;
+    text-align: center;
     font-size: 14px !important;
     font-weight: 400;
     width: 90%;
@@ -933,6 +936,20 @@ section.trabalhe-conosco.aos-init.aos-animate {
 
   .pessoas-page section.time .time__content a {
     padding: 5px 50px;
+    width: 76vw;
+    display: flex;
+    margin: auto;
+    height: 8.267vw;
+    font-size: 3.733vw;
+  }
+
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens .vantagem__card {
+    width: 69vw;
+  }
+
+  .pessoas-page section.nossa-cultura .nossa-cultura__vantagens .vantagem__card .card__imgWrapper {
+    width: 42vw !important;
+    height: auto !important;
   }
 
   .pessoas-page .content__qntd {
@@ -1002,7 +1019,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid #001A70;
+    border: 3px solid #003CFF;
     border-radius: 100%;
   }
 
@@ -1034,6 +1051,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
 
   .pessoas-page section.nossas-vagas {
     padding-top: 0 !important;
+    padding-bottom: 40px !important;
   }
 
   .pessoas-page .nossas-vagas h2.titulo-grande {
@@ -1083,7 +1101,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
   }
 
   .pessoas-page section.trabalhe-conosco p {
-    text-align: left;
+    text-align: center;
     width: 89%;
     margin: 0 auto;
     font-size: 16px !important;
@@ -1092,7 +1110,10 @@ section.trabalhe-conosco.aos-init.aos-animate {
   .pessoas-page section.trabalhe-conosco form p {
     text-align: left;
     width: 100%;
-    font-size: 11px !important;
+    font-size: 3.42vw !important;
+    font-weight: 500;
+    line-height: 100%;
+    margin-left: 1vw;
   }
 
   .pessoas-page section.trabalhe-conosco .conteudo-mobile {
@@ -1118,7 +1139,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
   }
 
   .pessoas-page .two-input>div {
-    width: 50% !important;
+    width: 46% !important;
     text-align: left;
   }
 
@@ -1126,7 +1147,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
   .pessoas-page .two-input>div .custom-label {
     white-space: nowrap;
     margin-bottom: 5px;
-    font-size: 12px !important;
+    font-size: 12px;
   }
 
   .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input .file-input-wrapper {
@@ -1179,7 +1200,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
     background-color: var(--cor-texto-time-botao);
     padding: 5px 24px;
     border-radius: 100px;
-    width: 64.542vw;
+    width: 69.542vw;
     display: block;
     margin: auto;
     height: 8.267vw;
@@ -1194,22 +1215,27 @@ section.trabalhe-conosco.aos-init.aos-animate {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    padding: 10px 5px;
+    padding: 0 5px;
     border-radius: 4px;
     border: none;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 1.972vw;
-    height: 3vw;
+    font-size: 3.733vw;
+    height: 8.267vw;
     color: #C3C4C5;
   }
 
   .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form .two-input .file-input-wrapper .file-wrapper {
     padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 3.733vw;
+    height: 8.267vw;
+    color: #C3C4C5;
   }
 
   span.file-name {
-    font-size: 1.97vw;
+    font-size: 3.733vw;
     font-family: 'Poppins';
     font-weight: 500;
     color: #C3C4C5;
@@ -1223,14 +1249,14 @@ section.trabalhe-conosco.aos-init.aos-animate {
     padding: 5px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 1.972vw;
+    font-size: 3.733vw;
     box-sizing: border-box;
     padding-left: 10px;
   }
 
   .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form label,
   .pessoas-page .custom-label {
-    font-size: 2.972vw;
+    font-size: 3.733vw !important;
     font-weight: 500;
     color: #fff;
     padding: 5px;
@@ -1239,12 +1265,14 @@ section.trabalhe-conosco.aos-init.aos-animate {
   .pessoas-page section.trabalhe-conosco .trabalhe-conosco__form button[type="submit"] {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: 2.84vw;
+    font-size: 3.5vw;
     border-radius: 100px;
     padding: 5px 16px;
     border: none;
     background-color: var(--cor-borda-titulo-secao);
     color: var(--cor-texto-time-botao);
     margin-top: 6vw;
+    width: 50vw;
+    height: 8.267vw;
   }
 }

@@ -18,7 +18,99 @@ export const BngHubLayoutSite = (): JSX.Element => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Dados completos das marcas
-  const brandsData = [
+  //   const brandsData = [
+  //   {
+  //     id: "arnica",
+  //     name: "Arnica",
+  //     bgColor: "",
+  //     logoSrc: "./Arnica.png",
+  //     logoSrcNegativo: "./Arnica_negativo.png",
+  //     logoWidth: "",
+  //     logoHeight: "",
+  //     title: "Gestão de Equipes Médicas",
+  //     description: "Arnica se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  //   },
+  //   {
+  //     id: "boas_novas",
+  //     name: "Boas Novas",
+  //     bgColor: "",
+  //     logoSrc: "./boas_novas.png",
+  //     logoSrcNegativo: "./boas_novas_negativo.png",
+  //     logoWidth: "",
+  //     logoHeight: "",
+  //     title: "Gestão de Equipes Médicas",
+  //     description: "Boas Novas se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  //   },
+  //   {
+  //     id: "bracos_saude",
+  //     name: "Braços Saúde",
+  //     bgColor: "",
+  //     logoSrc: "./Braços_saúde.png",
+  //     logoSrcNegativo: "./Braços_saúde_negativo.png",
+  //     logoWidth: "",
+  //     logoHeight: "",
+  //     title: "Gestão de Equipes Médicas",
+  //     description: "Braços Saúde se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  //   },
+  //   {
+  //     id: "envolva",
+  //     name: "Envolva",
+  //     bgColor: "",
+  //     logoSrc: "./Envolva.png",
+  //     logoSrcNegativo: "./Envolva_negativo.png",
+  //     logoWidth: "",
+  //     logoHeight: "",
+  //     title: "Gestão de Equipes Médicas",
+  //     description: "Envolva se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  //   },
+  //   {
+  //     id: "mensura",
+  //     name: "Mensura",
+  //     bgColor: "",
+  //     logoSrc: "./Mensura.png",
+  //     logoSrcNegativo: "./Mensura_negativo.png",
+  //     logoWidth: "",
+  //     logoHeight: "",
+  //     title: "Gestão de Equipes Médicas",
+  //     description: "Mensura se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  //   },
+  //   {
+  //     id: "solida",
+  //     name: "Sólida",
+  //     bgColor: "",
+  //     logoSrc: "./Solida.png",
+  //     logoSrcNegativo: "./Solida_negativo.png",
+  //     logoWidth: "",
+  //     logoHeight: "",
+  //     title: "Gestão de Equipes Médicas",
+  //     description: "Sólida se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  //   },
+
+  //   {
+  //     id: "integralidade",
+  //     name: "Integralidade Médica",
+  //     bgColor: "",
+  //     logoSrc: "./Integralidade.png",
+  //     logoSrcNegativo: "./Integralidade_negativo.png",
+  //     logoWidth: "",
+  //     logoHeight: "",
+  //     title: "Gestão de Equipes Médicas",
+  //     description: "Integralidade Médica se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  //   }
+  // ];
+
+ const brandsData = [
+  {
+    id: "solida",
+    name: "Sólida",
+    bgColor: "",
+    logoSrc: "./Solida.png",
+    logoSrcNegativo: "./Solida_negativo.png",
+    logoWidth: "",
+    logoHeight: "",
+    title: "Gestão de Equipes Médicas",
+    description: "Sólida se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  },
   {
     id: "arnica",
     name: "Arnica",
@@ -64,6 +156,28 @@ export const BngHubLayoutSite = (): JSX.Element => {
     description: "Envolva se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
   },
   {
+    id: "gestaoCuidado",
+    name: "Gestão do cuidado",
+    bgColor: "",
+    logoSrc: "./gestaoCuidado.png",
+    logoSrcNegativo: "./gestaoCuidado_negativo.png",
+    logoWidth: "",
+    logoHeight: "",
+    title: "Gestão de Equipes Médicas",
+    description: "Gestão do cuidado se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  },
+  {
+    id: "integralidade",
+    name: "Integralidade Médica",
+    bgColor: "",
+    logoSrc: "./Integralidade.png",
+    logoSrcNegativo: "./Integralidade_negativo.png",
+    logoWidth: "",
+    logoHeight: "",
+    title: "Gestão de Equipes Médicas",
+    description: "Integralidade Médica se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+  },
+  {
     id: "mensura",
     name: "Mensura",
     bgColor: "",
@@ -73,19 +187,10 @@ export const BngHubLayoutSite = (): JSX.Element => {
     logoHeight: "",
     title: "Gestão de Equipes Médicas",
     description: "Mensura se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "solida",
-    name: "Sólida",
-    bgColor: "",
-    logoSrc: "./Solida.png",
-    logoSrcNegativo: "./Solida_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Sólida se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
   }
 ];
+
+
 
 
 
@@ -213,7 +318,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* About Us Section */}
         <motion.section
-          className="relative w-full py-8 md:py-16 h-auto md:h-[42vw]"
+          className="relative w-full py-8 md:py-16 h-auto md:h-[42vw] md:mb-[2vw]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -261,7 +366,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 <br className="hidden md:block" />e gestão estratégica, promovendo saúde com qualidade e
                 altos níveis de satisfação.
 
-                <button className="bg-[#00009b] hover:bg-[#003CFF] text-white rounded-full mt-[6vw] text-[3.74vw] px-[1vw] py-[1vw] md:w-auto w-full  md:mt-[2vw] md:px-[1.67vw] md:py-[0.24vw] md:mt-[2vw] block md:text-[0.97vw] font-['Poppins']">
+                <button className="bg-[#00009b] hover:bg-[#003CFF] text-white font-medium rounded-full mt-[6vw] text-[3.74vw] px-[1vw] py-[1vw] md:w-auto w-full  md:mt-[2vw] md:px-[1.67vw] md:py-[0.24vw] md:mt-[2vw] block md:text-[0.97vw] font-['Poppins']">
                   Saiba mais
                 </button>
               </div>
@@ -312,7 +417,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
         {/* Blue Banner Section */}
         <motion.section
-          className="w-full bg-[#0000bf] shadow-[inset_0.28vw_0.28vw_0.28vw_#00000040] py-6 md:py-[3.33vw]"
+          className="w-full bg-[#00009B] shadow-[inset_0.28vw_0.28vw_0.28vw_#00000040] py-6 md:py-[3.33vw]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -347,13 +452,18 @@ export const BngHubLayoutSite = (): JSX.Element => {
         >
           <div className="w-[95%] md:w-[90%] mx-auto text-center">
             <div className="flex flex-col items-center justify-center mb-[0.56vw]">
-              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[3.733vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
+              <div className="font-marca-o font-bold font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[3.733vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
                 NOSSAS MARCAS
               </div>
             </div>
 
-            <h2 className="w-full px-4 text-xl leading-tight mb-[3.733vw] md:w-[42.43vw] md:px-0 md:text-[1.94vw] md:mt-0 mt-[3.84vw] md:leading-[2.92vw] md:mb-[1.39vw] mx-auto font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
+            <h2 className="hidden md:block w-full px-4 text-xl leading-tight mb-[3.733vw] md:w-[42.43vw] md:px-0 md:text-[1.94vw] md:mt-[1vw] mt-[3.84vw] md:leading-[2.92vw] md:mb-0 mx-auto font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
               Um ecossistema conectado pelo propósito
+            </h2>
+
+            <h2 className="block md:hidden w-full px-4 text-xl leading-tight mb-[3.733vw] md:w-[42.43vw] md:px-0 md:text-[1.94vw] md:mt-[1vw] mt-[3.84vw] md:leading-[2.92vw] md:mb-0 mx-auto font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
+              Um ecossistema conectado  <br/>
+              pelo propósito
             </h2>
 
             <p className="w-full h-auto text-[3.733vw]  leading-relaxed px-4 mb-0 md:w-[55.28vw] md:h-[1.67vw] md:text-[1.11vw] md:leading-[1.66vw] md:mb-[4.17vw] md:px-0 mx-auto font-['Poppins',Helvetica] font-normal text-[#666666] tracking-[0]">
@@ -364,7 +474,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
             <div className="flex gap-6 flex-row justify-center items-center md:gap-[0.9vw] relative overflow-visible relative md:bottom-0 md:my-0 my-[8vw]">
               {/* Navigation Arrow Left (SVG inline) */}
               <button
-                onClick={prevBrand}
+                onClick={nextBrand}
                 className="flex w-[10vw] h-[10vw] md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] relative top-0 md:top-0 md:border-[0.21vw] border-[#003cff] bg-white items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer"
               >
                 <svg
@@ -387,10 +497,10 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 // whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="hidden md:block"
               >
-                <Card className={`w-[17.83vw] h-[20.28vw] rounded-[16px] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#0000bf]`}>
+                <Card className={`w-[17.83vw] h-[20.28vw] rounded-[16px] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#00009B]`}>
                   <CardContent className="p-0 relative w-full h-full flex items-center justify-center">
                     <img
-                      className={`${brandsData[getBrandIndex('left')].logoWidth} ${brandsData[getBrandIndex('left')].logoHeight} object-contain transition-all w-[80%] md:w-[12.083vw] h-auto duration-500 ease-in-out `}
+                      className={`${brandsData[getBrandIndex('left')].logoWidth} ${brandsData[getBrandIndex('left')].logoHeight} object-contain transition-all w-[80%] md:w-[11.083vw] h-auto duration-500 ease-in-out `}
                       alt={brandsData[getBrandIndex('left')].name}
                       src={brandsData[getBrandIndex('left')].logoSrcNegativo}
                     />
@@ -400,15 +510,15 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
               {/* Card Central - Aberto (logo + título + texto) */}
               <motion.div
-              className="flex justify-center items-center md:w-auto w-[70%]"
+                className="flex justify-center items-center md:w-auto w-[70%]"
               // whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <Card className={`w-full pb-[8vw] md:pb-0 h-auto flex-col md:w-[38.75vw] md:h-[23.61vw] md:flex-row bg-white rounded-[16px] flex shadow-[0px_2px_6px_-1px_rgba(0,0,0,0.59)] md:shadow-[0px_6px_6px_2px_rgba(0,0,0,0.59)] transition-all duration-500 ease-in-out`}>
+                <Card className={`w-full pb-[8vw] md:pb-0 h-auto flex-col md:w-[38.75vw] md:h-[23.61vw] md:flex-row bg-white rounded-[16px] flex shadow-[0px_2px_6px_-1px_rgba(0,0,0,0.1)] md:shadow-[0px_6px_6px_2px_rgba(0,0,0,0.1)] transition-all duration-500 ease-in-out`}>
                   <CardContent className="flex flex-col p-0 md:p-4 md:flex-row md:p-0">
                     {/* Logo Section */}
                     <div className={`w-full h-32 rounded-t-[1.11vw] h-full md:w-[15.21vw] md:rounded-l-[16px] px-[5vw] md:px-0 md:py-[0] py-[3vw] flex items-center justify-center transition-all duration-500 ease-in-out bg-[#F2F2F2]`}>
                       <img
-                        className={`${brandsData[getBrandIndex('center')].logoWidth} ${brandsData[getBrandIndex('center')].logoHeight} object-contain transition-all duration-500 ease-in-out w-auto h-[24vw] md:h-auto md:w-[12.083vw]`}
+                        className={`${brandsData[getBrandIndex('center')].logoWidth} ${brandsData[getBrandIndex('center')].logoHeight} object-contain transition-all duration-500 ease-in-out w-auto h-[24vw] md:h-auto md:w-[11.083vw]`}
                         alt={brandsData[getBrandIndex('center')].name}
                         src={brandsData[getBrandIndex('center')].logoSrc}
                       />
@@ -416,7 +526,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
                     {/* Content Section */}
                     <div className="w-full p-4 rounded-b-[1.11vw] md:w-[23.54vw] md:rounded-r-[1.11vw] md:rounded-b-none md:p-[3.33vw] bg-white flex flex-col justify-center">
-                      <h3 className={`text-lg leading-tight mb-2 md:text-[1.39vw] md:leading-[1.67vw] md:mb-[1.11vw] font-bold text-[#666666] text-left transition-all duration-500 ease-in-out`}>
+                      <h3 className={`text-[3.733vw] leading-tight mb-2 md:text-[1.39vw] md:leading-[1.67vw] md:mb-[1.11vw] font-bold text-[#666666] text-left transition-all duration-500 ease-in-out`}>
                         {brandsData[getBrandIndex('center')].title}
                       </h3>
 
@@ -436,7 +546,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 <Card className={`w-[17.83vw] h-[20.28vw] rounded-[16px] flex items-center justify-center transition-all duration-500  bg-[#003cff]`}>
                   <CardContent className="p-0 relative w-full h-full flex items-center justify-center">
                     <img
-                      className={`object-contain transition-all duration-500 w-[80%] md:w-[12.083vw]`}
+                      className={`object-contain transition-all duration-500 w-[80%] md:w-[11.083vw]`}
                       alt={brandsData[getBrandIndex('right')].name}
                       src={brandsData[getBrandIndex('right')].logoSrcNegativo}
                     />
@@ -446,15 +556,15 @@ export const BngHubLayoutSite = (): JSX.Element => {
 
               {/* Navigation Arrow Right (SVG inline) */}
               <button
-                onClick={nextBrand}
-                className="flex w-[10vw] h-[10vw] md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] relative md:bottom-0 bottom-0 md:left-0 left-0  border-[#003cff] bg-white items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer disabled:opacity-50"
+                onClick={prevBrand}
+                className="flex w-[10vw] h-[10vw] md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] md:border-[0.21vw] relative md:bottom-0 bottom-0 md:left-0 left-0  border-[#003cff] bg-white items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer disabled:opacity-50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="10"
                   height="17"
                   viewBox="0 0 10 17"
-                  className="md:w-[0.69vw] md:h-[1.18vw] transition-all ml-[0.05vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
+                  className="md:w-[0.69vw] md:h-[1.18vw] transition-all ml-[0.95vw] md:ml-[0.2vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
                 >
                   <path
                     d="M1.60573 1.53583C1.60648 1.53621 1.61452 1.53989 1.6277 1.55281L8.01369 7.80898C8.40698 8.19431 8.40691 8.80565 8.01369 9.19102L1.6277 15.4472C1.61456 15.4601 1.6064 15.4638 1.60573 15.4642C1.60475 15.4646 1.60368 15.4648 1.60174 15.4652C1.59518 15.4662 1.57698 15.4666 1.55381 15.4572C1.545 15.4536 1.53919 15.4492 1.53483 15.4462L1.53683 15.4452L5.68497 11.3819C7.30593 9.79368 7.306 7.20628 5.68497 5.61807L1.53583 1.55381C1.53112 1.54845 1.53372 1.54693 1.53383 1.55281C1.53819 1.54982 1.5449 1.54644 1.55381 1.54282C1.57709 1.53341 1.59525 1.53373 1.60174 1.53483C1.6037 1.53518 1.60466 1.53531 1.60573 1.53583Z"
@@ -500,7 +610,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
         >
           <div className="container mx-auto text-center px-4 md:px-0">
             <div className="flex flex-col items-center justify-center mb-4">
-              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#0000bf] text-[3.74vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
+              <div className="font-marca-o font-[number:var(--marca-o-font-weight)] font-bold text-[#0000bf] text-[3.74vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
                 NOSSAS SOLUÇÕES
               </div>
             </div>
@@ -567,7 +677,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 viewport={{ once: true }}
               >
                 <div className="flex flex-col items-center md:items-start mb-4 md:mb-[1.39vw]">
-                  <div className="font-marca-o font-[number:var(--marca-o-font-weight)] text-[#00009b] text-[3.74vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
+                  <div className="font-marca-o font-[number:var(--marca-o-font-weight)] font-bold text-[#0000bf] text-[3.74vw] md:text-[0.97vw] tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
                     ONDE ESTAMOS
                   </div>
 

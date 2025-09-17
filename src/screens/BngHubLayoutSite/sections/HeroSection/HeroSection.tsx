@@ -70,7 +70,7 @@ const AnimatedValue = ({ value, shouldAnimate }: { value: string; shouldAnimate:
 };
 
 // Define the stats data for mapping
-const statsData = [
+const statsDataDesktop = [
   {
     value: "10 anos",
     description: "de inovação em\ngestão assistencial",
@@ -88,6 +88,37 @@ const statsData = [
     description: "vidas impactadas\ntodos os meses",
   },
 ];
+
+
+const statsDataMobile = [
+  {
+    value: "10 anos",
+    description: "de inovação\n em gestão\n assistencial",
+  },
+  {
+    value: "+300",
+    description: "unidades de \nsaúde com gestão \notimizada",
+  },
+  {
+    value: "+10 mil",
+    description: "profissionais da \nsaúde conectados \nao propósito",
+  },
+  {
+    value: "+300 mil",
+    description: "vidas \nimpactadas\ntodos os meses",
+  },
+];
+
+let statsData;
+
+if (window.innerWidth >= 768) {
+  statsData = statsDataDesktop;
+} else {
+  statsData = statsDataMobile;
+}
+
+// Componente principal HeroSection
+
 
 export const HeroSection = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState(false);
@@ -217,7 +248,7 @@ export const HeroSection = (): JSX.Element => {
 
         <div ref={sectionRef} className="flex flex-col w-full items-center gap-2 md:gap-[3.33vw] py-8 md:py-[5.56vw] px-0 md:px-0">
           <div className="flex flex-col items-center justify-center">
-            <h3 className="font-marca-o font-[number:var(--marca-o-font-weight)] text-white text-[3.74vw] md:text-[0.97vw] text-center tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
+            <h3 className="font-marca-o font-[number:var(--marca-o-font-weight)] font-bold text-white text-[3.74vw] md:text-[0.97vw] text-center tracking-[var(--marca-o-letter-spacing)] leading-[var(--marca-o-line-height)] [font-style:var(--marca-o-font-style)] border-b-2 border-solid border-[#FEDC0B]">
               NOSSOS NÚMEROS
             </h3>
           </div>
@@ -228,6 +259,8 @@ export const HeroSection = (): JSX.Element => {
                 Construindo conexões para gerar crescimento
               </h2>
             </div>
+
+
 
             {/* Cards em linha única */}
             <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-2 md:gap-[1.39vw] w-full max-w-[90vw]">
@@ -250,7 +283,7 @@ export const HeroSection = (): JSX.Element => {
                       {stat.description}
                     </p>
                   </CardContent>
-                  
+
                   {/* Fallback caso a imagem não carregue */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg opacity-90 -z-10" />
                 </Card>

@@ -29,7 +29,7 @@ export const BlogHomePage = (): JSX.Element => {
 
       {/* Hero Banner */}
       <motion.section 
-        className="relative w-full h-fit bg-gradient-to-r from-[#003cff] to-[#0052ff] rounded-bl-[20px] rounded-br-[20px] md:rounded-bl-[60px] md:rounded-br-[60px] flex items-center justify-center mt-0 overflow-hidden"
+        className="relative w-full h-fit bg-gradient-to-r from-[#003cff] to-[#0052ff] md:h-[35vw] rounded-bl-[20px] rounded-br-[20px] md:rounded-bl-[60px] md:rounded-br-[60px] flex items-center justify-center mt-0 overflow-hidden"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}

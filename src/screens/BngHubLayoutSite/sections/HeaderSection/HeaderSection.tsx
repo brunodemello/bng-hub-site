@@ -61,7 +61,7 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
+    <header className={`fixed top-0 left-0 w-full z-[500] transition-all duration-300 ease-in-out ${
       !isScrolled 
         ? 'bg-transparent'
         : 'bg-white shadow-md'
@@ -75,8 +75,9 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
           <Link to="/">
             <Logo
               className="md:ml-[6vw] w-[22vw] h-[10.933vw] md:w-[10.208vw] md:h-auto w-12 h-12 object-contain relative top-[1.24vw] md:top-0"
-             color={!isScrolled ? '#0c46e6' : 'white'}
-             textColor={!isScrolled ? 'white' : '#0c46e6'}
+             color={!isScrolled ? '#003CFF' : 'white'}
+             textColor={!isScrolled ? 'white' : '#003CFF'}
+             logoTextPart={!isScrolled ? 'white' : '#00009B'} 
             />
           </Link>
 
@@ -84,18 +85,18 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 transition-all duration-300 ${
-              !isScrolled ? 'text-white' : 'text-[#0c46e6]'
+              !isScrolled ? 'text-white' : 'text-[#003CFF]'
             }`}
             aria-label="Menu"
           >
             <span className={`block w-6 h-0.5 transition-all duration-300 ${
-              !isScrolled ? 'bg-white' : 'bg-[#0c46e6]'
+              !isScrolled ? 'bg-white' : 'bg-[#003CFF]'
             } ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
             <span className={`block w-6 h-0.5 transition-all duration-300 ${
-              !isScrolled ? 'bg-white' : 'bg-[#0c46e6]'
+              !isScrolled ? 'bg-white' : 'bg-[#003CFF]'
             } ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
             <span className={`block w-6 h-0.5 transition-all duration-300 ${
-              !isScrolled ? 'bg-white' : 'bg-[#0c46e6]'
+              !isScrolled ? 'bg-white' : 'bg-[#003CFF]'
             } ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
           {/* Navigation and Button Container */}
@@ -110,7 +111,7 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
                         className={`flex font-['Poppins'] flex-col items-center justify-center gap-[0.21vw] pt-[0.69vw] pb-0 px-0 font-bold text-[1.11vw] transition-all duration-300 ease-in-out ${
                           !isScrolled 
                             ? `text-white hover:text-[#003CFF] ${item.active ? "border-b-[0.14vw] border-[#FEDC0B]" : ""}`
-                            : `text-[#0c46e6] hover:text-[#0DFFC0] ${item.active ? "border-b-[0.14vw] border-[#FEDC0B]" : ""}`
+                            : `text-[#003CFF] hover:text-[#0DFFC0] ${item.active ? "border-b-[0.14vw] border-[#FEDC0B]" : ""}`
                         }`}
                       >
                         {item.label}
@@ -125,8 +126,8 @@ export const HeaderSection = ({ isQuemSomosPage = false }: { isQuemSomosPage?: b
             <Link to="/hub-news">
               <Button className={`font-['Poppins'] rounded-[6.94vw] px-[1.67vw] py-[0.35vw] transition-all duration-300 hover:bg-[#003CFF] ${
                 isHubNewsPage 
-                  ? 'bg-[#fedc0b] text-[#0c46e6] hover:bg-[#fedc0b]/70' 
-                  : 'bg-[#0c46e6] text-white '
+                  ? 'bg-[#fedc0b] text-[#00009B] hover:bg-[#003CFF] hover:text-white' 
+                  : 'bg-[#003CFF] text-white hover:bg-[#FEDC0B] hover:text-[#00009B]'
               }`}>
                 <span className="font-semibold text-[0.97vw] leading-[1.45vw]">
                   Hub News
