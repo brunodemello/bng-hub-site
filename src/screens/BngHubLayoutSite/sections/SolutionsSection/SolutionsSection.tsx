@@ -170,7 +170,7 @@ export const SolutionsSection = (): JSX.Element => {
 
   const toggleItem = (cardId: string, itemId: string) => {
     setOpenItemId(openItemId === itemId ? null : itemId);
-    
+
     // Atualizar o slider após a mudança de altura
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -202,19 +202,10 @@ export const SolutionsSection = (): JSX.Element => {
           }}
           className="absolute left-[-4vw] md:mt-0 mt-[11vw] top-1/2 -translate-y-1/2 w-[10vw] h-[10vw] md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 md:flex"
         >
-           <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="17"
-                  viewBox="0 0 10 17"
-                  className="md:w-[0.69vw] md:h-[1.18vw] rotate-180 transition-all  ml-[-0.05vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
-                >
-                  <path
-                    d="M1.60573 1.53583C1.60648 1.53621 1.61452 1.53989 1.6277 1.55281L8.01369 7.80898C8.40698 8.19431 8.40691 8.80565 8.01369 9.19102L1.6277 15.4472C1.61456 15.4601 1.6064 15.4638 1.60573 15.4642C1.60475 15.4646 1.60368 15.4648 1.60174 15.4652C1.59518 15.4662 1.57698 15.4666 1.55381 15.4572C1.545 15.4536 1.53919 15.4492 1.53483 15.4462L1.53683 15.4452L5.68497 11.3819C7.30593 9.79368 7.306 7.20628 5.68497 5.61807L1.53583 1.55381C1.53112 1.54845 1.53372 1.54693 1.53383 1.55281C1.53819 1.54982 1.5449 1.54644 1.55381 1.54282C1.57709 1.53341 1.59525 1.53373 1.60174 1.53483C1.6037 1.53518 1.60466 1.53531 1.60573 1.53583Z"
-          
-                    strokeWidth="3"
-                  />
-                </svg>
+          <ChevronLeft
+            style={{ width: "9vw", height: "9vw" }}
+            className="transition-colors duration-200 stroke-[3] text-[#003CFF] hover:text-white"
+          />
         </button>
 
         {/* Slider */}
@@ -246,34 +237,31 @@ export const SolutionsSection = (): JSX.Element => {
                           onClick={() => toggleItem(card.id, item.id)}
                           className="flex justify-between items-center py-0 md:py-0 text-left hover:opacity-80 transition-opacity"
                         >
-                          <span 
-                            className={`font-sans font-semibold text-[3.733vw] md:text-[1.11vw] leading-[1.66vw] ${
-                              isItemExpanded(card.id, item.id) ? 'text-[#0dffc0]' : 'text-white'
-                            }`}
+                          <span
+                            className={`font-sans font-semibold text-[3.733vw] md:text-[1.11vw] leading-[1.66vw] ${isItemExpanded(card.id, item.id) ? 'text-[#0dffc0]' : 'text-white'
+                              }`}
                           >
                             {item.title}
                           </span>
-                          <svg 
-                            className={`w-6 h-8 md:w-[1.83vw] md:h-[2.83vw] transition-all duration-300 ${
-                              isItemExpanded(card.id, item.id) 
-                                ? 'text-[#0dffc0] rotate-180' 
-                                : 'text-[#fedc0b] rotate-0'
-                            }`} 
-                            fill="currentColor" 
+                          <svg
+                            className={`w-6 h-8 md:w-[1.83vw] md:h-[2.83vw] transition-all duration-300 ${isItemExpanded(card.id, item.id)
+                              ? 'text-[#0dffc0] rotate-180'
+                              : 'text-[#fedc0b] rotate-0'
+                              }`}
+                            fill="currentColor"
                             viewBox="0 0 20 20"
                           >
                             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                           </svg>
                         </button>
-                        
-                        
-                        
+
+
+
                         {/* Conteúdo expandido */}
-                        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                          isItemExpanded(card.id, item.id) 
-                            ? 'max-h-[200px] opacity-100 mt-4 md:mt-[1.11vw]' 
-                            : 'max-h-0 opacity-0 mt-0'
-                        }`}>
+                        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isItemExpanded(card.id, item.id)
+                          ? 'max-h-[200px] opacity-100 mt-4 md:mt-[1.11vw]'
+                          : 'max-h-0 opacity-0 mt-0'
+                          }`}>
                           <div className="p-4 md:p-[1.11vw] bg-[#003cff] rounded-[0.56vw] mb-4 md:mb-[1.42vw]">
                             <p className="text-white text-sm md:text-[0.97vw] md:leading-[1.45vw] text-left">
                               {item.description}
@@ -297,19 +285,10 @@ export const SolutionsSection = (): JSX.Element => {
           }}
           className="absolute right-[-4vw] md:mt-0 mt-[11vw] top-1/2 -translate-y-1/2 w-10 h-10 md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] md:border-[0.21vw] border-[#003cff] bg-white flex items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer z-30 md:flex"
         >
-           <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="17"
-                  viewBox="0 0 10 17"
-                  className="md:w-[0.69vw] md:h-[1.18vw] transition-all ml-[0.95vw] md:ml-[0.2vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
-                >
-                  <path
-                    d="M1.60573 1.53583C1.60648 1.53621 1.61452 1.53989 1.6277 1.55281L8.01369 7.80898C8.40698 8.19431 8.40691 8.80565 8.01369 9.19102L1.6277 15.4472C1.61456 15.4601 1.6064 15.4638 1.60573 15.4642C1.60475 15.4646 1.60368 15.4648 1.60174 15.4652C1.59518 15.4662 1.57698 15.4666 1.55381 15.4572C1.545 15.4536 1.53919 15.4492 1.53483 15.4462L1.53683 15.4452L5.68497 11.3819C7.30593 9.79368 7.306 7.20628 5.68497 5.61807L1.53583 1.55381C1.53112 1.54845 1.53372 1.54693 1.53383 1.55281C1.53819 1.54982 1.5449 1.54644 1.55381 1.54282C1.57709 1.53341 1.59525 1.53373 1.60174 1.53483C1.6037 1.53518 1.60466 1.53531 1.60573 1.53583Z"
-                    strokeWidth="3"
-                   
-                  />
-                </svg>
+          <ChevronRight
+            style={{ width: "9vw", height: "9vw" }}
+            className="transition-colors duration-200 stroke-[3] text-[#003CFF] hover:text-white"
+          />
         </button>
       </div>
     </div>

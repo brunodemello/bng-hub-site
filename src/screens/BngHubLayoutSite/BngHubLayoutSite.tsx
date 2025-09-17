@@ -12,6 +12,7 @@ import { HeroBannerSection } from "./sections/HeroBannerSection";
 import { HeroSection } from "./sections/HeroSection";
 import { ServiceOverviewSection } from "./sections/ServiceOverviewSection";
 import { SolutionsSection as SolutionsAccordion } from "./sections/SolutionsSection";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const BngHubLayoutSite = (): JSX.Element => {
   const [currentBrandIndex, setCurrentBrandIndex] = useState(1);
@@ -99,96 +100,96 @@ export const BngHubLayoutSite = (): JSX.Element => {
   //   }
   // ];
 
- const brandsData = [
-  {
-    id: "solida",
-    name: "Sólida",
-    bgColor: "",
-    logoSrc: "./Solida.png",
-    logoSrcNegativo: "./Solida_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Sólida se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "arnica",
-    name: "Arnica",
-    bgColor: "",
-    logoSrc: "./Arnica.png",
-    logoSrcNegativo: "./Arnica_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Arnica se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "boas_novas",
-    name: "Boas Novas",
-    bgColor: "",
-    logoSrc: "./boas_novas.png",
-    logoSrcNegativo: "./boas_novas_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Boas Novas se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "bracos_saude",
-    name: "Braços Saúde",
-    bgColor: "",
-    logoSrc: "./Braços_saúde.png",
-    logoSrcNegativo: "./Braços_saúde_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Braços Saúde se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "envolva",
-    name: "Envolva",
-    bgColor: "",
-    logoSrc: "./Envolva.png",
-    logoSrcNegativo: "./Envolva_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Envolva se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "gestaoCuidado",
-    name: "Gestão do cuidado",
-    bgColor: "",
-    logoSrc: "./gestaoCuidado.png",
-    logoSrcNegativo: "./gestaoCuidado_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Gestão do cuidado se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "integralidade",
-    name: "Integralidade Médica",
-    bgColor: "",
-    logoSrc: "./Integralidade.png",
-    logoSrcNegativo: "./Integralidade_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Integralidade Médica se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  },
-  {
-    id: "mensura",
-    name: "Mensura",
-    bgColor: "",
-    logoSrc: "./Mensura.png",
-    logoSrcNegativo: "./Mensura_negativo.png",
-    logoWidth: "",
-    logoHeight: "",
-    title: "Gestão de Equipes Médicas",
-    description: "Mensura se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
-  }
-];
+  const brandsData = [
+    {
+      id: "solida",
+      name: "Sólida",
+      bgColor: "",
+      logoSrc: "./Solida.png",
+      logoSrcNegativo: "./Solida_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Sólida se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    },
+    {
+      id: "arnica",
+      name: "Arnica",
+      bgColor: "",
+      logoSrc: "./Arnica.png",
+      logoSrcNegativo: "./Arnica_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Arnica se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    },
+    {
+      id: "boas_novas",
+      name: "Boas Novas",
+      bgColor: "",
+      logoSrc: "./boas_novas.png",
+      logoSrcNegativo: "./boas_novas_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Boas Novas se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    },
+    {
+      id: "bracos_saude",
+      name: "Braços Saúde",
+      bgColor: "",
+      logoSrc: "./Braços_saúde.png",
+      logoSrcNegativo: "./Braços_saúde_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Braços Saúde se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    },
+    {
+      id: "envolva",
+      name: "Envolva",
+      bgColor: "",
+      logoSrc: "./Envolva.png",
+      logoSrcNegativo: "./Envolva_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Envolva se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    },
+    {
+      id: "gestaoCuidado",
+      name: "Gestão do cuidado",
+      bgColor: "",
+      logoSrc: "./gestaoCuidado.png",
+      logoSrcNegativo: "./gestaoCuidado_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Gestão do cuidado se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    },
+    {
+      id: "integralidade",
+      name: "Integralidade Médica",
+      bgColor: "",
+      logoSrc: "./Integralidade.png",
+      logoSrcNegativo: "./Integralidade_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Integralidade Médica se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    },
+    {
+      id: "mensura",
+      name: "Mensura",
+      bgColor: "",
+      logoSrc: "./Mensura.png",
+      logoSrcNegativo: "./Mensura_negativo.png",
+      logoWidth: "",
+      logoHeight: "",
+      title: "Gestão de Equipes Médicas",
+      description: "Mensura se dedica a fazer a gestão de equipes médicas em centenas de unidades de saúde em todo o Brasil. "
+    }
+  ];
 
 
 
@@ -462,7 +463,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
             </h2>
 
             <h2 className="block md:hidden w-full px-4 text-xl leading-tight mb-[3.733vw] md:w-[42.43vw] md:px-0 md:text-[1.94vw] md:mt-[1vw] mt-[3.84vw] md:leading-[2.92vw] md:mb-0 mx-auto font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-[#212121] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] [font-style:var(--BNG-t-tulo-02-h2-font-style)]">
-              Um ecossistema conectado  <br/>
+              Um ecossistema conectado  <br />
               pelo propósito
             </h2>
 
@@ -477,19 +478,10 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 onClick={nextBrand}
                 className="flex w-[10vw] h-[10vw] md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] relative top-0 md:top-0 md:border-[0.21vw] border-[#003cff] bg-white items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="17"
-                  viewBox="0 0 10 17"
-                  className="md:w-[0.69vw] md:h-[1.18vw] rotate-180 transition-all ml-[-0.05vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
-                >
-                  <path
-                    d="M1.60573 1.53583C1.60648 1.53621 1.61452 1.53989 1.6277 1.55281L8.01369 7.80898C8.40698 8.19431 8.40691 8.80565 8.01369 9.19102L1.6277 15.4472C1.61456 15.4601 1.6064 15.4638 1.60573 15.4642C1.60475 15.4646 1.60368 15.4648 1.60174 15.4652C1.59518 15.4662 1.57698 15.4666 1.55381 15.4572C1.545 15.4536 1.53919 15.4492 1.53483 15.4462L1.53683 15.4452L5.68497 11.3819C7.30593 9.79368 7.306 7.20628 5.68497 5.61807L1.53583 1.55381C1.53112 1.54845 1.53372 1.54693 1.53383 1.55281C1.53819 1.54982 1.5449 1.54644 1.55381 1.54282C1.57709 1.53341 1.59525 1.53373 1.60174 1.53483C1.6037 1.53518 1.60466 1.53531 1.60573 1.53583Z"
-
-                    strokeWidth="3"
-                  />
-                </svg>
+                <ChevronLeft
+                  style={{ width: "9vw", height: "9vw" }}
+                  className="transition-colors duration-200 stroke-[3] text-[#003CFF] hover:text-white"
+                />
               </button>
 
               {/* Card Esquerda - Fechado (apenas logo) */}
@@ -559,19 +551,10 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 onClick={prevBrand}
                 className="flex w-[10vw] h-[10vw] md:w-[2.43vw] md:h-[2.43vw] rounded-full border-[3px] md:border-[0.21vw] relative md:bottom-0 bottom-0 md:left-0 left-0  border-[#003cff] bg-white items-center justify-center hover:bg-[#003cff] transition-colors group cursor-pointer disabled:opacity-50"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="17"
-                  viewBox="0 0 10 17"
-                  className="md:w-[0.69vw] md:h-[1.18vw] transition-all ml-[0.95vw] md:ml-[0.2vw] stroke-[#003cff] fill-[#003cff] group-hover:stroke-white group-hover:fill-white"
-                >
-                  <path
-                    d="M1.60573 1.53583C1.60648 1.53621 1.61452 1.53989 1.6277 1.55281L8.01369 7.80898C8.40698 8.19431 8.40691 8.80565 8.01369 9.19102L1.6277 15.4472C1.61456 15.4601 1.6064 15.4638 1.60573 15.4642C1.60475 15.4646 1.60368 15.4648 1.60174 15.4652C1.59518 15.4662 1.57698 15.4666 1.55381 15.4572C1.545 15.4536 1.53919 15.4492 1.53483 15.4462L1.53683 15.4452L5.68497 11.3819C7.30593 9.79368 7.306 7.20628 5.68497 5.61807L1.53583 1.55381C1.53112 1.54845 1.53372 1.54693 1.53383 1.55281C1.53819 1.54982 1.5449 1.54644 1.55381 1.54282C1.57709 1.53341 1.59525 1.53373 1.60174 1.53483C1.6037 1.53518 1.60466 1.53531 1.60573 1.53583Z"
-                    strokeWidth="3"
-
-                  />
-                </svg>
+               <ChevronRight
+                  style={{ width: "9vw", height: "9vw" }}
+                  className="transition-colors duration-200 stroke-[3] text-[#003CFF] hover:text-white"
+                />
               </button>
 
               {/* Mobile Navigation Dots */}
