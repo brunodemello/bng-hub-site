@@ -501,6 +501,7 @@
   position: relative;
   z-index: 999;
   width: 15.347vw;
+  height: auto;
 }
 
 .pessoas-page .card__vaga:hover {
@@ -508,14 +509,14 @@
 }
 
 .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__titulo {
-  font-size: 1.11vw;
+  font-size: 1.04vw;
   font-weight: 700;
   color: #fff;
 }
 
 .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__horario,
 .pessoas-page .nossas-vagas .vagas__card-container .card__vaga .vaga__local {
-  font-size: 1.11vw;
+  font-size: 1vw;
   font-weight: 500;
   color: #fff;
 }
@@ -1025,7 +1026,7 @@ section.trabalhe-conosco.aos-init.aos-animate {
 
   .pessoas-page .nossas-vagas .vagas__card-container .card__vaga {
     min-width: 194px;
-    max-height: 88px;
+    height: 17vw;
   }
 
 

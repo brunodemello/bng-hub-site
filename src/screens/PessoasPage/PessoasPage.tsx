@@ -182,6 +182,17 @@ export const PessoasPage = (): JSX.Element => {
     });
   };
 
+  const anuncioVagas = [
+    { titulo: "Analista Financeiro", horario: "Híbrido - Seg a sex.", local: "Campinas - SP", link: "#trabalhe-conosco" },
+    { titulo: "Desenvolvedor Frontend", horario: "Remoto - Seg a sex.", local: "São Paulo - SP", link: "#trabalhe-conosco" },
+    { titulo: "UX Designer", horario: "Híbrido - Seg a sex.", local: "Campinas - SP", link: "#trabalhe-conosco" },
+    { titulo: "Product Owner", horario: "Híbrido - Seg a sex.", local: "Campinas - SP", link: "#trabalhe-conosco" },
+    { titulo: "Estagiário em Marketing", horario: "Presencial - Seg a sex.", local: "São Paulo - SP", link: "#trabalhe-conosco" },
+    { titulo: "Analista de Dados", horario: "Remoto - Seg a sex.", local: "Campinas - SP", link: "#trabalhe-conosco" },
+    { titulo: "Desenvolvedor Backend", horario: "Híbrido - Seg a sex.", local: "Campinas - SP", link: "#trabalhe-conosco" },
+    { titulo: "Tech Lead", horario: "Híbrido - Seg a sex.", local: "São Paulo - SP", link: "#trabalhe-conosco" },
+  ];
+
   return (
     <div className="pessoas-page bg-white w-full min-h-screen">
       {/* Header */}
@@ -592,46 +603,71 @@ export const PessoasPage = (): JSX.Element => {
         </section>
 
         {/* Nossas Vagas Section */}
-        <section className="nossas-vagas" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+
+        <section
+          className="nossas-vagas"
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <span className="secao-titulo">NOSSAS VAGAS</span>
           <h2 className="titulo-grande">E aí, quer se conectar também?</h2>
           <p>Confira as oportunidades disponíveis para decolar a sua carreira com a gente.</p>
-          <div className="vagas__card-container hidden md:grid">
-            {[...Array(8)].map((_, index) => (
-              <a href="#trabalhe-conosco">
-              <div key={index} className="card__vaga" data-aos="flip-right">
-                
-                  <span className="vaga__titulo">Analista Financeiro</span>
-                  <span className="vaga__horario">Híbrido - Seg a sex.</span>
-                  <span className="vaga__local">Campinas - SP</span>
-                
 
-              </div>
+          {/* GRID DESKTOP */}
+          <div className="vagas__card-container hidden md:grid">
+            {anuncioVagas.map((vaga, index) => (
+              <a href={vaga.link} key={index}>
+                <div className="card__vaga" data-aos="flip-right">
+                  <span className="vaga__titulo">{vaga.titulo}</span>
+                  <span className="vaga__horario">{vaga.horario}</span>
+                  <span className="vaga__local">{vaga.local}</span>
+                </div>
               </a>
             ))}
           </div>
+
+          {/* SLIDER MOBILE */}
           <div className="slider-wrapper relative overflow-visible md:hidden mt-[30px] w-full">
-            <button className="btn-left absolute top-[50%] left-[8.5%] translate-y-[-50%] z-[9999] pr-[2px]" onClick={() => instanceRef.current?.prev()}>
+            <button
+              className="btn-left absolute top-[50%] left-[8.5%] translate-y-[-50%] z-[9999] pr-[2px]"
+              onClick={() => instanceRef.current?.prev()}
+            >
               <ChevronLeft
                 style={{ width: "9vw", height: "9vw" }}
                 color={"#003CFF"}
                 className="transition-colors duration-200 stroke-[3]"
               />
             </button>
-            <div ref={sliderRef} className="keen-slider vagas__card-container flex relative w-full overflow-visible">
-              {[...Array(8)].map((_, index) => (
-                <div className="keen-slider__slide">
-                  <a href="#trabalhe-conosco">
-                  <div key={index} className="card__vaga mx-auto" style={currentSlide === index ? { backgroundColor: "#003CFF" } : { backgroundColor: "#B3C5FF" }}>
-                    <span className="vaga__titulo">Analista Financeiro</span>
-                    <span className="vaga__horario">Híbrido - Seg a sex.</span>
-                    <span className="vaga__local">Campinas - SP</span>
-                  </div>
+
+            <div
+              ref={sliderRef}
+              className="keen-slider vagas__card-container flex relative w-full overflow-visible"
+            >
+              {anuncioVagas.map((vaga, index) => (
+                <div key={index} className="keen-slider__slide">
+                  <a href={vaga.link}>
+                    <div
+                      className="card__vaga mx-auto"
+                      style={
+                        currentSlide === index
+                          ? { backgroundColor: "#003CFF" }
+                          : { backgroundColor: "#B3C5FF" }
+                      }
+                    >
+                      <span className="vaga__titulo">{vaga.titulo}</span>
+                      <span className="vaga__horario">{vaga.horario}</span>
+                      <span className="vaga__local">{vaga.local}</span>
+                    </div>
                   </a>
                 </div>
               ))}
             </div>
-            <button className="btn-right absolute top-[50%] right-[8.5%] translate-y-[-50%] z-[9999] pl-[2px]" onClick={() => instanceRef.current?.next()}>
+
+            <button
+              className="btn-right absolute top-[50%] right-[8.5%] translate-y-[-50%] z-[9999] pl-[2px]"
+              onClick={() => instanceRef.current?.next()}
+            >
               <ChevronRight
                 style={{ width: "9vw", height: "9vw" }}
                 color={"#003CFF"}
@@ -640,6 +676,7 @@ export const PessoasPage = (): JSX.Element => {
             </button>
           </div>
         </section>
+
 
         {/* Trabalhe Conosco Section */}
         <section className="trabalhe-conosco" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">

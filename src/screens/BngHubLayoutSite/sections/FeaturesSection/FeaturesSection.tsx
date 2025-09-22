@@ -26,7 +26,7 @@ export const FeaturesSection = (): JSX.Element => {
 
               <Button className="w-fit bg-[#fedc0b] hover:bg-[#fedc0b]/90 text-[#00009b] rounded-full md:rounded-[6.94vw] px-6 py-3 md:px-[1.67vw] md:py-[0.35vw] h-auto md:mt-[1vw]">
                 <span className="font-['Poppins',Helvetica] font-medium text-sm md:text-[0.97vw] text-center tracking-[0] leading-[1.45vw] ">
-                  Saiba mais
+                  <a href="/quem-somos">Saiba mais</a>
                 </span>
               </Button>
             </div>

@@ -223,13 +223,13 @@ export const ContactUsSection = (): JSX.Element => {
                 <div className="relative w-40 h-20 md:w-[11.39vw] md:h-[5.42vw]">
                   <div className="absolute w-40 h-10 md:w-[11.39vw] md:h-[2.78vw] top-4 md:top-[1.25vw] left-0 rounded-lg border border-solid border-white" />
                   <div className="absolute w-36 h-10 md:w-[9.93vw] md:h-[2.85vw] top-8 md:top-[2.57vw] left-2 md:left-[0.69vw] flex justify-between ">
-                    <a href="">
+                    <a href="https://www.instagram.com/bnghub/">
                       <img className="md:w-[2.917vw]" src="./icon_insta.svg" alt="" />
                     </a>
-                    <a href="">
+                    <a href="https://www.youtube.com/@BNGHUB">
                       <img className="md:w-[2.917vw]" src="./icon_youtube.svg" alt="" />
                     </a>
-                    <a href="">
+                    <a href="https://www.linkedin.com/company/bnghub">
                       <img className="md:w-[2.917vw]" src="./icon_linkedin.svg" alt="" />
                     </a>
                   </div >

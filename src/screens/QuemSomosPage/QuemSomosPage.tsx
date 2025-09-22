@@ -338,7 +338,7 @@ export const QuemSomosPage = (): JSX.Element => {
                   viewport={{ once: true }}
                 >
                   <Button className="bg-[#00009B] hover:bg-[#003CFF] text-white rounded-[100px] px-[2vw] py-[0.8vw] font-medium w-full md:w-auto text-[3.733vw] md:text-[0.97vw] font-medium">
-                    Faça parte do nosso time!
+                    <a href="/pessoas">Faça parte do nosso time!</a>
                   </Button>
                 </motion.div>
               </motion.div>

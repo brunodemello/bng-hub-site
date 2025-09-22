@@ -368,7 +368,9 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 altos níveis de satisfação.
 
                 <button className="bg-[#00009b] hover:bg-[#003CFF] text-white font-medium rounded-full mt-[6vw] text-[3.74vw] px-[1vw] py-[1vw] md:w-auto w-full  md:mt-[2vw] md:px-[1.67vw] md:py-[0.24vw] md:mt-[2vw] block md:text-[0.97vw] font-['Poppins']">
+                 <a href="/quem-somos">
                   Saiba mais
+                  </a>  
                 </button>
               </div>
 
@@ -435,7 +437,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               <span className="text-white">Nós transformamos a </span>
               <span className="font-bold text-[#0dffc0]">SAÚDE</span>
               <span className="font-bold text-white">&nbsp;</span>
-              <span className="text-white">através </span>
+              <span className="text-white">através de </span>
               <span className="font-bold text-[#0dffc0] leading-[0.1px]">
                 CONEXÕES DE VALOR
               </span>
@@ -614,7 +616,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
               transition={{ duration: 0.2 }}
             >
               <Button className="bg-[#00009b] hover:bg-[#003CFF] text-white rounded-full mt-[6vw] text-[3.74vw] px-[1vw] py-[1vw] md:w-auto w-[84%] md:px-[1.67vw] md:py-[0.52vw] md:mt-[2vw] block md:text-[0.97vw] font-['Poppins'] mx-auto h-auto">
-                Falar com um especialista
+                <a href="/contato">Falar com um especialista</a>
               </Button>
             </motion.div>
           </div>
@@ -667,7 +669,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 </div>
 
                 <h2 className="font-BNG-t-tulo-02-h2 font-[number:var(--BNG-t-tulo-02-h2-font-weight)] text-center md:text-left text-black text-[4.8vw] md:text-[1.94vw] tracking-[var(--BNG-t-tulo-02-h2-letter-spacing)] leading-[var(--BNG-t-tulo-02-h2-line-height)] [font-style:var(--BNG-t-tulo-02-h2-font-style)] mb-4 md:mb-[1.67vw]">
-                  SEM FRONTEIRAS para a alta peformance assistencial
+                  SEM FRONTEIRAS para a alta performance assistencial
                 </h2>
 
                 <p className="font-sans font-normal text-[#666666] text-center md:text-left text-sm md:text-[1.11vw] tracking-[0] md:leading-[1.66vw] mb-6 md:mb-[2.22vw]">
@@ -678,7 +680,7 @@ export const BngHubLayoutSite = (): JSX.Element => {
                 </p>
 
                 <Button className="bg-[#00009b] hover:bg-[#003CFF] mt-[3vw] text-[3.74vw] px-[1vw] py-[1vw] text-white rounded-full md:px-[1.67vw] md:py-[0.52vw] md:mt-[2vw] block md:text-[0.97vw] font-['Poppins'] h-auto md:w-fit">
-                  Saiba mais
+                 <a href="/contato">Saiba mais</a>
                 </Button>
               </motion.div>
 
